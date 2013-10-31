@@ -1,0 +1,691 @@
+= All search commands =
+
+The table below lists all search commands with a short description and links to their individual reference pages. For a quick guide with examples for use of these search commands, refer to the [[Documentation:Splunk:SearchReference:SearchCheatsheet|Search cheat sheet]].
+
+Some of these commands share functions -- you can see a list of these functions with descriptions and examples on the following pages: [[Documentation:Splunk:SearchReference:CommonEvalFunctions|Functions for eval and where]] and [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Functions for stats, chart, and timechart]].
+
+{| cellpadding="5" cellspacing="0" border="1"
+!Command
+!Alias(es)
+!Description
+!See also
+|-
+|<code>[[Documentation:Splunk:SearchReference:Abstract|abstract]]</code> 
+|excerpt 
+|Produces a summary of each search result. 
+|<code>highlight</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Accum|accum]]</code> 
+| 
+|Keeps a running total of the specified numeric field. 
+|<code>autoregress, delta, trendline, streamstats</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Addcoltotals|addcoltotals]]</code> 
+| 
+|Computes an event that contains sum of all numeric fields for previous events.
+|<code>addtotals</code>, <code>stats</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Addinfo|addinfo]]</code> 
+| 
+|Add fields that contain common information about the current search. 
+|<code>search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Addtotals|addtotals]]</code> 
+| 
+|Computes the sum of all numeric fields for each result. 
+|<code>addcoltotals</code>, <code>stats</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Af|analyzefields]]</code> 
+|
+|Analyze numerical fields for their ability to predict another discrete field. 
+|<code>anomalousvalue</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Anomalies|anomalies]]</code> 
+| 
+|Computes an "unexpectedness" score for an event. 
+|<code>anomalousvalue, cluster, kmeans, outlier</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Anomalousvalue|anomalousvalue]]</code> 
+| 
+|Finds and summarizes irregular, or uncommon, search results. 
+|<code>analyzefields, anomalies, cluster, kmeans, outlier</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Append|append]]</code> 
+|
+|Appends subsearch results to current results. 
+|<code>appendcols, appendcsv, appendlookup, join, set</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Appendcols|appendcols]]</code> 
+| 
+|Appends the fields of the subsearch results to current results, first results to first result, second to second, etc.
+|<code>append, appendcsv, join, set</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Appendpipe|appendpipe]]</code>
+|
+|Appends the result of the subpipeline applied to the current result set to results. 
+|<code>append</code>, <code>appendcols</code>, <code>join</code>, <code>set</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Arules|arules]]</code>
+|
+|Finds association rules between field values.
+|<code>[[Documentation:Splunk:SearchReference:Associate|associate]], [[Documentation:Splunk:SearchReference:Correlate|correlate]]</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Associate|associate]]</code> 
+| 
+|Identifies correlations between fields. 
+|<code>correlate, contingency</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Audit|audit]]</code> 
+| 
+|Returns audit trail information that is stored in the local audit index. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Autoregress|autoregress]]</code> 
+|
+|Sets up data for calculating the moving average. 
+|<code>accum, autoregress, delta, trendline, streamstats</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Bucket|bucket]]</code> 
+|bin, discretize 
+|Puts continuous numerical values into discrete sets. 
+|<code>chart, timechart</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Bucketdir|bucketdir]]</code>
+|
+|Replaces a field value with higher-level grouping, such as replacing filenames with directories. 
+|<code>cluster, dedup</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code> 
+|
+|Returns results in a tabular output for charting. See also, [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Functions for stats, chart, and timechart]].
+|<code>bucket, sichart, timechart</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Cluster|cluster]]</code> 
+|sic 
+|Clusters similar events together.
+|<code>anomalies, anomalousvalue, cluster, kmeans, outlier</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Collect|collect]]</code> 
+|stash 
+|Puts search results into a summary index. 
+|<code>overlap</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Concurrency|concurrency]]</code>
+|
+|Uses a duration field to find the number of "concurrent" events for each event. 
+|<code>timechart</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Contingency|contingency]]</code> 
+|counttable, ctable 
+|Builds a contingency table for two fields. 
+|<code>associate, correlate</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Convert|convert]]</code> 
+|
+|Converts field values into numerical values. 
+| <code>eval</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Correlate|correlate]]</code> 
+|
+|Calculates the correlation between different fields. 
+|<code>associate, contingency</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Crawl|crawl]]</code> 
+|
+|Crawls the filesystem for new sources to index. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Datamodel|datamodel]]</code>
+|
+|Examine data model or data model object and search a data model object. 
+|<code>pivot</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Dbinspect|dbinspect]]</code> 
+|
+|Returns information about the specified index. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Dedup|dedup]]</code> 
+|
+|Removes subsequent results that match a specified criteria. 
+|<code>uniq</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Delete|delete]]</code>
+|
+|Delete specific events or search results.
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Delta|delta]]</code> 
+|
+|Computes the difference in field value between nearby results. 
+| <code>accum, autoregress, trendline, streamstats</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Diff|diff]]</code> 
+|
+|Returns the difference between two search results. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Dispatch|dispatch]]</code> 
+|
+|Encapsulates long running, streaming reports. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Erex|erex]]</code>
+|
+|Allows you to specify example or counter example values to automatically extract fields that have similar values. 
+|<code>extract</code>, <code>kvform</code>, <code>multikv</code>, <code>regex</code>, <code>rex</code>, <code>xmlkv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Eval|eval]]</code> 
+| 
+|Calculates an expression and puts the value into a field. See also, [[Documentation:Splunk:SearchReference:CommonEvalFunctions|Functions for eval and where]].
+|<code>where</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Eventcount|eventcount]]</code> 
+|
+|Returns the number of events in an index. 
+|<code>dbinspect</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Eventstats|eventstats]]</code> 
+|
+|Adds summary statistics to all search results. 
+|<code>stats</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Extract|extract]]</code> 
+|kv 
+|Extracts field-value pairs from search results. 
+|<code>kvform, multikv, xmlkv, rex</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Fieldformat|fieldformat]]</code> 
+|
+|Expresses how to render a field at output time without changing the underlying value.  
+|<code>eval, where</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Fields|fields]]</code> 
+|
+|Removes fields from search results. 
+| 
+|-
+| <code>[[Documentation:Splunk:SearchReference:Fieldsummary|fieldsummary]]</code>
+|
+| Generates summary information for all or a subset of the fields. 
+| <code>af, anomalies, anomalousvalue, stats</code>
+|-
+|<code>file</code> 
+| 
+|This command is no longer supported. See [[Documentation:Splunk:SearchReference:Inputcsv|inputcsv]].
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Filldown|filldown]]</code>
+|
+|Replaces NULL values with the last non-NULL value.
+|<code>fillnull</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Fillnull|fillnull]]</code> 
+| 
+|Replaces null values with a specified value. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Findtypes|findtypes]]</code> 
+| 
+| Generates a list of suggested event types.
+| <code>typer</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Folderize|folderize]]</code>
+|
+| Creates a higher-level grouping, such as replacing filenames with directories. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Foreach|foreach]]</code>
+|
+|Run a templatized streaming subsearch for each field in a wildcarded field list.
+|<code>[[Documentation:Splunk:SearchReference:Eval|eval]]</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Format|format]]</code> 
+| 
+|Takes the results of a subsearch and formats them into a single result. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Gauge|gauge]]</code> 
+| 
+|Transforms results into a format suitable for display by the Gauge chart types. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Gentimes|gentimes]]</code> 
+| 
+|Generates time-range results. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Geostats|geostats]]</code>
+|
+|Generate statistics which are clustered into geographical bins to be rendered on a world map.
+|<code>[[Documentation:Splunk:SearchReference:Stats|stats]], [[Documentation:Splunk:SearchReference:Xyseries|xyseries]]</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Head|head]]</code> 
+| 
+|Returns the first number n of specified results.
+|<code>reverse, tail</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Highlight|highlight]]</code> 
+| 
+|Causes Splunk Web to highlight specified terms. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:History|history]]</code>
+|
+|Returns a history of searches formatted as an events list or as a table. 
+|<code>search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Iconify|iconify]]</code>
+|
+|Causes Splunk Web to make a unique icon for each value of the fields listed. 
+|<code>highlight</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Input|input]]</code> 
+| 
+|Adds sources to Splunk or disables sources from being processed by Splunk. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Inputcsv|inputcsv]]</code> 
+|
+|Loads search results from the specified CSV file. 
+|<code>loadjob, outputcsv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Inputlookup|inputlookup]]</code>
+|
+|Loads search results from a specified static lookup table. 
+|<code>inputcsv</code>, <code>join</code>, <code>lookup</code>, <code>outputlookup</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Iplocation|iplocation]]</code> 
+|
+|Extracts location information from IP addresses. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Join|join]]</code> 
+|
+|SQL-like joining of results from the main results pipeline with the results from the subpipeline. 
+|<code>selfjoin, appendcols</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Kmeans|kmeans]]</code> 
+| 
+|Performs k-means clustering on selected fields. 
+|<code>anomalies, anomalousvalue, cluster, outlier</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Kvform|kvform]]</code> 
+| 
+|Extracts values from search results, using a form template. 
+|<code>extract, kvform, multikv, xmlkv, rex</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Loadjob|loadjob]]</code> 
+| 
+|Loads events or results of a previously completed search job. 
+|<code>inputcsv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Localize|localize]]</code> 
+|
+|Returns a list of the time ranges in which the search results were found. 
+|<code>map, transaction</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Localop|localop]]</code> 
+|
+| Tells Splunk to run subsequent commands, that is all commands following this, locally and not on a remote peer(s).
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Lookup|lookup]]</code>
+|
+|Explicitly invokes field value lookups.
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Makecontinuous|makecontinuous]]</code> 
+|
+|Makes a field that is supposed to be the x-axis continuous (invoked by chart/timechart) 
+|<code>chart, timechart</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Makemv|makemv]]</code> 
+|
+|Change a specified field into a multivalued field during a search. 
+|<code>mvcombine, mvexpand, nomv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Map|map]]</code> 
+|
+|A looping operator, performs a search over each search result. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Metadata|metadata]]</code>
+|
+| Returns a list of source, sourcetypes, or hosts from a specified index or distributed search peer.
+|<code>dbinspect</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Metasearch|metasearch]]</code>
+|
+|Retrieves event metadata from indexes based on terms in the logical expression.
+|<code>metadata</code>, <code>search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Multikv|multikv]]</code> 
+| 
+| Extracts field-values from table-formatted events. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Multisearch|multisearch]]</code> 
+| 
+| Run multiple '''[[Splexicon:Streamingcommand|streaming searches]]''' at the same time. 
+| <code>append, join</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Mvcombine|mvcombine]]</code> 
+|
+|Combines events in search results that have a single differing field value into one result with a multivalue field of the differing field. 
+|<code>mvexpand, makemv, nomv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Mvexpand|mvexpand]]</code> 
+|
+|Expands the values of a multivalue field nto separate events for each value of the multivalue field. 
+|<code>mvcombine, makemv, nomv</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Nomv|nomv]]</code> 
+| 
+|Changes a specified multivalued field into a single-value field at search time. 
+|<code>makemv, mvcombine, mvexpand</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Outlier|outlier]]</code> 
+|outlierfilter 
+|Removes outlying numerical values. 
+|<code>anomalies, anomalousvalue, cluster, kmeans</code>  
+|-
+|<code>[[Documentation:Splunk:SearchReference:Outputcsv|outputcsv]]</code> 
+|
+|Outputs search results to a specified CSV file. 
+|<code>inputcsv, outputtext</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Outputlookup|outputlookup]]</code>
+|
+|Writes search results to the specified static lookup table. 
+|<code>inputlookup</code>, <code>lookup</code>, <code>outputcsv</code>, <code>outputlookup</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Outputtext|outputtext]]</code> 
+|
+|Ouputs the raw text field (<code>_raw</code>) of results into the <code>_xml</code> field. 
+|<code>outputtext</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Overlap|overlap]]</code> 
+|
+|Finds events in a summary index that overlap in time or have missed events. 
+|<code>collect</code> 
+|-
+| <code>[[Documentation:Splunk:SearchReference:Pivot|pivot]]
+|
+| Run pivot searches against a particular data model object. 
+| <code>datamodel</code>
+|-
+| <code>[[Documentation:Splunk:SearchReference:Predict|predict]]</code>
+|
+| Enables you to use time series algorithms to predict future values of fields.
+| <code>x11</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Rangemap|rangemap]]</code> 
+|
+|Sets RANGE field to the name of the ranges that match. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Rare|rare]]</code> 
+|
+|Displays the least common values of a field. 
+|<code>sirare, stats, top</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Regex|regex]]</code>
+|
+|Removes results that do not match the specified regular expression. 
+|<code>rex</code>, <code>search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Relevancy|relevancy]]</code> 
+| 
+|Calculates how well the event matches the query. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Reltime|reltime]]</code>
+|
+|Converts the difference between 'now' and '_time' to a human-readable value and adds adds this value to the field, 'reltime', in your search results. 
+|<code>convert</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Rename|rename]]</code> 
+|
+|Renames a specified field; wildcards can be used to specify multiple fields. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Replace|replace]]</code> 
+|
+|Replaces values of specified fields with a specified new value. 
+|
+|-
+| <code>[[Documentation:Splunk:SearchReference:Rest|rest]]</code>
+|
+| Access a REST endpoint and display the returned entities as search results. 
+|
+|-
+| <code>[[Documentation:Splunk:SearchReference:Return|return]]</code>
+|
+| Specify the values to return from a subsearch.
+| <code>format, search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Reverse|reverse]]</code> 
+|
+|Reverses the order of the results. 
+|<code>head, sort, tail</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Rex|rex]]</code> 
+|
+|Specify a Perl regular expression named groups to extract fields while you search. 
+|<code>extract, kvform, multikv, xmlkv, regex</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Rtorder|rtorder]]</code> 
+| 
+|Buffers events from real-time search to emit them in ascending time order when possible.  
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Run|run]]</code>
+|
+|See <code>script</code>.
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Savedsearch|savedsearch]]</code> 
+|macro, savedsplunk 
+|Returns the search results of a saved search. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Script|script]]</code> 
+|run 
+|Runs an external Perl or Python script as part of your search. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Scrub|scrub]]</code> 
+| 
+|Anonymizes the search results. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Search|search]]</code> 
+|
+|Searches Splunk indexes for matching events. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Searchtxn|searchtxn]]</code>
+|
+|Finds transaction events within specified search constraints. 
+|<code>transaction</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Selfjoin|selfjoin]]</code> 
+|
+| Joins results with itself. 
+|<code>join</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sendemail|sendemail]]</code> 
+|
+|Emails search results to a specified email address. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Set|set]]</code>
+|
+| Performs set operations (union, diff, intersect) on subsearches. 
+|<code>append, appendcols, join, diff</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Setfields|setfields]]</code> 
+|
+|Sets the field values for all results to a common value. 
+|<code>eval</code>, <code>fillnull</code>, <code>rename</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sichart|sichart]]</code> 
+|
+|Summary indexing version of chart. 
+|chart, sitimechart, timechart
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sirare|sirare]]</code> 
+|
+|Summary indexing version of rare. 
+|rare
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sistats|sistats]]</code> 
+|
+|Summary indexing version of stats. 
+|stats
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sitimechart|sitimechart]]</code> 
+|
+|Summary indexing version of timechart. 
+|chart, sichart, timechart
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sitop|sitop]]</code> 
+|
+|Summary indexing version of top. 
+|top
+|-
+|<code>[[Documentation:Splunk:SearchReference:Sort|sort]]</code> 
+| 
+|Sorts search results by the specified fields. 
+|<code>reverse</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Spath|spath]]</code>
+|
+| Provides a straightforward means for extracting fields from structured data formats, XML and JSON. 
+|<code>xpath</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code> 
+|
+|Provides statistics, grouped optionally by fields. See also, [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Functions for stats, chart, and timechart]].
+|<code>eventstats, top, rare</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Strcat|strcat]]</code> 
+|
+|Concatenates string values. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Streamstats|streamstats]]</code> 
+|
+|Adds summary statistics to all search results in a streaming manner. 
+|eventstats, stats
+|-
+|<code>[[Documentation:Splunk:SearchReference:Table|table]]</code>
+|
+|Creates a table using the specified fields. 
+|<code>fields</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Tags|tags]]</code>
+|
+|Annotates specified fields in your search results with tags. 
+|<code>eval</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Tail|tail]]</code>
+|
+|Returns the last number n of specified results. 
+|<code>head, reverse</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code> 
+|
+|Create a time series chart and corresponding table of statistics. See also, [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Functions for stats, chart, and timechart]].
+|<code>chart, bucket</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Top|top]]</code> 
+|common 
+|Displays the most common values of a field. 
+|<code>rare, stats</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Transaction|transaction]]</code> 
+|transam 
+|Groups search results into transactions. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Transpose|transpose]]</code> 
+| 
+|Reformats rows of search results as columns. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Trendline|trendline]]</code> 
+|
+|Computes moving averages of fields. 
+|<code>timechart</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Tscollect|tscollect]]</code> 
+|
+|Writes results into tsidx file(s) for later use by [[Documentation:Splunk:SearchReference:Tstats|tstats command]].
+|<code>[[Documentation:Splunk:SearchReference:Collect|collect]], [[Documentation:Splunk:SearchReference:Stats|stats]], [[Documentation:Splunk:SearchReference:Tstats|tstats]]</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Tstats|tstats]]</code>
+|
+|Calculates statistics over tsidx files created with the tscollect command.
+|<code>[[Documentation:Splunk:SearchReference:Stats|stats]], [[Documentation:Splunk:SearchReference:Tscollect|tscollect]]</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Typeahead|typeahead]]</code>
+|
+|Returns typeahead information on a specified prefix. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Typelearner|typelearner]]</code> 
+|
+|Generates suggested eventtypes. 
+|<code>typer</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Typer|typer]]</code> 
+|
+|Calculates the eventtypes for the search results. 
+|<code>typelearner</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Uniq|uniq]]</code> 
+|
+|Removes any search that is an exact duplicate with a previous result. 
+|<code>dedup</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Untable|untable]]</code> 
+|
+|Converts results from a tabular format to a format similar to <code>stats</code> output. Inverse of <code>xyseries</code> and <code>maketable</code>. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Where|where]]</code> 
+|
+|Performs arbitrary filtering on your data. See also, [[Documentation:Splunk:SearchReference:CommonEvalFunctions|Functions for eval and where]].
+|<code>eval</code> 
+|-
+| <code>[[Documentation:Splunk:SearchReference:X11|x11]]</code>
+|
+| Enables you to determine the trend in your data by removing the seasonal pattern.
+| <code>predict</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Xmlkv|xmlkv]]</code> 
+|
+|Extracts XML key-value pairs. 
+|<code>extract, kvform, multikv, rex</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:XMLunescape|xmlunescape]]</code> 
+|
+|Unescapes XML. 
+| 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Xpath|xpath]]</code> 
+|
+|Redefines the XML path. 
+|
+|-
+|<code>[[Documentation:Splunk:SearchReference:Xyseries|xyseries]]</code> 
+|
+|Converts results into a format suitable for graphing. 
+| 
+|}
+
+
+[[Category:Reference]][[Category:Search commands]]
+[[Category:V:Splunk:6.0beta]][[Category:V:Splunk:6.0]][[Category:V:Splunk:6.0.1]]
