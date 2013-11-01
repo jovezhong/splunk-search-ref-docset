@@ -14,5 +14,15 @@ m.each{
 		end=str.indexOf(']')
 	commands.put(str.substring(index+1,end),str.substring(0,index))
 }
- commands.each{k,v->
- 	println "$k: $v"}
+//commands.each{k,v->println "$k: $v"}
+def urlPrefix='http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/'
+//INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('abstract', 'Command', 'Abstract.html');
+def sql=[]
+commands.each{name,file->
+	sql<<"INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('${name}', 'Command', '${file}.html');"
+	def html=new URL("${urlPrefix}${file}").getText()
+	def f=new File("spl.docset/Contents/Resources/Documents/${file}.html")
+	f.createNewFile()
+	f.setText(html)
+}
+sql.each{println it}
