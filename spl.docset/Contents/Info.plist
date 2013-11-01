@@ -5,7 +5,7 @@
 	<key>CFBundleIdentifier</key>
 	<string>spl</string>
 	<key>CFBundleName</key>
-	<string>spl</string>
+	<string>Splunk Search Reference</string>
 	<key>DocSetPlatformFamily</key>
 	<string>spl</string>
 	<key>isDashDocset</key>
