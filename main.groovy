@@ -19,7 +19,8 @@ def urlPrefix='http://docs.splunk.com/Documentation/Splunk/latest/SearchReferenc
 //INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('abstract', 'Command', 'Abstract.html');
 def sql=[]
 commands.each{name,file->
-	sql<<"INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('${name}', 'Command', '${file}.html');"
+	//println "Handling $name : $file"
+	sql<<"INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('${name}', 'Command', '${file}.html#${name}');"
 	def html=new URL("${urlPrefix}${file}").getText()
 	def f=new File("spl.docset/Contents/Resources/Documents/${file}.html")
 	f.createNewFile()
