@@ -8,4 +8,4 @@ If you purchase the powpack of Alfrd, you can use keyboard to quickly search any
 # How to use
 After you install Dash, simply clone or download this project, and open the Dash preference, add the spl.docset. Then you can use spl:cmdName to search any command.
 
-![](https://www.evernote.com/shard/s15/sh/7882bd93-13fd-4f53-9d27-8d122d730d2e/7d30e415d0888a9dcd5ce2bcf97b90bb/res/36e80f50-b8d0-4ebf-996c-8bd0e92a77f9/skitch.png?resizeSmall&width=400)
+![screenshot](https://www.evernote.com/shard/s15/sh/7882bd93-13fd-4f53-9d27-8d122d730d2e/7d30e415d0888a9dcd5ce2bcf97b90bb/res/36e80f50-b8d0-4ebf-996c-8bd0e92a77f9/skitch.png)
