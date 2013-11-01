@@ -1,0 +1,630 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=""
+xml:lang="en" lang="en" dir="ltr">
+
+<head>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+						<link rel="canonical" href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Eval" />
+				
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<title> eval </title>
+
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/jquery-ui-1.7.2.custom.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/ui.selectmenu.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/view.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/default.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/grid.css?121" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/style.css?121" type="text/css" media="screen, projection" />
+		
+
+		<link rel="stylesheet" type="text/css" media="print" href="http://docs.splunk.com/skins/common/commonPrint.css?121" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE50Fixes.css?121";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE55Fixes.css?121";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE60Fixes.css?121";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE70Fixes.css?121";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="http://docs.splunk.com/skins/common/IEFixes.js?121"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="splunk",
+splunkHost="www.splunk.com",
+stylepath="http://docs.splunk.com/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://docs.splunk.com",
+wgCanonicalNamespace="Documentation",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=100,
+wgPageName="Documentation:Splunk:SearchReference:Eval:6.0beta",
+wgTitle="Splunk:SearchReference:Eval:6.0beta",
+wgAction="view",
+wgArticleId=118469,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=308717,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Splunk Knowledgebase", "5": "Splunk Knowledgebase talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Documentation", "101": "Documentation talk", "110": "Apps", "120": "Dev", "130": "Deploy", "140": "FAQ", "150": "Splexicon", "160": "Community", "170": "Labs"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "splunk_knowledgebase": 4, "splunk_knowledgebase_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "documentation": 100, "documentation_talk": 101, "apps": 110, "dev": 120, "deploy": 130, "faq": 140, "splexicon": 150, "community": 160, "labs": 170, "image": 6, "image_talk": 7},
+wgSiteName="Splunk Knowledgebase",
+wgCategories=["Eval", "Assist", "Reference", "V:Splunk:6.0beta", "V:Splunk:6.0", "V:Splunk:6.0.1"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<script type="text/javascript" src="http://docs.splunk.com/skins/common/wikibits.js?121"><!-- wikibits js --></script>
+		
+		
+		<!--  User CSS -->
+				<script type="text/javascript">
+			function ponyDocsOnLoad() {}
+
+			function AjaxChangeProduct_callback( o ) {
+				document.getElementById('docsProductSelect').disabled = true;
+				var s = new String( o.responseText );
+				document.getElementById('docsProductSelect').disabled = false;
+				window.location.href = s;
+			}
+
+			function AjaxChangeProduct( ) {
+				var productIndex = document.getElementById('docsProductSelect').selectedIndex;
+				var product = document.getElementById('docsProductSelect')[productIndex].value;
+				var title = 'Documentation:Splunk:SearchReference:Eval:6.0beta';
+				sajax_do_call( 'efPonyDocsAjaxChangeProduct', [product,title], AjaxChangeProduct_callback );
+			}
+
+			function AjaxChangeVersion_callback( o ) {
+				document.getElementById('docsVersionSelect').disabled = true;
+				var s = new String( o.responseText );
+				document.getElementById('docsVersionSelect').disabled = false;
+				window.location.href = s;
+			}
+
+			function AjaxChangeVersion( ) {
+				//var productIndex = document.getElementById('docsProductSelect').selectedIndex;
+				//var product = document.getElementById('docsProductSelect')[productIndex].value;
+				var product = $('#docsProductSelect').val();
+				var versionIndex = document.getElementById('docsVersionSelect').selectedIndex;
+				var version = document.getElementById('docsVersionSelect')[versionIndex].value;
+				var title = 'Documentation:Splunk:SearchReference:Eval:6.0beta';
+				sajax_do_call( 'efPonyDocsAjaxChangeVersion', [product,version,title], AjaxChangeVersion_callback );
+			}
+
+			function changeManual(){
+				var url = $("#docsManualSelect").attr("value");
+				if (url != ""){
+					window.location.href = url;
+				}
+			}
+		</script>
+
+		
+		<!-- Start Head Scripts -->
+		<script src="/skins/common/ajax.js?121"></script>
+<script src="/extensions/PonyDocs/js/jquery-1.4.2.min.js?121"></script>
+<script src="/extensions/PonyDocs/js/jquery.json-2.2.min.js?121"></script>
+<script src="/extensions/PonyDocs/js/docs.js?121"></script>
+		<!-- End Head Scripts -->
+		<script src="http://www.splunk.com/themes/splunk_com/scripts/js/cache-splunkdocs-121/jquery-ui-1.7.3.custom,jquery.cookie,global,jquery.simplemodal-1.3.js" type="text/javascript"></script>
+		<script src="/skins/common/wikibits.js?121"></script>
+		<script src="/skins/splunk/splunk.js?121"></script>
+		<script type="text/javascript" src="/skins/splunk/ui.selectmenu.js?121"></script>
+
+		</head>
+
+<body onload="ponyDocsOnLoad();">
+
+<div class="superWrapper">
+<div id="header">
+    <div id="splunktoolbar">
+		<ul id="tools" class="inline">
+				<li><a href="http://www.splunk.com">Splunk.com</a></li>
+				<li id="menu_community" class="toolNavItem">
+				<a id="menulink_community" class="toolNavLink" href="http://community.splunk.com">Community</a>
+				<div id="dropdown_community" class="dropdown">
+					<div class="dropdownColumn">
+						<ul>
+                           <li><a href="http://docs.splunk.com/Documentation">Documentation</a></li>
+                           <li><a href="http://apps.splunk.com">Apps</a></li>
+                           <li><a href="http://answers.splunk.com">Answers</a></li>
+                           <li><a href="http://wiki.splunk.com">Wiki</a></li>
+                           <li><a href="http://blogs.splunk.com">Blogs</a></li>
+                           <li><a href="http://dev.splunk.com">Developers</a></li>
+						</ul>
+					</div>
+				</div>
+				</li>
+										<li><a href="http://www.splunk.com/index.php/sign_up?redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Eval">Sign Up</a></li>
+							<li class="last"><a href="http://www.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Eval">Login</a></li>
+					</ul>
+	</div><!--/toolbar -->
+
+	<div id="mastheadNoNav">
+		<div id="logoMantra">
+			<a href="/Documentation" id="logo">&nbsp;</a>
+		</div>
+		<div id="searchContainer">
+			<form id="searchform" action="/Special:SplunkSearch/docs" method="get">
+				<span style="">
+					<input type="text" accesskey="f" name="q" id="searchbox" value="Search" title="Search Splunk [ctrl-f]" onblur="$(this).val('search')" onclick="$(this).val('')" />
+				</span>
+			</form>
+		</div>
+	</div>
+</div><!--/header -->
+<div class="bc_bg"><div class="container"><div class="breadcrumb"><a href="/Documentation">Documentation</a> &gt; <a href="/Documentation/Splunk">Splunk Enterprise</a> &gt; <a href="/Documentation/Splunk/latest/SearchReference">Search Reference</a> &gt; <a href="/Documentation/Splunk/latest/SearchReference/Eval"> eval </a></div></div></div>			<!-- H1 START -->
+			<div class="head_bg">
+				<div class="container">
+					<div class="span-12">
+						<div class="dochead">
+							<div class="span-8">
+																	<div class="span-1">
+										<img class="prodicon" width="67px" height="67px" src="/skins/splunk/images/icon-Splunk.png" />
+									</div>
+									<div class="span-7 last">
+										<h1>Search Reference</h1>
+																				<p>&nbsp;</p>
+									</div>
+															</div>
+							<div class="span-4 last">
+								<script type="text/javascript">
+									$(function() {
+										$("#docsProductSelect").selectmenu({
+												style:"dropdown",
+												maxHeight: 150
+										});
+									})
+								</script>
+								<div class="product" style="display: none">
+									<label for="docsProductSelect"  class="navlabels">Product</label><br />
+									<select id="docsProductSelect" name="selectedProduct" onChange="AjaxChangeProduct();">
+										<option value="Splunk" selected>Splunk Enterprise</option><option value="Hunk">Hunk</option><option value="Storm">Splunk Storm</option><option value="ES">Splunk App for Enterprise Security</option><option value="PCI">Splunk App for PCI Compliance</option><option value="VMW">Splunk App for VMware</option><option value="SDK">Splunk SDKs</option><option value="PythonSDK">Splunk SDK for Python Reference</option><option value="JavaSDK">Splunk SDK for Java Reference</option><option value="JavaScriptSDK">Splunk SDK for JavaScript Reference</option><option value="PHPSDK">Splunk SDK for PHP Reference</option><option value="RubySDK">Splunk SDK for Ruby Reference</option><option value="CshrpSDK">Splunk SDK for C# Reference</option><option value="DepMon">Splunk Deployment Monitor App</option><option value="WebFramework">Splunk Web Framework</option><option value="WAS">Splunk for WebSphere Application Server</option><option value="HadoopOps">Splunk App for HadoopOps</option><option value="HadoopConnect">Splunk Hadoop Connect</option><option value="XenDT">Splunk App for Citrix XenDesktop</option><option value="XenApp">Splunk App for Citrix XenApp</option><option value="ServerVirt">Splunk App for Server Virtualization</option><option value="Netscaler">Splunk App for Citrix NetScaler with AppFlow</option><option value="DBX">Splunk DB Connect</option><option value="MSExchange">Splunk App for Microsoft Exchange</option><option value="ActiveDirectory">Splunk App for Active Directory</option><option value="UnixApp">Splunk App for Unix and Linux</option><option value="WindowsApp">Splunk App for Windows</option><option value="OPSEC-LEA">Splunk Technology Add-on for Check Point OPSEC LEA</option><option value="CIM">Splunk Common Information Model Add-on</option><option value="MySQL">Splunk MySQL Connector</option><option value="Ponydocs">Ponydocs</option><option value="Splunkbase">Splunk Answers and Splunk Apps</option>									</select>
+								</div>
+																			<script type="text/javascript">
+												$(function(){
+													$("#docsVersionSelect").selectmenu({
+															style:"dropdown",
+															maxHeight: 150
+													});
+												})
+											</script>
+											<div class="productVersion">
+												<label for="docsVersionSelect"  class="navlabels">Version </label><br />
+												<input type="hidden" name="selectedProduct" value="Splunk" />
+												<select id="docsVersionSelect" name="selectedVersion" onChange="AjaxChangeVersion();">
+													<option value="2.1">2.1</option><option value="2.2">2.2</option><option value="2.2.1">2.2.1</option><option value="2.2.3">2.2.3</option><option value="2.2.6">2.2.6</option><option value="3.0">3.0</option><option value="3.0.1">3.0.1</option><option value="3.0.2">3.0.2</option><option value="3.1">3.1</option><option value="3.1.1">3.1.1</option><option value="3.1.2">3.1.2</option><option value="3.1.3">3.1.3</option><option value="3.1.4">3.1.4</option><option value="3.2">3.2</option><option value="3.2.1">3.2.1</option><option value="3.2.2">3.2.2</option><option value="3.2.3">3.2.3</option><option value="3.2.4">3.2.4</option><option value="3.2.5">3.2.5</option><option value="3.2.6">3.2.6</option><option value="3.3">3.3</option><option value="3.3.1">3.3.1</option><option value="3.3.2">3.3.2</option><option value="3.3.3">3.3.3</option><option value="3.3.4">3.3.4</option><option value="3.4">3.4</option><option value="3.4.1">3.4.1</option><option value="3.4.2">3.4.2</option><option value="3.4.3">3.4.3</option><option value="3.4.5">3.4.5</option><option value="3.4.6">3.4.6</option><option value="3.4.8">3.4.8</option><option value="3.4.9">3.4.9</option><option value="3.4.10">3.4.10</option><option value="3.4.11">3.4.11</option><option value="3.4.12">3.4.12</option><option value="3.4.13">3.4.13</option><option value="3.4.14">3.4.14</option><option value="4.0">4.0</option><option value="4.0.1">4.0.1</option><option value="4.0.2">4.0.2</option><option value="4.0.3">4.0.3</option><option value="4.0.4">4.0.4</option><option value="4.0.5">4.0.5</option><option value="4.0.6">4.0.6</option><option value="4.0.7">4.0.7</option><option value="4.0.8">4.0.8</option><option value="4.0.9">4.0.9</option><option value="4.0.10">4.0.10</option><option value="4.0.11">4.0.11</option><option value="4.1">4.1</option><option value="4.1.1">4.1.1</option><option value="4.1.2">4.1.2</option><option value="4.1.3">4.1.3</option><option value="4.1.4">4.1.4</option><option value="4.1.5">4.1.5</option><option value="4.1.6">4.1.6</option><option value="4.1.7">4.1.7</option><option value="4.1.8">4.1.8</option><option value="4.2">4.2</option><option value="4.2.1">4.2.1</option><option value="4.2.2">4.2.2</option><option value="4.2.3">4.2.3</option><option value="4.2.4">4.2.4</option><option value="4.2.5">4.2.5</option><option value="4.3">4.3</option><option value="4.3.1">4.3.1</option><option value="4.3.2">4.3.2</option><option value="4.3.3">4.3.3</option><option value="4.3.4">4.3.4</option><option value="4.3.5">4.3.5</option><option value="4.3.6">4.3.6</option><option value="4.3.7">4.3.7</option><option value="5.0">5.0</option><option value="5.0.1">5.0.1</option><option value="5.0.2">5.0.2</option><option value="5.0.3">5.0.3</option><option value="5.0.4">5.0.4</option><option value="5.0.5">5.0.5</option><option value="6.0" selected>6.0 (latest release)</option>												</select>
+											</div>
+																	</div>
+						</div><!-- /dochead -->
+					</div><!-- /12 -->
+				</div><!-- /container -->
+			</div>
+			<!-- H1 END -->
+		<script type="text/javascript">
+	$(document).ready(function(){
+
+		/* Remove any extra whitespace that might be in the content */
+		$(".container h2 .mw-headline").each(function(index) {
+			var str = $(this).html();
+			str = jQuery.trim(str);
+			$(this).html(str);
+		});
+
+		/* Move the editsection span to the end of .container h2 */
+		$(".container h2").each(function(index) {
+			var editLinkHtml = $(this).children("span.editsection").html();
+			if (editLinkHtml) {
+				$(this).children("span.editsection").remove();
+				$(this).append('<span class="editsection">'+editLinkHtml+'</span>');
+			}
+		});
+
+		$(function(){
+			tabify('roleTabs');
+		});
+	});
+</script>
+
+<div class="container">
+
+	<div class="span-3 append-1">
+		<div class="wikiSidebarBox">
+		<!--  If inside a manual, show complete TOC (section+h1s) -->
+				<!--googleoff: index-->
+		<div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Introduction  </strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/WhatsInThisManual"> Welcome to the Search Reference Manual </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/HowToUseThisManual"> How to use this manual </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Reference Overview</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/SearchCheatsheet"> Search Command Cheat Sheet and Search Language Quick Reference Card </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfPopularSearchCommands"> Popular search commands </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/SQLtoSplunk"> Splunk for SQL users </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Commands and Functions</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfSearchCommands"> All search commands </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions"> Functions for eval and where </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CommonStatsFunctions"> Functions for stats, chart, and timechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Commontimeformatvariables"> Common date and time format variables</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/SearchTimeModifiers"> Time modifiers for search </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfDataTypes"> List of data types </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Command Reference</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/Abstract"> abstract </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Accum"> accum </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addcoltotals"> addcoltotals </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addinfo"> addinfo </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addtotals"> addtotals </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Af"> analyzefields </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Anomalies"> anomalies </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Anomalousvalue"> anomalousvalue </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Append"> append </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Appendcols"> appendcols </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Appendpipe"> appendpipe</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Arules"> arules</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Associate"> associate </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Audit"> audit </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Autoregress"> autoregress </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bin"> bin </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bucket"> bucket </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bucketdir"> bucketdir </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Chart"> chart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Cluster"> cluster </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Cofilter"> cofilter</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Collect"> collect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Concurrency"> concurrency </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Contingency"> contingency </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Convert"> convert </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Correlate"> correlate </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Crawl"> crawl </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Datamodel"> datamodel </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dbinspect"> dbinspect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dedup"> dedup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Delete"> delete </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Delta"> delta </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Diff"> diff </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Erex"> erex </a></li><li class="selected"> eval </li><li><a href="/Documentation/Splunk/latest/SearchReference/Eventcount"> eventcount </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Eventstats"> eventstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Extract"> extract (kv)</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fieldformat"> fieldformat </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fields"> fields </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fieldsummary"> fieldsummary </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Filldown"> filldown </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fillnull"> fillnull </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Findtypes"> findtypes</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Folderize"> folderize </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Foreach"> foreach</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Format"> format </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Gauge"> gauge</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Gentimes"> gentimes </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Geostats"> geostats</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Head"> head </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Highlight"> highlight </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/History"> history </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Iconify"> iconify </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Input"> input </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Inputcsv"> inputcsv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Inputlookup"> inputlookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Iplocation"> iplocation </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Join"> join </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Kmeans"> kmeans </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Kvform"> kvform </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Loadjob"> loadjob </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Localize"> localize </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Localop"> localop </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Lookup"> lookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Makecontinuous"> makecontinuous </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Makemv"> makemv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Map"> map </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Metadata"> metadata </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Metasearch"> metasearch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Multikv"> multikv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Multisearch"> multisearch</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Mvcombine"> mvcombine </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Mvexpand"> mvexpand </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Nomv"> nomv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outlier"> outlier </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputcsv"> outputcsv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputlookup"> outputlookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputtext"> outputtext </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Overlap"> overlap </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Pivot"> pivot </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Predict"> predict</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rangemap"> rangemap </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rare"> rare </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Regex"> regex </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Relevancy"> relevancy </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Reltime"> reltime </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rename"> rename </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Replace"> replace </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rest"> rest</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Return"> return</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Reverse"> reverse </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rex"> rex </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rtorder"> rtorder </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Run"> run </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Savedsearch"> savedsearch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Script"> script </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Scrub"> scrub </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Search"> search </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Searchtxn"> searchtxn </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Selfjoin"> selfjoin </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Set"> set </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Setfields"> setfields</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sendemail"> sendemail </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sichart"> sichart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sirare"> sirare </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sistats"> sistats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sitimechart"> sitimechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sitop"> sitop </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sort"> sort </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Spath"> spath</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Stats"> stats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Strcat"> strcat </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Streamstats"> streamstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Table"> table</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tags"> tags </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tail"> tail </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Timechart"> timechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Top"> top </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Transaction"> transaction </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Transpose"> transpose </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Trendline"> trendline </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tscollect"> tscollect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tstats"> tstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typeahead"> typeahead </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typelearner"> typelearner </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typer"> typer </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Uniq"> uniq </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Untable"> untable </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Where"> where </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/X11"> x11</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xmlkv"> xmlkv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xmlunescape"> xmlunescape </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xpath"> xpath </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xyseries"> xyseries </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Internal Search Commands</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/Aboutinternalcommands"> About internal commands</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Collapse"> collapse </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dispatch"> dispatch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dump"> dump </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Runshellscript"> runshellscript </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search in the CLI</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/AboutCLIsearches"> About searches in the CLI </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CLIsearchsyntax"> Syntax for searches in the CLI </a></li></ul></div>			<!--googleon: index-->
+					<div class="pdf_CTA">
+				<ul>
+					<li>
+						<a href="/index.php?title=Documentation:Splunk:SearchReference:Eval:6.0beta&action=pdfbook">Download the Search Reference as PDF &raquo;</a>
+											</li>
+					<li class="plus">
+						<a id="toolboxToggle" href="#">Document Toolbox</a>
+						<div id="toolboxSubNav">
+															<a id="t-specialpages" href="/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a><br>
+																						<a id="t-print" href="/index.php?title=Documentation:Splunk:SearchReference:Eval:6.0beta&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a><br>
+													</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<!--
+		<div class="lineRule"></div>
+		<div id="p-tb-aboutSplunk" class="wikiSidebarBox">
+			<div class="pBody">
+				<h3> <span class="mw-headline" id="Splunk_.3E_The_IT_Search_Company"> Splunk &gt; The IT Search Company </span></h3>
+<ul><li> Search and navigate IT data from applications, servers and network devices in real-time. 
+</li><li> <a href="http://www.splunk.com/download/?ac=wiki_download" class="external text">Download Splunk</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Visit_the_Splexicon"> Visit the Splexicon </span></h3>
+<p>Look up a term in the <b><a href="/Splexicon" title="Splexicon">Splunk Splexicon</a></b>
+</p>
+<h3> <span class="mw-headline" id="Make_a_PDF"> Make a PDF </span></h3>
+<p>Navigate to a manual and click <b>pdf version</b> at the top of this table of contents frame.
+</p>			</div>
+		</div>
+-->
+		
+	</div> <!-- .end sidebar -->
+
+	<div id="mainArticle" class="span-9 last">
+			<h1 class="mainArticleHeader"> eval </h1>
+
+			
+			<!--  Inline TOC -->
+			<div class="table_of_contents"><h3>Contents</h3><ul><li class="toclevel-1"><div class="plusSpacer" totoggle="synopsis">&nbsp;</div><a href="#Synopsis">Synopsis</a></li><li class=" synopsis toclevel-2"><a href="#Syntax">Syntax</a></li><li class=" synopsis toclevel-2"><a href="#Required_arguments">Required arguments</a></li><li class=" synopsis toclevel-2"><a href="#Operators">Operators</a></li><li class=" synopsis toclevel-2"><a href="#Functions">Functions</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Description">Description</a></li><li class="toclevel-1"><div class="plusSpacer" totoggle="examples">&nbsp;</div><a href="#Examples">Examples</a></li><li class=" examples toclevel-2"><a href="#Example_1">Example 1</a></li><li class=" examples toclevel-2"><a href="#Example_2">Example 2</a></li><li class=" examples toclevel-2"><a href="#Example_3">Example 3</a></li><li class=" examples toclevel-2"><a href="#Example_4">Example 4</a></li><li class=" examples toclevel-2"><a href="#Example_5">Example 5</a></li><li class=" examples toclevel-2"><a href="#Example_6">Example 6</a></li><li class=" examples toclevel-2"><a href="#More_examples">More examples</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Calculated_fields">Calculated fields</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Answers">Answers</a></li></ul></div>
+			<script type="text/javascript">if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); }</script>
+
+			<!--<h3 id="siteSub">From Splunk Knowledgebase</h3>-->
+			<div id="contentSub"></div>
+						
+			<!-- Content is here which could be article text or a form or both. -->
+			<h1> <span class="mw-headline" id="eval"> eval </span></h1>
+<p>The eval command enables you to devise an arbitrary expression that involves automatically extracted fields and create a new field that takes the value that is the result of that expression's evaluation.
+</p><p><br />
+</p>
+<h2> <span class="mw-headline" id="Synopsis"> Synopsis </span></h2>
+<p>Calculates an expression and puts the resulting value into a field.
+</p>
+<h3> <span class="mw-headline" id="Syntax"> Syntax </span></h3>
+<p>eval &lt;eval-field&gt;=&lt;eval-expression&gt;
+</p>
+<h3> <span class="mw-headline" id="Required_arguments"> Required arguments </span></h3>
+<dl><dt> eval-field 
+</dt><dd> <b>Syntax:</b> &lt;string&gt; 
+</dd><dd> <b>Description:</b> A destination field name for the resulting value. If the field name already exists in your events, eval will overwrite the value.
+</dd></dl>
+<dl><dt> eval-expression
+</dt><dd> <b>Syntax:</b> &lt;string&gt; 
+</dd><dd> <b>Description:</b> A combination of values, variables, operators, and functions that represent the value of your destination field. The syntax of the expression is checked before running the search, and an exception will be thrown for an invalid expression. For example, the result of an eval statement is not allowed to be boolean. If Splunk cannot evaluate the expression successfully at search-time for a given event, eval erases the value in the result field. Additionally, If the expression references a field name that contains non-alphanumeric characters, it needs to be surrounded by single quotes; for example new=count+'server-1'.
+</dd></dl>
+<h3> <span class="mw-headline" id="Operators"> Operators </span></h3>
+<p>The following table lists the basic operations you can perform with eval. For these evaluations to work, your values need to be valid for the type of operation. For example, with the exception of addition, arithmetic operations may not produce valid results if the values are not numerical. When concatenating values, Splunk reads the values as strings (regardless of their value). 
+</p>
+<table cellpadding="5" cellspacing="0" border="1">
+<tr>
+<th> Type
+</th><th> Operators
+</th></tr>
+<tr>
+<td> Arithmetic
+</td><td> <code>+ - * /&nbsp;%</code>
+</td></tr>
+<tr>
+<td> Concatenation
+</td><td> <code>.</code>
+</td></tr>
+<tr>
+<td> Boolean
+</td><td> <code>AND OR NOT XOR &lt; &gt; &lt;= &gt;=&nbsp;!= = == LIKE</code>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Functions"> Functions </span></h3>
+<p>The eval command includes the following functions: <code>abs(), case(), ceil() , ceiling(), cidrmatch(), coalesce(), commands(), exact(), exp(), floor(), if(), ifnull(), isbool(), isint(), isnotnull(), isnull(), isnum(), isstr(), len(), like(), ln(), log(), lower(), ltrim(), match(), max(), md5(), min(), mvappend(), mvcount(), mvindex(), mvfilter(), mvjoin(), mvrange(), mvzip(), now(), null(), nullif(), pi(), pow(), random(), relative_time(), replace(), round(), rtrim(), searchmatch(), sigfig(), spath(), split(), sqrt(), strftime(), strptime(), substr(), time(), tonumber(), tostring(), trim(), typeof(), upper(), urldecode(), validate()</code>.
+</p><p>For <b>descriptions and examples</b> of each function, see <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/CommonEvalFunctions" class="external text">"Functions for eval and where"</a>.
+</p>
+<h2> <span class="mw-headline" id="Description"> Description </span></h2>
+<p>Performs an evaluation of arbitrary expressions that can include mathematical, string, and boolean operations. The eval command requires that you specify a field name that takes the results of the expression you want to evaluate. If this destination field matches a field name that already exists, the values of the field are replaced by the results of the eval expression.  
+</p><p>If you are using a search as an argument to the <code>eval</code> command and functions, you cannot use a saved search name; you have to pass a literal search string or a field that contains a literal search string (like the 'search' field extracted from index=_audit events).
+</p><p>You can use <code>eval</code> statements to define calculated fields. To do this, you set up the <code>eval</code> statement in <code>props.conf</code>. When you run a search, Splunk automatically evaluates the statements behind the scenes to create fields in a manner similar to that of search time field extraction. When you do this you no longer need to define the eval statement in a search string--you can just search on the resulting calculated field directly. 
+</p><p>For more information see the <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Eval#Calculated_fields" class="external text">Calculated fields</a> section, below.
+</p>
+<h2> <span class="mw-headline" id="Examples"> Examples </span></h2>
+<h3> <span class="mw-headline" id="Example_1"> Example 1 </span></h3>
+<p>This example shows how you might coalesce a field from two different source types and use that to create a transaction of events. <code>sourcetype=A</code> has a field called <code>number</code>, and <code>sourcetype=B</code> has the same information in a field called <code>subscriberNumber</code>. 
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=A OR sourcetype=B | eval phone=coalesce(number,subscriberNumber) | transaction phone maxspan=2m</code><br/></div>
+<p>The <code>eval</code> command is used to add a common field, called <code>phone</code>, to each of the events whether they are from <code>sourcetype=A</code> or <code>sourcetype=B</code>. The value of <code>phone</code> is defined, using the <code>coalesce()</code> function, as the values of <code>number</code> and <code>subscriberNumber</code>. The <code>coalesce()</code> function takes the value of the first non-NULL field (that means, it exists in the event).
+</p><p>Now, you're able to group events from either source type <code>A</code> or <code>B</code> if they share the same <code>phone</code> value.
+</p>
+<h3> <span class="mw-headline" id="Example_2"> Example 2 </span></h3>
+<table cellpadding="10" cellspacing="0" border="1" width="100%">
+
+<tr>
+<td>This example uses recent earthquake data downloaded from the <a href="http://earthquake.usgs.gov/earthquakes/" class="external text">USGS Earthquakes website</a>. The data is a comma separated ASCII text file that contains magnitude (mag), coordinates (latitude, longitude), region (place), etc., for each earthquake recorded.
+<p>You can download a current CSV file from the <b><a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php" class="external text">USGS Earthquake Feeds</a></b> and add it as an input to Splunk.
+</p><p>Earthquakes occurring at a depth of less than 70 km are classified as <b>shallow-focus</b> earthquakes, while those with a focal-depth between 70 and 300 km are commonly termed <b>mid-focus</b> earthquakes. In subduction zones, <b>deep-focus</b> earthquakes may occur at much greater depths (ranging from 300 up to 700 kilometers).
+</p>
+</td></tr></table>
+<p>Classify recent earthquakes based on their depth.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>source=usgs | eval Description=case(depth&lt;=70, &quot;Shallow&quot;, depth&gt;70 AND depth&lt;=300, &quot;Mid&quot;, depth&gt;300, &quot;Deep&quot;) | stats count min(mag) max(mag) by Description</code><br/></div>
+<p>The <code>eval</code> command is used to create a field called <code>Description</code>, which takes the value of "Shallow", "Mid", or "Deep" based on the <code>Depth</code> of the earthquake. The <code>case()</code> function is used to specify which ranges of the depth fits each description. For example, if the depth is less than 70 km, the earthquake is characterized as a shallow-focus quake; and the resulting <code>Description</code> is <code>Shallow</code>. 
+</p><p>The search also pipes the results of <code>eval</code> into the <code>stats</code> command to count the number of earthquakes and display the minimum and maximum magnitudes for each Description:
+</p><p><a href="/File:Searchref_eval_usgsex1.1.png" class="image"><img alt="Searchref eval usgsex1.1.png" src="/images/0/0b/Searchref_eval_usgsex1.1.png" width="700" height="115" /></a>
+</p>
+<h3> <span class="mw-headline" id="Example_3"> Example 3 </span></h3>
+<table cellpadding="10" cellspacing="0" border="1" width="100%">
+
+<tr>
+<td>This example is designed to use the sample dataset from <b><a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchTutorial/GetthetutorialdataintoSplunk" class="external text">"Get the tutorial data into Splunk"</a></b> topic of the Search Tutorial, but it should work with any format of Apache Web access log. Download the data set and follow the instructions in that topic to upload it to Splunk. Then, run this search using the time range <i>Other &gt; Yesterday</i>.
+</td></tr></table>
+<p>In this search, you're finding IP addresses and classifying the network they belong to.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=access_* | eval network=if(cidrmatch(&quot;192.0.0.0/16&quot;, clientip), &quot;local&quot;, &quot;other&quot;)</code><br/></div>
+<p>This example uses the <code>cidrmatch()</code> function to compare the IP addresses in the <code>clientip</code> field to a subnet range. The search also uses the <code>if()</code> function, which says that if the value of <code>clientip</code> falls in the subnet range, then <code>network</code> is given the value <code>local</code>. Otherwise, <code>network=other</code>.
+</p><p>The <code>eval</code> command does not do any special formatting to your results -- it just creates a new field which takes the value based on the eval expression. After you run this search, use the <b><a href="/Splexicon:Fieldssidebar" title="Splexicon:Fieldssidebar">fields sidebar</a></b> to add the <code>network</code> field to your results. Now you can see, inline with your search results, which IP addresses are part of your <code>local</code> network and which are not. Your events list should look something like this:
+</p><p><a href="/File:EvalEx2_events.png" class="image"><img alt="EvalEx2 events.png" src="/images/8/8d/EvalEx2_events.png" width="800" height="316" /></a>
+</p><p><br />
+Another option for formatting your results is to pipe the results of <code>eval</code> to the <code>table</code> command to display only the fields of interest to you. (See Example 1)
+</p><p><b>Note:</b> This example just illustrates how to use the <code>cidrmatch</code> function. If you want to classify your events and quickly search for those events, the better approach is to use event types. Read more <b><a href="http://docs.splunk.com/Documentation/Splunk/6.0/Knowledge/Abouteventtypes" class="external text">about event types</a></b> in the <i>Knowledge manager manual</i>.
+</p>
+<h3> <span class="mw-headline" id="Example_4"> Example 4 </span></h3>
+<table cellpadding="10" cellspacing="0" border="1" width="100%">
+
+<tr>
+<td>This example uses generated email data (<code>sourcetype=cisco_esa</code>). You should be able to run this example on any email data by replacing the <code>sourcetype=cisco_esa</code> with your data's <code>sourcetype</code> value and the <code>mailfrom</code> field with your data's email address field name (for example, it might be <code>To, From, or Cc</code>).
+</td></tr></table>
+<p>Use the email address field to extract the user's name and domain.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=&quot;cisco_esa&quot; mailfrom=* | eval accountname=split(mailfrom,&quot;@&quot;) | eval from_user=mvindex(accountname,0) | eval from_domain=mvindex(accountname,-1) | table mailfrom, from_user, from_domain</code><br/></div>
+<p>This example uses the <code>split()</code> function to break the <code>mailfrom</code> field into a multivalue field called <code>accountname</code>. The first value of <code>accountname</code> is everything before the "@" symbol, and the second value is everything after. 
+</p><p>The example then uses <code>mvindex()</code> function to set <code>from_user</code> and <code>from_domain</code> to the first and second values of <code>accountname</code>, respectively.
+</p><p>The results of the <code>eval</code> expressions are then piped into the <code>table</code> command. You can see the the original <code>mailfrom</code> values and the new <code>from_user</code> and <code>from_domain</code> values in the following results table:
+</p><p><a href="/File:EvalEx4_results.png" class="image"><img alt="EvalEx4 results.png" src="/images/f/fb/EvalEx4_results.png" width="800" height="323" /></a>
+</p><p><br />
+<b>Note:</b> This example is really not that practical. It was written to demonstrate how to use an <code>eval</code> function to identify the individual values of a multivalue fields. Because this particular set of email data did not have any multivalue fields, the example creates one (<code>accountname</code>) from a single value field (<code>mailfrom</code>).
+</p><p><br />
+</p>
+<h3> <span class="mw-headline" id="Example_5"> Example 5 </span></h3>
+<table cellpadding="10" cellspacing="0" border="1" width="100%">
+
+<tr>
+<td>This example uses generated email data (<code>sourcetype=cisco_esa</code>). You should be able to run this example on any email data by replacing the <code>sourcetype=cisco_esa</code> with your data's <code>sourcetype</code> value and the <code>mailfrom</code> field with your data's email address field name (for example, it might be <code>To, From, or Cc</code>).
+</td></tr></table>
+<p>This example classifies where an email came from based on the email address's domain: .com, .net, and .org  addresses are considered <i>local</i>, while anything else is considered <i>abroad</i>. (Of course, domains that are not .com/.net/.org are not necessarily from <i>abroad</i>.)
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=&quot;cisco_esa&quot; mailfrom=*| eval accountname=split(mailfrom,&quot;@&quot;) | eval from_domain=mvindex(accountname,-1) | eval location=if(match(from_domain, &quot;[^\n\r\s]+\.(com|net|org)&quot;), &quot;local&quot;, &quot;abroad&quot;) | stats count by location</code><br/></div>
+<p>The first half of this search is similar to Example 3. The <code>split()</code> function is used to break up the email address in the <code>mailfrom</code> field. The <code>mvindex</code> function defines the <code>from_domain</code> as the portion of the <code>mailfrom</code> field after the <code>@</code> symbol.
+</p><p>Then, the <code>if()</code> and <code>match()</code> functions are used: if the <code>from_domain</code> value ends with a <code>.com, .net., or .org</code>, the <code>location</code> field is assigned <code>local</code>. If <code>from_domain</code> does not match, <code>location</code> is assigned <code>abroad</code>.
+</p><p>The <code>eval</code> results are then piped into the <code>stats</code> command to count the number of results for each <code>location</code> value and produce the following results table:
+</p><p><a href="/File:EvalEx5_resultsTable.png" class="image"><img alt="EvalEx5 resultsTable.png" src="/images/f/f3/EvalEx5_resultsTable.png" width="800" height="157" /></a>
+</p><p><br />
+After you run the search, you can add the <code>mailfrom</code> and <code>location</code> fields to your events to see the classification inline with your events. If your search results contain these fields, they will look something like this:
+</p><p><a href="/File:EvalEx5_eventsList.png" class="image"><img alt="EvalEx5 eventsList.png" src="/images/f/ff/EvalEx5_eventsList.png" width="800" height="202" /></a>
+</p><p><br />
+<b>Note:</b> This example merely illustrates using the <code>match()</code> function. If you want to classify your events and quickly search for those events, the better approach is to use event types. Read more <b><a href="http://docs.splunk.com/Documentation/Splunk/6.0/Knowledge/Abouteventtypes" class="external text">about event types</a></b> in the <i>Knowledge manager manual</i>.
+</p>
+<h3> <span class="mw-headline" id="Example_6"> Example 6 </span></h3>
+<table cellpadding="10" cellspacing="0" border="1" width="100%">
+
+<tr>
+<td>This example uses the sample dataset from <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchTutorial/WelcometotheSearchTutorial" class="external text">the Search Tutorial</a> but should work with any format of Apache Web access log. Download the data set from <b><a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchTutorial/GetthetutorialdataintoSplunk" class="external text">this topic in the Search Tutorial</a></b> and follow the instructions to upload it to Splunk. Then, run this search using the time range, <b>Other &gt; Yesterday</b>.
+</td></tr></table>
+<p>Reformat a numeric field measuring time in seconds into a more readable string format.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=access_* | transaction clientip maxspan=10m | eval durationstr=tostring(duration,&quot;duration&quot;)</code><br/></div>
+<p>This example uses the <code>tostring()</code> function and the <i>duration</i> option to convert the <code>duration</code> of the transaction into a more readable string formatted as HH:MM:SS. The <code>duration</code> is the time between the first and last events in the transaction and is given in seconds. 
+</p><p>The search defines a new field, <code>durationstr</code>, for the reformatted <code>duration</code> value. After you run the search, you can use the Field picker to show the two fields inline with your events. If your search results contain these fields, they will look something like this:
+</p><p><a href="/File:EvalEx4_eventsList.png" class="image"><img alt="EvalEx4 eventsList.png" src="/images/5/51/EvalEx4_eventsList.png" width="800" height="238" /></a>
+</p>
+<h3> <span class="mw-headline" id="More_examples"> More examples </span></h3>
+<p><b>Example A:</b> Set velocity to distance / time.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval velocity=distance/time</code><br/></div>
+<p><b>Example B:</b> Set status to OK if error is 200; otherwise, Error.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval status = if(error == 200, &quot;OK&quot;, &quot;Error&quot;)</code><br/></div>
+<p><b>Example C:</b> Set lowuser to the lowercase version of username.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval lowuser = lower(username)</code><br/></div>
+<p><b>Example D:</b> Set sum_of_areas to be the sum of the areas of two circles
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval sum_of_areas = pi() * pow(radius_a, 2) + pi() * pow(radius_b, 2)</code><br/></div>
+<p><b>Example E:</b> Set status to some simple http error codes.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval error_msg = case(error == 404, &quot;Not found&quot;, error == 500, &quot;Internal Server Error&quot;, error == 200, &quot;OK&quot;)</code><br/></div>
+<p><b>Example F:</b> Set full_name to the concatenation of first_name, a space, and last_name.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval full_name = first_name.&quot; &quot;.last_nameSearch</code><br/></div>
+<p><b>Example G:</b> Display timechart of the avg of cpu_seconds by processor rounded to 2 decimal places.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | timechart eval(round(avg(cpu_seconds),2)) by processor</code><br/></div>
+<p><b>Example H:</b> Convert a numeric field value to a string with commas and 2 decimal places. If the original value of x is 1000000, this returns x as 1,000,000.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | eval x=tostring(x,&quot;commas&quot;)</code><br/></div>
+<h2> <span class="mw-headline" id="Calculated_fields"> Calculated fields </span></h2>
+<p>You can use calculated fields to move your commonly used eval statements out of your search string and into <code>props.conf</code>, where they will be processed behind the scenes at search time. With calculated fields, you can change the search from <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Eval#Example_4" class="external text">Example 4</a>, above, to:
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=&quot;cisco_esa&quot; mailfrom=* | table mailfrom, from_user, from_domain</code><br/></div>
+<p>In this example, the three eval statements that were in the search--that defined the <code>accountname</code>, <code>from_user</code>, and <code>from_domain</code> fields--are now computed behind the scenes when the search is run for any event that contains the extracted field <code>mailfrom</code> field. You can also search on those fields independently once they're set up as calculated fields in <code>props.conf</code>. You could search on <code>from_domain=email.com</code>, for example.
+</p><p>For more information about setting calculated fields up in <code>props.conf</code>, see <a href="http://docs.splunk.com/Documentation/Splunk/6.0/Knowledge/definecalcfields" class="external text">"Define calculated fields"</a> in the Knowledge Manager Manual.
+</p>
+<h2> <span class="mw-headline" id="Answers"> Answers </span></h2>
+<p>Have questions? Visit <a href="http://splunk-base.splunk.com" class="external text">Splunk Answers</a> and see what <a href="http://splunk-base.splunk.com/tags/eval/" class="external text">questions and answers the Splunk community has using the eval command</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 201/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="printfooter">
+Retrieved from "<a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Eval">http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Eval</a>"</div>
+
+			<script type="text/javascript">$('#mainArticle > h1').eq(1).hide();</script>
+
+			<!--  Footer start/prev/next links if available. -->
+						<div id="footerPagination" class="smallRoundedCorners">
+				<span id="prevlink"><a href="/Documentation/Splunk/latest/SearchReference/Erex">&laquo;  erex </a></span>  <span id="nextlink"><a href="/Documentation/Splunk/latest/SearchReference/Eventcount"> eventcount  &raquo;</a></span>			</div>
+						<!--  End Footer start/prev/next links if available. -->
+
+			<!-- Versions Tags/Lists -->
+						<div class="affectedVersions smallRoundedCorners current">
+				<p>This documentation applies to the following versions of Splunk:
+				<a href="/Category:V:Splunk:6.0">6.0</a> 				<span id="startlink">
+					View the <a href="/index.php?title=Documentation:Splunk:SearchReference:Eval:6.0beta&action=history">Article History</a>
+					for its revisions.</span>
+				</p>
+			</div>
+							<!-- End Versions Tags/Lists -->
+
+
+			<!--  Show category/version links/tags which apply.  Add logic to show current in one place and list of ALL someplace else? -->
+						<!-- End content here -->
+
+			<!-- Begin comments -->
+							<br />
+				<div id="commentListingTitle" style="display:none"><h2>Comments</h2></div>
+				<div id="commentListing">
+								</div>
+
+
+					<ul class="footerTab" id="roleTabs">
+						<li class="current"><a href="#tab_2">Was this topic useful?</a></li>
+						<li ><a href="#tab_1">Post a comment</a></li>
+					</ul>
+					<!-- start comment -->
+					<div  class="footerTabBody" id="tab_1">
+						
+							<p>You must be logged into splunk.com in order to post comments.
+							<a href="http://www.splunk.com/index.php?module=roles&func=showloginform&redirecturl=http://
+							docs.splunk.com/Documentation/Splunk/latest/SearchReference/Eval">Log in now</a>.</p>
+							
+					</div>
+					<!-- end comment -->
+
+					<!-- begin feedback  -->
+					<div   class="footerTabBody"  id="tab_2">
+						<!--<h2>Was this topic useful?</h2>-->
+						<div id="feedbackdialoginner">
+							<form>
+								<input type="hidden" id="splunk_feedback_title" value="Documentation/Splunk/latest/SearchReference/Eval" />
+								<input type="hidden" id="splunk_feedback_rawtitle" value="Documentation:Splunk:SearchReference:Eval:6.0beta" />
+								<p>
+								Was this documentation topic helpful?
+								<select id="splunk_feedback_yesno">s
+									<option	value="YES">Yes</option>
+									<option value="NO">No</option>
+								</select>
+								</p>
+
+								<p>
+									If you'd like to hear back from us, please provide your email address:
+									<input id="splunk_feedback_email" type="text" maxlength="255" size="20" width="300">
+								</p>
+							
+								<p>
+								We'd love to hear what you think about this topic or the documentation as a whole.
+								Feedback you enter here will be delivered to the documentation team.
+								<br />
+								<textarea id="splunk_feedback_comment" rows="4" cols="60"></textarea>
+								</p>
+								<span id="splunk_feedback_submit_outer">
+									<input type="submit" class="primary" id="splunk_feedback_submit" name="submit" tabindex="5" value="Send Feedback" />
+								</span>
+							</form>
+						</div>
+						<p id="splunk_helpful_completed" class="commentOrHelpfulResponse" >
+							<em>Feedback submitted, thanks!</em>
+						</p>
+
+					</div>
+					<!-- end feedback  -->
+
+					<noscript>
+						<div id="footerNoJS">Please enable JavaScript to use our comments and feedback system.</div>
+					</noscript>
+					<script>
+						$('#footerNoJS').hide();
+						$('.footerTabBody').show();
+						$('#roleTabs').show();
+					</script>
+
+				
+			<!-- End comments -->
+		<!--</div>  wikiContentInner -->
+	</div><!--  wikiContent -->
+
+</div><!-- .container -->
+
+
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+
+<div class="push"></div>
+
+</div> <!-- superWraper -->
+
+<div id="anchor" class="footer">
+	<div id="footer">
+		<div class="container">
+		<div id="singleColumn" class="span-12 last">
+		<div class="footer_left">
+
+			<ul>
+				<li><a href="http://www.splunk.com/article/246" class="hashlink">Contact</a></li>
+				<li><a href="http://www.splunk.com/article/7" class="hashlink">Privacy Policy</a></li>
+				<li><a href="http://www.splunk.com/article/8" class="hashlink">Terms of Use</a></li>
+				<li class="lastlist"><a href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Community content licensed under Creative Commons</a></li>
+			</ul>
+
+		</div><!-- /footer_left -->
+
+		<div class="footer_right">
+		</div><!-- /footer_right -->
+
+		</div>
+		<div class="clear"></div>
+			<div id="veryBottom">
+				<ul id="terms" class="inline">
+					<li class="first">Copyright &copy; 2005-2013 <a href="http://www.splunk.com">Splunk Inc.</a> All rights reserved.</li>
+				</ul>
+			</div><!-- veryBottom -->
+		</div><!-- container -->
+	</div><!-- / footer -->
+
+    <div id="footerBtmCap"></div>
+
+</div> <!-- anchor (and footer class) -->
+
+<script type='text/javascript' language='JavaScript' src='http://www.splunk.com/themes/splunk_com/scripts/js/elqNow/elqCfg.js'></script>
+<script type='text/javascript' language='JavaScript' src='http://www.splunk.com/themes/splunk_com/scripts/js/elqNow/elqImg.js'></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-399680-1");
+pageTracker._setDomainName("splunk.com");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body></html>

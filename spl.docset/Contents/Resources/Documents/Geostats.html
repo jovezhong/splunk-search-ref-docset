@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=""
+xml:lang="en" lang="en" dir="ltr">
+
+<head>
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+						<link rel="canonical" href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Geostats" />
+				
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<title> geostats</title>
+
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/jquery-ui-1.7.2.custom.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/ui.selectmenu.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/view.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/default.css?121" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/grid.css?121" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="http://docs.splunk.com/skins/splunk/style.css?121" type="text/css" media="screen, projection" />
+		
+
+		<link rel="stylesheet" type="text/css" media="print" href="http://docs.splunk.com/skins/common/commonPrint.css?121" />
+		<!--[if lt IE 5.5000]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE50Fixes.css?121";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE55Fixes.css?121";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE60Fixes.css?121";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "http://docs.splunk.com/skins/splunk/IE70Fixes.css?121";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="http://docs.splunk.com/skins/common/IEFixes.js?121"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="splunk",
+splunkHost="www.splunk.com",
+stylepath="http://docs.splunk.com/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgScript="/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://docs.splunk.com",
+wgCanonicalNamespace="Documentation",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=100,
+wgPageName="Documentation:Splunk:SearchReference:Geostats:6.0beta",
+wgTitle="Splunk:SearchReference:Geostats:6.0beta",
+wgAction="view",
+wgArticleId=116217,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=310298,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Splunk Knowledgebase", "5": "Splunk Knowledgebase talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "100": "Documentation", "101": "Documentation talk", "110": "Apps", "120": "Dev", "130": "Deploy", "140": "FAQ", "150": "Splexicon", "160": "Community", "170": "Labs"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "splunk_knowledgebase": 4, "splunk_knowledgebase_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "documentation": 100, "documentation_talk": 101, "apps": 110, "dev": 120, "deploy": 130, "faq": 140, "splexicon": 150, "community": 160, "labs": 170, "image": 6, "image_talk": 7},
+wgSiteName="Splunk Knowledgebase",
+wgCategories=["Geostats", "Assist", "Reference", "V:Splunk:6.0beta", "V:Splunk:6.0", "V:Splunk:6.0.1"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<script type="text/javascript" src="http://docs.splunk.com/skins/common/wikibits.js?121"><!-- wikibits js --></script>
+		
+		
+		<!--  User CSS -->
+				<script type="text/javascript">
+			function ponyDocsOnLoad() {}
+
+			function AjaxChangeProduct_callback( o ) {
+				document.getElementById('docsProductSelect').disabled = true;
+				var s = new String( o.responseText );
+				document.getElementById('docsProductSelect').disabled = false;
+				window.location.href = s;
+			}
+
+			function AjaxChangeProduct( ) {
+				var productIndex = document.getElementById('docsProductSelect').selectedIndex;
+				var product = document.getElementById('docsProductSelect')[productIndex].value;
+				var title = 'Documentation:Splunk:SearchReference:Geostats:6.0beta';
+				sajax_do_call( 'efPonyDocsAjaxChangeProduct', [product,title], AjaxChangeProduct_callback );
+			}
+
+			function AjaxChangeVersion_callback( o ) {
+				document.getElementById('docsVersionSelect').disabled = true;
+				var s = new String( o.responseText );
+				document.getElementById('docsVersionSelect').disabled = false;
+				window.location.href = s;
+			}
+
+			function AjaxChangeVersion( ) {
+				//var productIndex = document.getElementById('docsProductSelect').selectedIndex;
+				//var product = document.getElementById('docsProductSelect')[productIndex].value;
+				var product = $('#docsProductSelect').val();
+				var versionIndex = document.getElementById('docsVersionSelect').selectedIndex;
+				var version = document.getElementById('docsVersionSelect')[versionIndex].value;
+				var title = 'Documentation:Splunk:SearchReference:Geostats:6.0beta';
+				sajax_do_call( 'efPonyDocsAjaxChangeVersion', [product,version,title], AjaxChangeVersion_callback );
+			}
+
+			function changeManual(){
+				var url = $("#docsManualSelect").attr("value");
+				if (url != ""){
+					window.location.href = url;
+				}
+			}
+		</script>
+
+		
+		<!-- Start Head Scripts -->
+		<script src="/skins/common/ajax.js?121"></script>
+<script src="/extensions/PonyDocs/js/jquery-1.4.2.min.js?121"></script>
+<script src="/extensions/PonyDocs/js/jquery.json-2.2.min.js?121"></script>
+<script src="/extensions/PonyDocs/js/docs.js?121"></script>
+		<!-- End Head Scripts -->
+		<script src="http://www.splunk.com/themes/splunk_com/scripts/js/cache-splunkdocs-121/jquery-ui-1.7.3.custom,jquery.cookie,global,jquery.simplemodal-1.3.js" type="text/javascript"></script>
+		<script src="/skins/common/wikibits.js?121"></script>
+		<script src="/skins/splunk/splunk.js?121"></script>
+		<script type="text/javascript" src="/skins/splunk/ui.selectmenu.js?121"></script>
+
+		</head>
+
+<body onload="ponyDocsOnLoad();">
+
+<div class="superWrapper">
+<div id="header">
+    <div id="splunktoolbar">
+		<ul id="tools" class="inline">
+				<li><a href="http://www.splunk.com">Splunk.com</a></li>
+				<li id="menu_community" class="toolNavItem">
+				<a id="menulink_community" class="toolNavLink" href="http://community.splunk.com">Community</a>
+				<div id="dropdown_community" class="dropdown">
+					<div class="dropdownColumn">
+						<ul>
+                           <li><a href="http://docs.splunk.com/Documentation">Documentation</a></li>
+                           <li><a href="http://apps.splunk.com">Apps</a></li>
+                           <li><a href="http://answers.splunk.com">Answers</a></li>
+                           <li><a href="http://wiki.splunk.com">Wiki</a></li>
+                           <li><a href="http://blogs.splunk.com">Blogs</a></li>
+                           <li><a href="http://dev.splunk.com">Developers</a></li>
+						</ul>
+					</div>
+				</div>
+				</li>
+										<li><a href="http://www.splunk.com/index.php/sign_up?redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Geostats">Sign Up</a></li>
+							<li class="last"><a href="http://www.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Geostats">Login</a></li>
+					</ul>
+	</div><!--/toolbar -->
+
+	<div id="mastheadNoNav">
+		<div id="logoMantra">
+			<a href="/Documentation" id="logo">&nbsp;</a>
+		</div>
+		<div id="searchContainer">
+			<form id="searchform" action="/Special:SplunkSearch/docs" method="get">
+				<span style="">
+					<input type="text" accesskey="f" name="q" id="searchbox" value="Search" title="Search Splunk [ctrl-f]" onblur="$(this).val('search')" onclick="$(this).val('')" />
+				</span>
+			</form>
+		</div>
+	</div>
+</div><!--/header -->
+<div class="bc_bg"><div class="container"><div class="breadcrumb"><a href="/Documentation">Documentation</a> &gt; <a href="/Documentation/Splunk">Splunk Enterprise</a> &gt; <a href="/Documentation/Splunk/latest/SearchReference">Search Reference</a> &gt; <a href="/Documentation/Splunk/latest/SearchReference/Geostats"> geostats</a></div></div></div>			<!-- H1 START -->
+			<div class="head_bg">
+				<div class="container">
+					<div class="span-12">
+						<div class="dochead">
+							<div class="span-8">
+																	<div class="span-1">
+										<img class="prodicon" width="67px" height="67px" src="/skins/splunk/images/icon-Splunk.png" />
+									</div>
+									<div class="span-7 last">
+										<h1>Search Reference</h1>
+																				<p>&nbsp;</p>
+									</div>
+															</div>
+							<div class="span-4 last">
+								<script type="text/javascript">
+									$(function() {
+										$("#docsProductSelect").selectmenu({
+												style:"dropdown",
+												maxHeight: 150
+										});
+									})
+								</script>
+								<div class="product" style="display: none">
+									<label for="docsProductSelect"  class="navlabels">Product</label><br />
+									<select id="docsProductSelect" name="selectedProduct" onChange="AjaxChangeProduct();">
+										<option value="Splunk" selected>Splunk Enterprise</option><option value="Hunk">Hunk</option><option value="Storm">Splunk Storm</option><option value="ES">Splunk App for Enterprise Security</option><option value="PCI">Splunk App for PCI Compliance</option><option value="VMW">Splunk App for VMware</option><option value="SDK">Splunk SDKs</option><option value="PythonSDK">Splunk SDK for Python Reference</option><option value="JavaSDK">Splunk SDK for Java Reference</option><option value="JavaScriptSDK">Splunk SDK for JavaScript Reference</option><option value="PHPSDK">Splunk SDK for PHP Reference</option><option value="RubySDK">Splunk SDK for Ruby Reference</option><option value="CshrpSDK">Splunk SDK for C# Reference</option><option value="DepMon">Splunk Deployment Monitor App</option><option value="WebFramework">Splunk Web Framework</option><option value="WAS">Splunk for WebSphere Application Server</option><option value="HadoopOps">Splunk App for HadoopOps</option><option value="HadoopConnect">Splunk Hadoop Connect</option><option value="XenDT">Splunk App for Citrix XenDesktop</option><option value="XenApp">Splunk App for Citrix XenApp</option><option value="ServerVirt">Splunk App for Server Virtualization</option><option value="Netscaler">Splunk App for Citrix NetScaler with AppFlow</option><option value="DBX">Splunk DB Connect</option><option value="MSExchange">Splunk App for Microsoft Exchange</option><option value="ActiveDirectory">Splunk App for Active Directory</option><option value="UnixApp">Splunk App for Unix and Linux</option><option value="WindowsApp">Splunk App for Windows</option><option value="OPSEC-LEA">Splunk Technology Add-on for Check Point OPSEC LEA</option><option value="CIM">Splunk Common Information Model Add-on</option><option value="MySQL">Splunk MySQL Connector</option><option value="Ponydocs">Ponydocs</option><option value="Splunkbase">Splunk Answers and Splunk Apps</option>									</select>
+								</div>
+																			<script type="text/javascript">
+												$(function(){
+													$("#docsVersionSelect").selectmenu({
+															style:"dropdown",
+															maxHeight: 150
+													});
+												})
+											</script>
+											<div class="productVersion">
+												<label for="docsVersionSelect"  class="navlabels">Version </label><br />
+												<input type="hidden" name="selectedProduct" value="Splunk" />
+												<select id="docsVersionSelect" name="selectedVersion" onChange="AjaxChangeVersion();">
+													<option value="2.1">2.1</option><option value="2.2">2.2</option><option value="2.2.1">2.2.1</option><option value="2.2.3">2.2.3</option><option value="2.2.6">2.2.6</option><option value="3.0">3.0</option><option value="3.0.1">3.0.1</option><option value="3.0.2">3.0.2</option><option value="3.1">3.1</option><option value="3.1.1">3.1.1</option><option value="3.1.2">3.1.2</option><option value="3.1.3">3.1.3</option><option value="3.1.4">3.1.4</option><option value="3.2">3.2</option><option value="3.2.1">3.2.1</option><option value="3.2.2">3.2.2</option><option value="3.2.3">3.2.3</option><option value="3.2.4">3.2.4</option><option value="3.2.5">3.2.5</option><option value="3.2.6">3.2.6</option><option value="3.3">3.3</option><option value="3.3.1">3.3.1</option><option value="3.3.2">3.3.2</option><option value="3.3.3">3.3.3</option><option value="3.3.4">3.3.4</option><option value="3.4">3.4</option><option value="3.4.1">3.4.1</option><option value="3.4.2">3.4.2</option><option value="3.4.3">3.4.3</option><option value="3.4.5">3.4.5</option><option value="3.4.6">3.4.6</option><option value="3.4.8">3.4.8</option><option value="3.4.9">3.4.9</option><option value="3.4.10">3.4.10</option><option value="3.4.11">3.4.11</option><option value="3.4.12">3.4.12</option><option value="3.4.13">3.4.13</option><option value="3.4.14">3.4.14</option><option value="4.0">4.0</option><option value="4.0.1">4.0.1</option><option value="4.0.2">4.0.2</option><option value="4.0.3">4.0.3</option><option value="4.0.4">4.0.4</option><option value="4.0.5">4.0.5</option><option value="4.0.6">4.0.6</option><option value="4.0.7">4.0.7</option><option value="4.0.8">4.0.8</option><option value="4.0.9">4.0.9</option><option value="4.0.10">4.0.10</option><option value="4.0.11">4.0.11</option><option value="4.1">4.1</option><option value="4.1.1">4.1.1</option><option value="4.1.2">4.1.2</option><option value="4.1.3">4.1.3</option><option value="4.1.4">4.1.4</option><option value="4.1.5">4.1.5</option><option value="4.1.6">4.1.6</option><option value="4.1.7">4.1.7</option><option value="4.1.8">4.1.8</option><option value="4.2">4.2</option><option value="4.2.1">4.2.1</option><option value="4.2.2">4.2.2</option><option value="4.2.3">4.2.3</option><option value="4.2.4">4.2.4</option><option value="4.2.5">4.2.5</option><option value="4.3">4.3</option><option value="4.3.1">4.3.1</option><option value="4.3.2">4.3.2</option><option value="4.3.3">4.3.3</option><option value="4.3.4">4.3.4</option><option value="4.3.5">4.3.5</option><option value="4.3.6">4.3.6</option><option value="4.3.7">4.3.7</option><option value="5.0">5.0</option><option value="5.0.1">5.0.1</option><option value="5.0.2">5.0.2</option><option value="5.0.3">5.0.3</option><option value="5.0.4">5.0.4</option><option value="5.0.5">5.0.5</option><option value="6.0" selected>6.0 (latest release)</option>												</select>
+											</div>
+																	</div>
+						</div><!-- /dochead -->
+					</div><!-- /12 -->
+				</div><!-- /container -->
+			</div>
+			<!-- H1 END -->
+		<script type="text/javascript">
+	$(document).ready(function(){
+
+		/* Remove any extra whitespace that might be in the content */
+		$(".container h2 .mw-headline").each(function(index) {
+			var str = $(this).html();
+			str = jQuery.trim(str);
+			$(this).html(str);
+		});
+
+		/* Move the editsection span to the end of .container h2 */
+		$(".container h2").each(function(index) {
+			var editLinkHtml = $(this).children("span.editsection").html();
+			if (editLinkHtml) {
+				$(this).children("span.editsection").remove();
+				$(this).append('<span class="editsection">'+editLinkHtml+'</span>');
+			}
+		});
+
+		$(function(){
+			tabify('roleTabs');
+		});
+	});
+</script>
+
+<div class="container">
+
+	<div class="span-3 append-1">
+		<div class="wikiSidebarBox">
+		<!--  If inside a manual, show complete TOC (section+h1s) -->
+				<!--googleoff: index-->
+		<div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Introduction  </strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/WhatsInThisManual"> Welcome to the Search Reference Manual </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/HowToUseThisManual"> How to use this manual </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Reference Overview</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/SearchCheatsheet"> Search Command Cheat Sheet and Search Language Quick Reference Card </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfPopularSearchCommands"> Popular search commands </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/SQLtoSplunk"> Splunk for SQL users </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Commands and Functions</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfSearchCommands"> All search commands </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions"> Functions for eval and where </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CommonStatsFunctions"> Functions for stats, chart, and timechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Commontimeformatvariables"> Common date and time format variables</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/SearchTimeModifiers"> Time modifiers for search </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/ListOfDataTypes"> List of data types </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search Command Reference</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/Abstract"> abstract </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Accum"> accum </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addcoltotals"> addcoltotals </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addinfo"> addinfo </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Addtotals"> addtotals </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Af"> analyzefields </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Anomalies"> anomalies </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Anomalousvalue"> anomalousvalue </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Append"> append </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Appendcols"> appendcols </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Appendpipe"> appendpipe</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Arules"> arules</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Associate"> associate </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Audit"> audit </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Autoregress"> autoregress </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bin"> bin </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bucket"> bucket </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Bucketdir"> bucketdir </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Chart"> chart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Cluster"> cluster </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Cofilter"> cofilter</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Collect"> collect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Concurrency"> concurrency </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Contingency"> contingency </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Convert"> convert </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Correlate"> correlate </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Crawl"> crawl </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Datamodel"> datamodel </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dbinspect"> dbinspect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dedup"> dedup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Delete"> delete </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Delta"> delta </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Diff"> diff </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Erex"> erex </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Eval"> eval </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Eventcount"> eventcount </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Eventstats"> eventstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Extract"> extract (kv)</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fieldformat"> fieldformat </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fields"> fields </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fieldsummary"> fieldsummary </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Filldown"> filldown </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Fillnull"> fillnull </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Findtypes"> findtypes</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Folderize"> folderize </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Foreach"> foreach</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Format"> format </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Gauge"> gauge</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Gentimes"> gentimes </a></li><li class="selected"> geostats</li><li><a href="/Documentation/Splunk/latest/SearchReference/Head"> head </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Highlight"> highlight </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/History"> history </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Iconify"> iconify </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Input"> input </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Inputcsv"> inputcsv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Inputlookup"> inputlookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Iplocation"> iplocation </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Join"> join </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Kmeans"> kmeans </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Kvform"> kvform </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Loadjob"> loadjob </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Localize"> localize </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Localop"> localop </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Lookup"> lookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Makecontinuous"> makecontinuous </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Makemv"> makemv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Map"> map </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Metadata"> metadata </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Metasearch"> metasearch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Multikv"> multikv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Multisearch"> multisearch</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Mvcombine"> mvcombine </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Mvexpand"> mvexpand </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Nomv"> nomv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outlier"> outlier </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputcsv"> outputcsv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputlookup"> outputlookup </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Outputtext"> outputtext </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Overlap"> overlap </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Pivot"> pivot </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Predict"> predict</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rangemap"> rangemap </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rare"> rare </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Regex"> regex </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Relevancy"> relevancy </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Reltime"> reltime </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rename"> rename </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Replace"> replace </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rest"> rest</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Return"> return</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Reverse"> reverse </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rex"> rex </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Rtorder"> rtorder </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Run"> run </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Savedsearch"> savedsearch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Script"> script </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Scrub"> scrub </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Search"> search </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Searchtxn"> searchtxn </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Selfjoin"> selfjoin </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Set"> set </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Setfields"> setfields</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sendemail"> sendemail </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sichart"> sichart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sirare"> sirare </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sistats"> sistats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sitimechart"> sitimechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sitop"> sitop </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Sort"> sort </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Spath"> spath</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Stats"> stats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Strcat"> strcat </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Streamstats"> streamstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Table"> table</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tags"> tags </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tail"> tail </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Timechart"> timechart </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Top"> top </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Transaction"> transaction </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Transpose"> transpose </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Trendline"> trendline </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tscollect"> tscollect </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Tstats"> tstats </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typeahead"> typeahead </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typelearner"> typelearner </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Typer"> typer </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Uniq"> uniq </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Untable"> untable </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Where"> where </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/X11"> x11</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xmlkv"> xmlkv </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xmlunescape"> xmlunescape </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xpath"> xpath </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Xyseries"> xyseries </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Internal Search Commands</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/Aboutinternalcommands"> About internal commands</a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Collapse"> collapse </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dispatch"> dispatch </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Dump"> dump </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/Runshellscript"> runshellscript </a></li></ul></div><div class="p-tb collapsible"><strong class="collapsible" style="cursor:pointer">Search in the CLI</strong><ul><li><a href="/Documentation/Splunk/latest/SearchReference/AboutCLIsearches"> About searches in the CLI </a></li><li><a href="/Documentation/Splunk/latest/SearchReference/CLIsearchsyntax"> Syntax for searches in the CLI </a></li></ul></div>			<!--googleon: index-->
+					<div class="pdf_CTA">
+				<ul>
+					<li>
+						<a href="/index.php?title=Documentation:Splunk:SearchReference:Geostats:6.0beta&action=pdfbook">Download the Search Reference as PDF &raquo;</a>
+											</li>
+					<li class="plus">
+						<a id="toolboxToggle" href="#">Document Toolbox</a>
+						<div id="toolboxSubNav">
+															<a id="t-specialpages" href="/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a><br>
+																						<a id="t-print" href="/index.php?title=Documentation:Splunk:SearchReference:Geostats:6.0beta&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a><br>
+													</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<!--
+		<div class="lineRule"></div>
+		<div id="p-tb-aboutSplunk" class="wikiSidebarBox">
+			<div class="pBody">
+				<h3> <span class="mw-headline" id="Splunk_.3E_The_IT_Search_Company"> Splunk &gt; The IT Search Company </span></h3>
+<ul><li> Search and navigate IT data from applications, servers and network devices in real-time. 
+</li><li> <a href="http://www.splunk.com/download/?ac=wiki_download" class="external text">Download Splunk</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Visit_the_Splexicon"> Visit the Splexicon </span></h3>
+<p>Look up a term in the <b><a href="/Splexicon" title="Splexicon">Splunk Splexicon</a></b>
+</p>
+<h3> <span class="mw-headline" id="Make_a_PDF"> Make a PDF </span></h3>
+<p>Navigate to a manual and click <b>pdf version</b> at the top of this table of contents frame.
+</p>			</div>
+		</div>
+-->
+		
+	</div> <!-- .end sidebar -->
+
+	<div id="mainArticle" class="span-9 last">
+			<h1 class="mainArticleHeader"> geostats</h1>
+
+			
+			<!--  Inline TOC -->
+			<div class="table_of_contents"><h3>Contents</h3><ul><li class="toclevel-1"><div class="plusSpacer" totoggle="synopsis">&nbsp;</div><a href="#Synopsis">Synopsis</a></li><li class=" synopsis toclevel-2"><a href="#Syntax">Syntax</a></li><li class=" synopsis toclevel-2"><a href="#Required_arguments">Required arguments</a></li><li class=" synopsis toclevel-2"><a href="#Optional_arguments">Optional arguments</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Description">Description</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Examples">Examples</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#See_also">See also</a></li><li class="toclevel-1"><div class="noPlusSpacer">&nbsp;</div><a href="#Answers">Answers</a></li></ul></div>
+			<script type="text/javascript">if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); }</script>
+
+			<!--<h3 id="siteSub">From Splunk Knowledgebase</h3>-->
+			<div id="contentSub"></div>
+						
+			<!-- Content is here which could be article text or a form or both. -->
+			<h1> <span class="mw-headline" id="geostats"> geostats</span></h1>
+<p>You can now display geographic data and summaries on maps directly within Splunk. To do so, first run your reporting search with geostats, save it as a report or to a dashboard, then edit the Simple XML to include the &lt;map&gt; visualization element. For more information, see:
+</p>
+<ul><li> "<a href="http://docs.splunk.com/Documentation/Splunk/6.0/Viz/Visualizationreference#Maps" class="external text">Visualization reference</a>" in the Splunk Data Visualizations Manual.
+</li><li> The <a href="http://docs.splunk.com/Documentation/Splunk/6.0/Viz/PanelreferenceforSimplifiedXML#map" class="external text">&lt;map&gt;</a> element in the Simple XML Reference.
+</li></ul>
+<h2> <span class="mw-headline" id="Synopsis"> Synopsis </span></h2>
+<p>Generate statistics which are clustered into geographical bins to be rendered on a world map.
+</p>
+<h3> <span class="mw-headline" id="Syntax"> Syntax </span></h3>
+<p>geostats [translatetoxy=t|f] [latfield=&lt;string&gt;] [longfield=&lt;string&gt;] [globallimit=&lt;int&gt;] [locallimit=&lt;int&gt;] [outputlatfield=&lt;string&gt;] [outputlongfield=&lt;string&gt;] [ binspanlat=&lt;float&gt; binspanlong=&lt;float&gt; maxzoomlevel=&lt;int&gt; ] &lt;stats-agg-term&gt; [AS &lt;rename&gt;] [by &lt;split-by-fields&gt;]
+</p>
+<h3> <span class="mw-headline" id="Required_arguments"> Required arguments </span></h3>
+<dl><dt> &lt;stats-agg-term&gt;
+</dt><dd> <b>Syntax:</b> &lt;stats-agg-term&gt; [AS &lt;rename&gt;]
+</dd><dd> <b>Description:</b> Specify an aggregator or function. You can specify one or multiple functions and optionally, rename the field. For a list of stats functions with descriptions and examples, see <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/CommonStatsFunctions" class="external text">"Functions for stats, chart, and timechart"</a>. 
+</dd></dl>
+<h3> <span class="mw-headline" id="Optional_arguments"> Optional arguments </span></h3>
+<dl><dt> binspanlat
+</dt><dd> <b>Syntax:</b> binspanlat=&lt;float&gt;
+</dd><dd> <b>Description:</b> The size of the bins in latitude degrees at the lowest zoom level. Defaults to 22.5. With default binspanlong=45.0, leads to a grid size of 8x8. 
+</dd></dl>
+<dl><dt> binspanlong
+</dt><dd> <b>Syntax:</b> binspanlong=&lt;float&gt;
+</dd><dd> <b>Description:</b> The size of the bins in longitude degrees at the lowest zoom level. Defaults to 45.0. With default binspanlat=22.5, leads to a grid size of 8x8.
+</dd></dl>
+<dl><dt> globallimit
+</dt><dd> <b>Syntax:</b> globallimit=&lt;int&gt;
+</dd><dd> <b>Description:</b> Controls the number of pies in the pie-chart. All other split-by values will be grouped under "OTHER". Look at *chart* command documentation. Setting globallimit=0 will remove all limits and all columns will be rendered. Currently the grouping into "OTHER" only works intuitively for count and additive statistics. Defaults to 10.
+</dd></dl>
+<dl><dt> latfield
+</dt><dd> <b>Syntax:</b> latfield=&lt;field&gt;
+</dd><dd> <b>Description:</b> Specify a field from the pre-search that represents the latitude coordinates to use in your analysis. Defaults to "lat".
+</dd></dl>
+<dl><dt> longfield
+</dt><dd> <b>Syntax:</b> longfield=&lt;field&gt;
+</dd><dd> <b>Description:</b> Specify a field from the pre-search that represents the longitude coordinates to use in your analysis. Defaults to "lon".
+</dd></dl>
+<dl><dt> maxzoomlevel
+</dt><dd> <b>Syntax:</b> maxzoomlevel=&lt;int&gt;
+</dd><dd> <b>Description:</b> The maximum level to be created in the quad tree. Defaults to 9, which specifies that 10 zoom levels will be created: 0-9.
+</dd></dl>
+<dl><dt> outlatfield
+</dt><dd> <b>Syntax:</b> outlatfield=&lt;string&gt;
+</dd><dd> <b>Description:</b> Specify a name for the latitude field in your geostats output data. Defaults to "latitude".
+</dd></dl>
+<dl><dt> outlongfield
+</dt><dd> <b>Syntax:</b> outlongfield=&lt;string&gt;
+</dd><dd> <b>Description:</b> Specify a name for the longitude field in your geostats output data. Defaults to "longitude".
+</dd></dl>
+<dl><dt> translatetoxy
+</dt><dd> <b>Syntax:</b> translatetoxy= t | f
+</dd><dd> <b>Description:</b> If the number of split-by-fields is more than 1, or if you are using geostats to analyze multiple statistics without the intent of actually plotting pies on a map, you can get the raw geostats output like a stats command by setting translatetoxy=f (false). This will disable the output like a chart. Defaults to t (true).
+</dd></dl>
+<h2> <span class="mw-headline" id="Description"> Description </span></h2>
+<p>Use the geostats command to compute statistical functions and render a world map. The calculations can be grouped or split by fields using a by-clause. First, the events will be clustered based on latitude and longitude fields in the events. Then, the statistics will be evaluated on the generated clusters. To allow efficient rendering and zooming on the map, clusters will be generated at different zoom levels. These zoom levels can be controlled by the options binspanlat/binspanlong/maxzoomlevel.
+</p>
+<h2> <span class="mw-headline" id="Examples"> Examples </span></h2>
+<p><b>Example 1:</b> This example uses the Buttercup Games data (tutorialdata.zip) and lookup files (prices.csv and vendors.csv) from the <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchTutorial/WelcometotheSearchTutorial" class="external text">Search Tutorial</a>. Compute the count of each product sold by a vendor and display the information on a map.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>sourcetype=vendor_* | lookup price_lookup Code OUTPUTNEW product_name | table product_name VendorID | lookup vendors_lookup VendorID | geostats latfield=VendorLatitude longfield=VendorLongitude count by product_name</code><br/></div>
+<p>In this case, the sourcetype=vendor_sales and each of the events looks like this:
+</p>
+<pre>
+[26/Sep/2013:18:24:02] VendorID=5036 Code=B AcctID=6024298300471575
+</pre>
+<p>The price_lookup is used to match the Code field in each event to a product_name in the table. The vendors_lookup is used to output all the fields in vendors.csv: Vendor, VendorCity, VendorID, VendorLatitude, VendorLongitude, VendorStateProvince, VendorCountry that match the VendorID in each event. 
+</p><p><b>Note:</b> In this search, the csv files are uploaded into Splunk and the lookups defined, but not automatic.
+</p><p>This search produces a statistics table:
+</p><p><a href="/File:Searchref_geostats_ex1.png" class="image"><img alt="Searchref geostats ex1.png" src="/images/5/51/Searchref_geostats_ex1.png" width="700" height="315" /></a>
+</p><p>After you run the search, save it to a dashboard. Here, the dashboard is named "Geostats example" and the panel is named "Vendor and Product Map". Then, select <b>Edit source</b> to edit the XML to change the table element to a map element:
+</p><p><a href="/File:Searchref_geostats_ex1b.png" class="image"><img alt="Searchref geostats ex1b.png" src="/images/0/02/Searchref_geostats_ex1b.png" width="700" height="279" /></a>
+</p><p>Now, when you view the dashboard you should see the information on a world map. Here, it is zoomed in and the mouse is over the pie chart for a region in the northeastern USA:
+</p><p><a href="/File:Searchref_geostats_ex1c.png" class="image"><img alt="Searchref geostats ex1c.png" src="/images/9/92/Searchref_geostats_ex1c.png" width="700" height="287" /></a>
+</p><p>Zoom in and out to see more details on the map. You can read more about the <a href="http://docs.splunk.com/Documentation/Splunk/6.0/Viz/PanelreferenceforSimplifiedXML#map" class="external text">&lt;map&gt;</a> element and its available options in the Simple XML Reference.
+</p><p><br />
+<b>Example 2:</b>  Compute the average rating for each gender after clustering/grouping the events by "eventlat" and "eventlong" values.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | geostats latfield=eventlat longfield=eventlong avg(rating) by gender</code><br/></div>
+<p><b>Example 3:</b> Cluster events by default latitude and longitude fields "lat" and "lon" respectively. Calculate the count of such events
+</p>
+<div class="inlineQuery splunk_search_4_3"><code> ... | geostats count</code><br/></div>
+<h2> <span class="mw-headline" id="See_also"> See also </span></h2>
+<p><a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Iplocation" class="external text">iplocation</a>, <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Stats" class="external text">stats</a>, <a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Xyseries" class="external text">xyseries</a>
+</p>
+<h2> <span class="mw-headline" id="Answers"> Answers </span></h2>
+<p>Have questions? Visit <a href="http://splunk-base.splunk.com" class="external text">Splunk Answers</a> and see what <a href="http://splunk-base.splunk.com/tags/geostats/" class="external text">questions and answers the Splunk community has about using the geostats command</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 70/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="printfooter">
+Retrieved from "<a href="http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Geostats">http://docs.splunk.com/Documentation/Splunk/6.0/SearchReference/Geostats</a>"</div>
+
+			<script type="text/javascript">$('#mainArticle > h1').eq(1).hide();</script>
+
+			<!--  Footer start/prev/next links if available. -->
+						<div id="footerPagination" class="smallRoundedCorners">
+				<span id="prevlink"><a href="/Documentation/Splunk/latest/SearchReference/Gentimes">&laquo;  gentimes </a></span>  <span id="nextlink"><a href="/Documentation/Splunk/latest/SearchReference/Head"> head  &raquo;</a></span>			</div>
+						<!--  End Footer start/prev/next links if available. -->
+
+			<!-- Versions Tags/Lists -->
+						<div class="affectedVersions smallRoundedCorners current">
+				<p>This documentation applies to the following versions of Splunk:
+				<a href="/Category:V:Splunk:6.0">6.0</a> 				<span id="startlink">
+					View the <a href="/index.php?title=Documentation:Splunk:SearchReference:Geostats:6.0beta&action=history">Article History</a>
+					for its revisions.</span>
+				</p>
+			</div>
+							<!-- End Versions Tags/Lists -->
+
+
+			<!--  Show category/version links/tags which apply.  Add logic to show current in one place and list of ALL someplace else? -->
+						<!-- End content here -->
+
+			<!-- Begin comments -->
+							<br />
+				<div id="commentListingTitle" style="display:none"><h2>Comments</h2></div>
+				<div id="commentListing">
+								</div>
+
+
+					<ul class="footerTab" id="roleTabs">
+						<li class="current"><a href="#tab_2">Was this topic useful?</a></li>
+						<li ><a href="#tab_1">Post a comment</a></li>
+					</ul>
+					<!-- start comment -->
+					<div  class="footerTabBody" id="tab_1">
+						
+							<p>You must be logged into splunk.com in order to post comments.
+							<a href="http://www.splunk.com/index.php?module=roles&func=showloginform&redirecturl=http://
+							docs.splunk.com/Documentation/Splunk/latest/SearchReference/Geostats">Log in now</a>.</p>
+							
+					</div>
+					<!-- end comment -->
+
+					<!-- begin feedback  -->
+					<div   class="footerTabBody"  id="tab_2">
+						<!--<h2>Was this topic useful?</h2>-->
+						<div id="feedbackdialoginner">
+							<form>
+								<input type="hidden" id="splunk_feedback_title" value="Documentation/Splunk/latest/SearchReference/Geostats" />
+								<input type="hidden" id="splunk_feedback_rawtitle" value="Documentation:Splunk:SearchReference:Geostats:6.0beta" />
+								<p>
+								Was this documentation topic helpful?
+								<select id="splunk_feedback_yesno">s
+									<option	value="YES">Yes</option>
+									<option value="NO">No</option>
+								</select>
+								</p>
+
+								<p>
+									If you'd like to hear back from us, please provide your email address:
+									<input id="splunk_feedback_email" type="text" maxlength="255" size="20" width="300">
+								</p>
+							
+								<p>
+								We'd love to hear what you think about this topic or the documentation as a whole.
+								Feedback you enter here will be delivered to the documentation team.
+								<br />
+								<textarea id="splunk_feedback_comment" rows="4" cols="60"></textarea>
+								</p>
+								<span id="splunk_feedback_submit_outer">
+									<input type="submit" class="primary" id="splunk_feedback_submit" name="submit" tabindex="5" value="Send Feedback" />
+								</span>
+							</form>
+						</div>
+						<p id="splunk_helpful_completed" class="commentOrHelpfulResponse" >
+							<em>Feedback submitted, thanks!</em>
+						</p>
+
+					</div>
+					<!-- end feedback  -->
+
+					<noscript>
+						<div id="footerNoJS">Please enable JavaScript to use our comments and feedback system.</div>
+					</noscript>
+					<script>
+						$('#footerNoJS').hide();
+						$('.footerTabBody').show();
+						$('#roleTabs').show();
+					</script>
+
+				
+			<!-- End comments -->
+		<!--</div>  wikiContentInner -->
+	</div><!--  wikiContent -->
+
+</div><!-- .container -->
+
+
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+
+<div class="push"></div>
+
+</div> <!-- superWraper -->
+
+<div id="anchor" class="footer">
+	<div id="footer">
+		<div class="container">
+		<div id="singleColumn" class="span-12 last">
+		<div class="footer_left">
+
+			<ul>
+				<li><a href="http://www.splunk.com/article/246" class="hashlink">Contact</a></li>
+				<li><a href="http://www.splunk.com/article/7" class="hashlink">Privacy Policy</a></li>
+				<li><a href="http://www.splunk.com/article/8" class="hashlink">Terms of Use</a></li>
+				<li class="lastlist"><a href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Community content licensed under Creative Commons</a></li>
+			</ul>
+
+		</div><!-- /footer_left -->
+
+		<div class="footer_right">
+		</div><!-- /footer_right -->
+
+		</div>
+		<div class="clear"></div>
+			<div id="veryBottom">
+				<ul id="terms" class="inline">
+					<li class="first">Copyright &copy; 2005-2013 <a href="http://www.splunk.com">Splunk Inc.</a> All rights reserved.</li>
+				</ul>
+			</div><!-- veryBottom -->
+		</div><!-- container -->
+	</div><!-- / footer -->
+
+    <div id="footerBtmCap"></div>
+
+</div> <!-- anchor (and footer class) -->
+
+<script type='text/javascript' language='JavaScript' src='http://www.splunk.com/themes/splunk_com/scripts/js/elqNow/elqCfg.js'></script>
+<script type='text/javascript' language='JavaScript' src='http://www.splunk.com/themes/splunk_com/scripts/js/elqNow/elqImg.js'></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-399680-1");
+pageTracker._setDomainName("splunk.com");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body></html>
