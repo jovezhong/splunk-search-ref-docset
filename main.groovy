@@ -30,7 +30,7 @@ void genSearchCommands(){
 	sql.each{println it}
 }
 //genSearchCommands()
-void genFunctions(){
+void genEvalFunctions(){
 	def searchWiki=new File('wiki/CommonEvalFunctions.txt').getText()
 	def m=searchWiki=~/\|-\n\| <code>(.+)<\/code>/
 	//println m
@@ -47,4 +47,22 @@ void genFunctions(){
 	}
 	sql.each{println it}
 }
-genFunctions()
+//genEvalFunctions()
+void genStatsFunctions(){
+	def searchWiki=new File('wiki/CommonStatsFunctions.txt').getText()
+	def m=searchWiki=~/\|-\n\|<code>(.+)<\/code>/
+	//println m
+	//println m.size()
+	//m.each{println it}
+	def functions=[]
+	m.each{
+		def str=it[1]//e.g. abs(X)
+		functions << str.substring(0,str.indexOf('('))
+	}
+	def sql=[]
+	functions.each{
+		sql<<"INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('${it}', 'Function', '2_CommonStatsFunctions.html');"
+	}
+	sql.each{println it}
+}
+genStatsFunctions()
