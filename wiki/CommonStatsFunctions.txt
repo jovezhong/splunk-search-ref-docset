@@ -1,27 +1,27 @@
-= Functions for stats, chart, and timechart =
+= Statistical and charting functions =
 These are statistical functions that you can use with the 
 <code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>,  
 <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, and 
 <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code> commands.
-* Functions that are relevant for stats are also relevant for <code>[[Documentation:Splunk:SearchReference:Eventstats|eventstats]]</code> and <code>[[Documentation:Splunk:SearchReference:Streamstats|streamstats]]</code>.
+* Functions that are relevant for stats are also relevant for <code>[[Documentation:Splunk:SearchReference:Eventstats|eventstats]]</code>, <code>[[Documentation:Splunk:SearchReference:Streamstats|streamstats]]</code>, and <code>[[Documentation:Splunk:SearchReference:Geostats|geostats]]</code>.
 * Functions that are relevant for chart, stats, and timechart are also relevant for their respective summary indexing counterparts: <code>[[Documentation:Splunk:SearchReference:Sichart|sichart]]</code>, <code>[[Documentation:Splunk:SearchReference:Sistats|sistats]]</code>, and <code>[[Documentation:Splunk:SearchReference:Sitimechart|sitimechart]]</code>.
-* Functions that are relevant for sparklines will say as much. Note that sparklines apply only to <code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code> and <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>.
+* Functions that are relevant for sparklines will say as much. Note that sparklines is not a search command, it is a function that applies only to <code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code> and <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code> and allows you to call other functions. For more information, read [[Documentation:Splunk:Search:AddSparklinestoSearchResults|"Add sparklines to search results"]] in the Search Manual.
 
 {| cellpadding="5" cellspacing="0" border="1"
 !Function
 !Description
-!Command(s)
-!Example(s)
-|-
+!Commands
+!Examples
+|- valign="top" | 
 |<code>avg(X)</code>
-|This function returns the average of the values of field X. See also, mean(X).
+|Returns the average of the values of field X. See also, mean(X).
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |This examples returns the average response time:
 
 <code>avg(responseTime)</code>
-|-
+|- valign="top" | 
 |<code>c(X) &#124; count(X)</code>
-|This function returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value").
+|Returns the number of occurrences of the field X. To indicate a specific field value to match, format X as eval(field="value").
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |This example returns the count of events where <code>status</code> has the value "404":
 
@@ -32,9 +32,9 @@ These generate sparklines for the counts of events. The first looks at the <code
 <code>sparkline(count)</code>
 
 <code>sparkline(count(user))</code>
-|-
+|-  valign="top" | 
 |<code>dc(X) &#124; distinct_count(X)</code>
-|This function returns the count of distinct values of the field X.
+|Returns the count of distinct values of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 | This example generates sparklines for the distinct count of devices and renames the field, "numdevices":
 
@@ -43,73 +43,75 @@ These generate sparklines for the counts of events. The first looks at the <code
 This example counts the distinct sources for each sourcetype, and buckets the count for each five minute spans:
 
 <code>sparkline(dc(source),5m) by sourcetype</code>
-|-
+|- valign="top" | 
 | <code>earliest(X)</code>
-| This function returns the chronologically earliest seen occurrence of a value of a field X.
+| Returns the chronologically earliest seen occurrence of a value of a field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" |
 | <code>estdc(X)</code>
-| This function returns the estimated count of the distinct values of the field X.
+| Returns the estimated count of the distinct values of the field X.
 | <code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 | <code>estdc_error(X)</code>
-| This function returns the theoretical error of the estimated count of the distinct values of the field X. The error represents a ratio of abs(estimate_value - real_value)/real_value.
+| Returns the theoretical error of the estimated count of the distinct values of the field X. The error represents a ratio of abs(estimate_value - real_value)/real_value.
 | <code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
-|<code>first(X)</code>
-|This function returns the first seen value of the field X. In general, the first seen value of the field is the most recent instance of this field, relative to the input order of events into the stats command.
+|- valign="top" | 
+| <code>first(X)</code>
+| Returns the first seen value of the field X. In general, the first seen value of the field is the most recent instance of this field, relative to the input order of events into the stats command.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>last(X)</code>
-|This function returns the last seen value of the field X.  In general, the last seen value of the field is the oldest instance of this field relative to the input order of events into the stats command.
+| Returns the last seen value of the field X.  In general, the last seen value of the field is the oldest instance of this field relative to the input order of events into the stats command.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 | <code>latest(X)</code>
-| This function returns the chronologically latest seen occurrence of a value of a field X.
+|Returns the chronologically latest seen occurrence of a value of a field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>list(X)</code>
-|This function returns the list of all values of the field X as a multi-value entry. The order of the values reflects the order of input events.
+| Returns the list of all values of the field X as a multivalue entry. The order of the values reflects the order of input events.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>max(X)</code>
-|This function returns the maximum value of the field X. If the values of X are non-numeric, the max is found from lexicographic ordering.
+| Returns the maximum value of the field X. If the values of X are non-numeric, the max is found from lexicographic ordering.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |This example returns the maximum value of "size":
 
 <code>max(size)</code>
-|-
+|- valign="top" | 
 |<code>mean(X)</code>
-|This function returns the arithmetic mean of the field X. See also, avg(X).
+| Returns the arithmetic mean of the field X. See also, avg(X).
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |This example returns the mean of "kbps" values:
 
 <code>mean(kbps)</code>
-|-
+|- valign="top" | 
 |<code>median(X)</code>
-|This function returns the middle-most value of the field X.
+| Returns the middle-most value of the field X. 
+
+'''Note:''' The median calculation is more correct for odd numbers of events. In cases where you have an even number of events, the median is approximated to be the higher of the two values.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>min(X)</code>
-|This function returns the minimum value of the field X. If the values of X are non-numeric, the min is found from lexicographic ordering.
+| Returns the minimum value of the field X. If the values of X are non-numeric, the min is found from lexicographic ordering.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>mode(X)</code>
-|This function returns the most frequent value of the field X.
+| Returns the most frequent value of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>p<X>(Y) &#124; perc<X>(Y) &#124; exactperc<X>(Y) &#124; upperperc<X>(Y)</code>
-|This function returns the X-th percentile value of the numeric field Y, where X is an integer between 1 and 99. The percentile X-th function sorts the values of Y in an increasing order. Then, if you consider that 0% is the lowest and 100% the highest, the functions picks the value that corresponds to the position of the X% value.
+| Returns the X-th percentile value of the numeric field Y, where X is an integer between 1 and 99. The percentile X-th function sorts the values of Y in an increasing order. Then, if you consider that 0% is the lowest and 100% the highest, the functions picks the value that corresponds to the position of the X% value.
 
 The functions perc, p, and upperperc give approximate values for the integer percentile requested. The approximation algorithm used provides a strict bound of the actual value for any percentile.  The functions perc and p return a single number that represents the lower end of that range while upperperc gives the approximate upper bound.  exactperc provides the exact value, but will be very expensive for high cardinality fields.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
@@ -118,78 +120,83 @@ The functions perc, p, and upperperc give approximate values for the integer per
 <code>perc50(Y)=6</code>
 
 <code>perc95(Y)=10</code>
-|-
+|- valign="top" | 
 |<code>per_day(X)</code>
-|This function returns the values of field X per day. 
+| Returns the values of field X per day. 
 |<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |This example returns the values of "total" per day.
 
 <code>per_day(total)</code>
-|-
+|- valign="top" | 
 |<code>per_hour(X)</code>
-|This function returns the values of field X per hour.
+| Returns the values of field X per hour.
 |<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |This example returns the values of "total" per hour.
 
 <code>per_hour(total)</code>
-|-
+|- valign="top" | 
 |<code>per_minute(X)</code>
-|This function returns the values of field X per minute. 
+| Returns the values of field X per minute. 
 |<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |This example returns the values of "total" per minute.
 
 <code>per_minute(total)</code>
-|-
+|- valign="top" | 
 |<code>per_second(X)</code>
-|This function returns the values of field X per second.
+| Returns the values of field X per second.
 |<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |This example returns values of "kb" per second:
 
 <code>per_second(kb)</code>
-|-
+|- valign="top" | 
 |<code>range(X)</code>
-|This function returns the difference between the max and min values of the field X ONLY IF the value of X are numeric.
+| Returns the difference between the max and min values of the field X ONLY IF the value of X are numeric.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |
-|-
+|- valign="top" | 
 |<code>stdev(X)</code>
-|This function returns the sample standard deviation of the field X.
+| Returns the sample standard deviation of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |This example returns the standard deviation of wildcarded fields "*delay" which can apply to both, "delay" and "xdelay".
 
 <code>stdev(*delay)</code>
-|-
+|- valign="top" | 
 |<code>stdevp(X)</code>
-|This function returns the population standard deviation of the field X.
+| Returns the population standard deviation of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |
-|-
+|- valign="top" | 
 |<code>sum(X)</code>
-|This function returns the sum of the values of the field X.
+| Returns the sum of the values of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |<code>sum(eval(date_hour * date_minute))</code>
-|-
+|- valign="top" | 
 |<code>sumsq(X)</code>
-|This function returns the sum of the squares of the values of the field X.
+| Returns the sum of the squares of the values of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |
-|-
+|- valign="top" | 
 |<code>values(X)</code>
-|This function returns the list of all distinct values of the field X as a multi-value entry. The order of the values is lexicographical.
+| Returns the list of all distinct values of the field X as a multivalue entry. The order of the values is lexicographical.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>
 |
-|-
+|- valign="top" | 
 |<code>var(X)</code>
-|This function returns the sample variance of the field X.
+| Returns the sample variance of the field X.
 |<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |
-|-
+|- valign="top" | 
 |<code>varp(X)</code>
-|This function returns the population variance of the field X.
-|<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>.
+| Returns the population variance of the field X.
+|<code>[[Documentation:Splunk:SearchReference:Chart|chart]]</code>, <code>[[Documentation:Splunk:SearchReference:Stats|stats]]</code>, <code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code>, <code>[[Documentation:Splunk:Search:AddSparklinestoSearchResults|sparkline()]]</code>
 |
 |}
 
+== See also ==
+[[Documentation:Splunk:SearchReference:CommonEvalFunctions|Evaluation functions]], [[Documentation:Splunk:SearchReference:Stats|stats]],  [[Documentation:Splunk:SearchReference:Chart|chart]],  [[Documentation:Splunk:SearchReference:Timechart|timechart]], [[Documentation:Splunk:SearchReference:Eventstats|eventstats]], [[Documentation:Splunk:SearchReference:Streamstats|streamstats]], [[Documentation:Splunk:SearchReference:Geostats|geostats]]
+
+== Answers ==
+Have questions? Visit [http://splunk-base.splunk.com Splunk Answers] and search for a specific function or command. 
 
 
-[[Category:V:Splunk:5.0beta]][[Category:V:Splunk:5.0]][[Category:V:Splunk:6.0beta]][[Category:V:Splunk:6.0]][[Category:V:Splunk:5.0.1]][[Category:V:Splunk:5.0.2]][[Category:V:Splunk:5.0.3]][[Category:V:Splunk:5.0.4]][[Category:V:Splunk:5.0.5]][[Category:V:Splunk:6.0.1]]
+[[Category:V:Splunk:6.0beta]][[Category:V:Splunk:6.0]][[Category:V:Splunk:6.0.1]][[Category:V:Splunk:6.1beta]][[Category:V:Splunk:6.0.2]][[Category:V:Splunk:6.1]][[Category:V:Splunk:6.0.3]][[Category:V:Splunk:6.0.4]][[Category:V:Splunk:6.2beta]][[Category:V:Splunk:6.1.1]][[Category:V:Splunk:6.0.5]][[Category:V:Splunk:6.1.2]][[Category:V:Splunk:6.1.3]][[Category:V:Splunk:6.2.0]][[Category:V:Splunk:6.3.0beta]][[Category:V:Splunk:6.0.6]][[Category:V:Splunk:6.1.4]][[Category:V:Splunk:6.1.5]][[Category:V:Splunk:6.2.1]][[Category:V:Splunk:6.0.7]][[Category:V:Splunk:6.1.6]][[Category:V:Splunk:6.2.2]][[Category:V:Splunk:6.0.8]][[Category:V:Splunk:6.1.7]][[Category:V:Splunk:6.2.3]][[Category:V:Splunk:6.3.0]][[Category:V:Splunk:6.3.1511]][[Category:V:Splunk:6.2.4]][[Category:V:Splunk:6.0.9]][[Category:V:Splunk:6.1.8]][[Category:V:Splunk:6.1.9]][[Category:V:Splunk:6.2.5]][[Category:V:Splunk:Galaxy]][[Category:V:Splunk:6.0.10]][[Category:V:Splunk:6.2.6]][[Category:V:Splunk:6.2.7]][[Category:V:Splunk:6.3.1]]

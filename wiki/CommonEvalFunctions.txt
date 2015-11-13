@@ -1,223 +1,57 @@
-= Functions for eval and where =
-These are functions that you can use with the <code>[[Documentation:Splunk:SearchReference:Eval|eval]]</code> and <code> [[Documentation:Splunk:SearchReference:Where|where]]</code> commands and as part of eval expressions.
+= Evaluation functions =
+
+==Commands==
+You can use these functions with the <code>[[Documentation:Splunk:SearchReference:Eval|eval]]</code>, <code>[[Documentation:Splunk:SearchReference:Fieldformat|fieldformat]]</code>, and <code> [[Documentation:Splunk:SearchReference:Where|where]]</code> commands, and as part of evaluation expressions.
+
+==Usage==
+* All functions that accept strings can accept literal strings or any field. 
+* All functions that accept numbers can accept literal numbers or any numeric field.
+
+==Comparison and Conditional functions== 
 
 {| cellpadding="5" cellspacing="0" border="1" width="100%"
 !Function
 !Description
 !Example(s)
 |-
-| <code>abs(X)</code>
-| This function takes a number X and returns its absolute value.
-| This example returns the absnum, whose values are the absolute values of the numeric field <code>number</code>: 
-
-<code>... &#124; eval absnum=abs(number)</code>
-|-
-| <code>case(X,"Y",...)</code>
-| This function takes pairs of arguments X and Y. X arguments are Boolean expressions that, when evaluated to TRUE, return the corresponding Y argument. The function defaults to NULL if none are true.
+| valign=top|<code>case(X,"Y",...)</code>
+| valign=top|This function takes pairs of arguments X and Y. The X arguments are Boolean expressions that will be evaluated from first to last.  When the first X expression is encountered that evaluates to TRUE, the corresponding Y argument will be returned. The function defaults to NULL if none are true.
 | This example returns descriptions for the corresponding http status code: 
 
 <code>... &#124; eval description=<nowiki>case(error &#61;&#61; 404, "Not found", error &#61;&#61; 500,
 "Internal Server Error", error &#61;&#61; 200, "OK")</nowiki></code>
 |-
-| <code>ceil(X), ceiling(X)</code>
-| This function returns the ceiling of a number X. 
-| This example returns n=2:
+| valign=top|<code>cidrmatch("X",Y)</code> 
+| valign=top|This function returns true, when IP address Y belongs to a particular subnet X. The function uses two string arguments: the first is the CIDR subnet; the second is the IP address to match.  
+| This example uses cidrmatch to set a field, <code>isLocal</code>, to "local" if the field <code>ip</code> matches the subnet, or "not local" if it does not:
 
-<code>... &#124; eval n=ceil(1.9)</code>
-|-
-| <code>cidrmatch("X",Y)</code> 
-| This function identifies IP addresses that belong to a particular subnet. The function uses two arguments: the first is the CIDR subnet, which is contained in quotes; the second is the IP address to match, which may be values in a field. 
-| This example returns a field, <code>addy</code>, whose values are the IP addresses in the field <code>ip</code> that match the subnet:
+<code>... &#124; eval isLocal=if(cidrmatch("123.132.32.0/25",ip), "local", "not local")</code>
 
-<code>... &#124; eval isLocal=if(cidrmatch("123.132.32.0/25",ip),true,false)</code>
+This example uses cidrmatch as a filter:
+
+<code>... &#124; where cidrmatch("123.132.32.0/25", ip)</code>
 |-
-| <code>coalesce(X,...)</code>
-| This function takes an arbitrary number of arguments and returns the first value that is not null.
+| valign=top|<code>coalesce(X,...)</code>
+| valign=top|This function takes an arbitrary number of arguments and returns the first value that is not null.
 | Let's say you have a set of events where the IP address is extracted to either <code>clientip</code> or <code>ipaddress</code>. This example defines a new field called <code>ip</code>, that takes the value of either <code>clientip</code> or <code>ipaddress</code>, depending on which is not NULL (exists in that event): 
 
 <code>... &#124; eval ip=coalesce(clientip,ipaddress)</code>
 |-
-| <code>commands(X)</code>
-| This function takes a search string, or field that contains a search string, X and returns a multivalued field containing a list of the commands used in X. (This is generally not recommended for use except for analysis of audit.log events.)
-| <code>... &#124; eval x=commands("search foo  &#124; stats count  &#124; sort count")</code> 
-
-returns a multivalue field x, that contains 'search', 'stats', and 'sort'.
-|-
-| <code>exact(X)</code> 
-| This function evaluates an expression X using double precision floating point arithmetic.  
-| <code>... &#124; eval n=exact(3.14 * num)</code>
-|-
-| <code>exp(X)</code>
-| This function takes a number X and returns e<sup>X</sup>.
-| This example returns y=e<sup>3</sup>: 
-
-<code>... &#124; eval y=exp(3)</code>
-|- 
-| <code>floor(X)</code>
-| This function returns the floor of a number X.
-| This example returns 1: 
-
-<code>... &#124; eval n=floor(1.9)</code>
-|-
-| <code>if(X,Y,Z)</code> 
-| This function takes three arguments. The first argument X is a Boolean expression. If X evaluates to TRUE, the result is the second argument Y. Optionally, if X evaluates to FALSE, the result evaluates to the third argument Z.
-| This example looks at the values of error and returns err=OK if error=200, otherwise returns err=Error:
+| valign=top|<code>if(X,Y,Z)</code> 
+| valign=top|This function takes three arguments. The first argument X must be a Boolean expression. If X evaluates to TRUE, the result is the second argument Y. If, X evaluates to FALSE, the result evaluates to the third argument Z.
+| valign=top|This example looks at the values of error and returns err=OK if error=200, otherwise returns err=Error:
 
 <code>... &#124; eval err=if(error &#61;&#61; 200, "OK", "Error")</code>
 |-
-| <code>isbool(X)</code>
-| This function takes one argument X and returns TRUE if X is Boolean.
-| <code>... &#124; eval n=if(isbool(field),"yes","no")</code>
-
-or
-
-<code>... &#124; where isbool(field)</code>
-|-
-| <code>isint(X)</code>
-| This function takes one argument X and returns TRUE if X is an integer.
-| <code>... &#124; eval n=isint(field)</code>
-
-or
-
-<code>... &#124; where isint(field)</code>
-|-
-| <code>isnotnull(X)</code> 
-| This function takes one argument X and returns TRUE if X is not NULL. This is a useful check for whether or not a field (X) contains a value.
-| <code>... &#124; eval n=if(isnotnull(field),"yes","no")</code>
-
-or
-
-<code>... &#124;  where isnotnull(field)</code>
-|-
-| <code>isnull(X)</code> 
-| This function takes one argument X and returns TRUE if X is NULL. 
-| <code>... &#124; eval n=if(isnull(field),"yes","no")</code>
-
-or
-
-<code>... &#124; where isnull(field)</code>
-|-
-| <code>isnum(X)</code>
-| This function takes one argument X and returns TRUE if X is a number. 
-| <code>... &#124; eval n=if(isnum(field),"yes","no")</code>
-
-or
-
-<code>... &#124; where isnum(field)</code>
-|-
-| <code>isstr()</code>
-| This function takes one argument X and returns TRUE if X is a string. 
-| <code>... &#124; eval n=if(isstr(field),"yes","no")</code>
-
-or
-
-<code>... &#124; where isstr(field)</code>
-|-
-| <code>len(X)</code>
-| This function returns the character length of a string X.
-| <code>... &#124; eval n=len(field)</code>
-|-
-| <code>like(X,"Y")</code>
-| This function takes two arguments, a field X and a quoted string Y, and returns TRUE if and only if the first argument is like the SQLite pattern in Y. 
+| valign=top|<code>like(TEXT, PATTERN)</code>
+| valign=top|This function takes two arguments, a string to match TEXT and a match expression string PATTERN.  It returns TRUE if and only if the first argument is like the SQLite pattern in Y.  The pattern language supports exact text match, as well as % characters for wildcards and _ characters for a single character match.
 | This example returns islike=TRUE if the field value starts with foo:
 
-<code>... &#124; eval islike=like(field, "foo%")</code>
+<code>... &#124; eval is_a_foo=if(like(field, "foo%"), "yes a foo", "not a foo")</code>
 
 or
 
 <code>... &#124; where like(field, "foo%")</code>
-|-
-| <code>ln(X)</code>
-| This function takes a number X and returns its natural log. 
-| This example returns the natural log of the values of bytes:
-
-<code>... &#124; eval lnBytes=ln(bytes)</code>
-|-
-| <code>log(X,Y)</code>
-| This function takes either one or two numeric arguments and returns the log of the first argument X using the second argument Y as the base. If the second argument Y is omitted, this function evaluates the log of number X with base 10.
-| <code>... &#124; eval num=log(number,2)</code>
-|-
-| <code>lower(X)</code>
-| This function takes one string argument and returns the lowercase version. The upper() function also exists for returning the uppercase version.
-| This example returns the value provided by the field username in lowercase.
-
-<code>... &#124; eval username=lower(username)</code>
-|-
-| <code>ltrim(X,Y)</code>
-| This function takes one or two string arguments X and Y and returns X with the characters in Y trimmed from the left side. If Y is not specified, spaces and tabs are trimmed.
-| This example returns x="abcZZ":
-
-<code>... &#124; eval x=ltrim("   ZZZZabcZZ ", " Z")</code> 
-|-
-| <code>match(X,Y)</code> 
-| This function compares the regex string Y to the value of X and returns a Boolean value; it returns T (true) if X matches the pattern defined by Y.
-| This example returns true IF AND ONLY IF field matches the basic pattern of an IP address. Note that the example uses ^ and $ to perform a full match.
-
-<code>... &#124; eval n=if(match(field, "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$"), 1, 0)</code>
-|-
-| <code>max(X,...)</code>
-| This function takes an arbitrary number of arguments X, that is numbers or strings, and returns the max; strings are greater than numbers.
-| This example returns either "foo" or field, depending on the value of field:
-
-<code>... &#124; eval n=max(1, 3, 6, 7, "foo", field)</code>
-|-
-| <code>md5(X)</code> 
-| This function computes and returns the MD5 hash of a string value X. 
-| <code>... &#124; eval n=md5(field)</code>
-|-
-| <code>min(X,...)</code>
-| This function takes an arbitrary number of arguments X, that is numbers or strings, and returns the min; strings are greater than numbers.
-| This example returns 1:
-
-<code>... &#124; eval n=min(1, 3, 6, 7, "foo", field)</code>
-|-
-| <code>mvappend(X,"Y",Z)</code>
-| This function takes three arguments, fields X and Z and a quoted string Y, and returns a multivalued result. The value of Y and the values of the field Z are appended to the values of field X. The fields X and Z can be either multi or single valued fields. 
-| <code>... &#124; eval fullName=mvappend(lastName,", ",firstName)</code>
-|-
-| <code>mvcount(X)</code>
-| This function takes an field X and returns the number of values of that field if the field is multivalued, 1 if the field is single valued, and NULL otherwise.
-| <code>... &#124; eval n=mvcount(multifield)</code>
-|-
-| <code>mvfilter(X)</code> 
-| This function filters a multi-valued field based on an arbitrary Boolean expression X. The Boolean expression X can reference ONLY ONE field at a time. 
-
-'''Note:'''This function will return NULL values of the field <code>x</code> as well. If you don't want the NULL values, use the expression: <code>mvfilter(x!=NULL)</code>.
-| This example returns all values of the field email that end in .net or .org:
-
-<code>... &#124; eval n=mvfilter(match(email, "\.net$") OR match(email, "\.org$"))</code>
-|-
-| <code>mvfind(X,"Y")</code>
-| Appears in 4.2.2. This function tries to find a value in multivalued field X that matches the regular expression Y. If a match exists, the index of the first matching value is returned (beginning with zero). If no values match, NULL is returned.
-| <code>... &#124; eval n=mvfind(mymvfield, "err\d+")</code>
-|-
-| <code>mvindex(X,Y,Z)</code>
-| This function takes two or three arguments, field X and numbers Y and Z, and returns a subset of the multivalued field using the indexes provided.
-
-For <code>mvindex(mvfield, startindex, [endindex])</code>, endindex is inclusive and optional; both startindex and endindex can be negative, where -1 is the last element. If endindex is not specified, it returns just the value at startindex. If the indexes are out of range or invalid, the result is NULL. 
-| Since indexes start at zero, this example returns the third value in "multifield", if it exists:
-
-<code>... &#124; eval n=mvindex(multifield, 2)</code>
-|-
-| <code>mvjoin(X,Y)</code>
-| This function takes two arguments, multi-valued field X and string delimiter Y, and joins the individual values of X using Y.  
-| This example joins together the individual values of "foo" using a semicolon as the delimiter:
-
-<code>... &#124; eval n=mvjoin(foo, ";")</code>
-|-
-| <code>mvrange(X,Y,Z)</code>
-| This function creates a multivalue field for a range of numbers. It takes up to three arguments: a starting number X, an ending number Y (exclusive), and an optional step increment Z. If the increment is a timespan (such as '7'd), the starting and ending numvers are treated as epoch times.
-| This example returns a multivalue field with the values 1, 3, 5, 7, 9.
-
-<code>... &#124; eval mv=mvrange(1,11,2)</code>
-|-
-| <code>mvzip(X,Y)</code>
-| This function takes two multivalue fields, X and Y, and combines them by stitching together the first value of X with the first value of field Y, then the second with the second, etc.  Similar to Python's zip command.
-| <code>... &#124; eval n=server=mvzip(hosts,ports)</code>
-|-
-| <code>now()</code>
-| This function takes no arguments and returns the time that the search was started. The time is represented in Unix time or seconds since epoch.
-| 
 |-
 | <code>null()</code> 
 | This function takes no arguments and returns NULL. The evaluation engine uses NULL to represent "no value"; setting a field to NULL clears its value.
@@ -227,6 +61,224 @@ For <code>mvindex(mvfield, startindex, [endindex])</code>, endindex is inclusive
 | This function takes two arguments, fields X and Y, and returns the X if the arguments are different. It returns NULL, otherwise.
 | <code>... &#124; eval n=nullif(fieldA,fieldB)</code>
 |-
+| valign=top|<code>match(SUBJECT, "REGEX")</code> 
+| valign=top|This function compares the regex string REGEX to the value of SUBJECT and returns a Boolean value. It returns true if the REGEX can find a match against any substring of SUBJECT.
+| This example returns true IF AND ONLY IF field matches the basic pattern of an IP address. Note that the example uses ^ and $ to perform a full match.
+
+<code>... &#124; eval n=if(match(field, "^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$"), 1, 0)</code>
+|-
+| valign=top|<code>searchmatch(X)</code>
+| valign=top|This function takes one argument X, which is a search string. The function returns true IF AND ONLY IF the event matches the search string. 
+| <code>... &#124; eval n=searchmatch("foo AND bar")</code>
+|-
+| valign=top|<code>validate(X,Y,...)</code>
+| valign=top|This function takes pairs of arguments, Boolean expressions X and strings Y. The function returns the string Y corresponding to the first expression X that evaluates to False and defaults to NULL if all are True. 
+| This example runs a simple check for valid ports:
+<code>... &#124; eval n=validate(isint(port), "ERROR: Port is not an integer", 
+port &gt;= 1 AND port &lt;= 65535, "ERROR: Port is out of range")</code>
+|}
+
+==Conversion functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%" 
+!Function
+!Description
+!Examples
+|-
+| valign=top|<code>tonumber(NUMSTR,BASE)</code>
+
+<code>tonumber(NUMSTR)</code>
+| This function converts the input string NUMSTR to a number, where BASE is optional and used to define the base of the number to convert to. BASE can be 2..36, and defaults to 10. If tonumber cannot parse a field value to a number, the function returns NULL.  If tonumber cannot parse a literal string to a number, it returns an error.
+| valign=top|This example returns "164":
+
+<code>... &#124; eval n=tonumber("0A4",16)</code>
+|-
+| valign=top|<code>tostring(X,Y)</code> 
+| valign=top|This function converts the input value to a string. If the input value is a number, it reformats it as a string. If the input value is a Boolean value, it returns the corresponding string value, "True" or "False".
+
+This function requires at least one argument X; if X is a number, the second argument Y is optional and can be <code>"hex"</code> <code>"commas"</code> or <code>"duration"</code>:
+* <code>tostring(X,"hex")</code> converts X to hexadecimal.
+* <code>tostring(X,"commas")</code> formats X with commas and, if the number includes decimals, rounds to nearest two decimal places.
+* <code>tostring(X,"duration")</code> converts seconds X to readable time format HH:MM:SS.
+| valign=top|This example returns "True 0xF 12,345.68":
+<code>... &#124; eval n=tostring(1&#61;&#61;1) + " " + tostring(15, "hex") + " " 
++ tostring(12345.6789, "commas")</code>
+
+This example returns <code>foo=615 and foo2=00:10:15</code>:
+
+<code>... &#124; eval foo=615 &#124; eval foo2 = tostring(foo, "duration")</code>
+
+This example formats the column totalSales to display values with a currency symbol and commas. You must use a period between the currency value and the <code>tostring</code> function.
+
+<code>...&#124; fieldformat totalSales="$".tostring(totalSales,"commas")</code>
+
+'''Note:''' When used with the <code>eval</code> command, the values might not sort as expected because the values are converted to ASCII. Use the <code>fieldformat</code> command with the <code>tostring</code> function to format the displayed values.  The underlying values are not changed with the <code>fieldformat</code> command.
+|}
+
+==Cryptographic functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Example(s)
+|-
+| <code>md5(X)</code> 
+| This function computes and returns the MD5 hash of a string value X. 
+| <code>... &#124; eval n=md5(field)</code>
+|-
+| <code>sha1(X)</code> 
+| This function computes and returns the secure hash of a string value X based on the FIPS compliant SHA-1 hash function. 
+| <code>... &#124; eval n=sha1(field)</code>
+|-
+| <code>sha256(X)</code> 
+| This function computes and returns the secure hash of a string value X based on the FIPS compliant SHA-256 hash function. 
+| <code>... &#124; eval n=sha256(field)</code>
+|-
+| <code>sha512(X)</code> 
+| This function computes and returns the secure hash of a string value X based on the FIPS compliant SHA-512 hash function. 
+| <code>... &#124; eval n=sha512(field)</code>
+|}
+==Date and Time functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Example(s)
+|-
+| valign=top|<code>now()</code>
+| This function takes no arguments and returns the time that the search was started. The time is represented in Unix time or in seconds since Epoch time.
+| 
+|-
+| valign=top|<code>relative_time(X,Y)</code>
+| This function takes an epochtime time, X, as the first argument and a relative time specifier, Y, as the second argument and returns the epochtime value of Y applied to X.
+| valign=top|<code>... &#124; eval n=relative_time(now(), "-1d@d")</code>
+|-
+| valign=top|<code>strftime(X,Y)</code>
+| valign=top|This function takes an epochtime value, X, as the first argument and renders it as a string using the format specified by Y.  For a list and descriptions of format options, refer to the topic [[Documentation:Splunk:SearchReference:Commontimeformatvariables|"Common time format variables"]].
+| This example returns the hour and minute from the _time field:
+
+<code>... &#124; eval n=strftime(_time, "%H:%M")</code>
+|-
+| valign=top|<code>strptime(X,Y)</code>
+| valign=top|This function takes a time represented by a string, X, and parses it into a timestamp using the format specified by Y.  For a list and descriptions of format options, refer to the topic [[Documentation:Splunk:SearchReference:Commontimeformatvariables|"Common time format variables"]].
+| If timeStr is in the form, "11:59", this returns it as a timestamp:
+
+<code>... &#124; eval n=strptime(timeStr, "%H:%M")</code>
+|-
+| valign=top|<code>time()</code>
+| This function returns the wall-clock time with microsecond resolution. The value of time() will be different for each event based on when that event was processed by the <code>eval</code> command.
+|
+|}
+
+==Informational functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Example(s)
+|-
+| valign=top|<code>isbool(X)</code>
+| valign=top|This function takes one argument X and returns TRUE if X is Boolean.
+| <code>... &#124; eval n=if(isbool(field),"yes","no")</code>
+
+or
+
+<code>... &#124; where isbool(field)</code>
+|-
+| valign=top|<code>isint(X)</code>
+| valign=top|This function takes one argument X and returns TRUE if X is an integer.
+| <code>... &#124; eval n=if(isint(field), "int", "not int")</code>
+
+or
+
+<code>... &#124; where isint(field)</code>
+|-
+| valign=top|<code>isnotnull(X)</code> 
+| valign=top|This function takes one argument X and returns TRUE if X is not NULL. This is a useful check for whether or not a field (X) contains a value.
+| <code>... &#124; eval n=if(isnotnull(field),"yes","no")</code>
+
+or
+
+<code>... &#124;  where isnotnull(field)</code>
+|-
+| valign=top|<code>isnull(X)</code> 
+| valign=top|This function takes one argument X and returns TRUE if X is NULL. 
+| <code>... &#124; eval n=if(isnull(field),"yes","no")</code>
+
+or
+
+<code>... &#124; where isnull(field)</code>
+|-
+| valign=top|<code>isnum(X)</code>
+| valign=top|This function takes one argument X and returns TRUE if X is a number. 
+| <code>... &#124; eval n=if(isnum(field),"yes","no")</code>
+
+or
+
+<code>... &#124; where isnum(field)</code>
+|-
+| valign=top|<code>isstr(X)</code>
+| valign=top|This function takes one argument X and returns TRUE if X is a string. 
+| <code>... &#124; eval n=if(isstr(field),"yes","no")</code>
+
+or
+
+<code>... &#124; where isstr(field)</code>
+|-
+| valign=top|<code>typeof(X)</code>
+| valign=top|This function takes one argument and returns a string representation of its type.
+| This example returns "NumberStringBoolInvalid":
+
+<code>... &#124; eval n=typeof(12) + typeof("string") + typeof(1&#61;&#61;2) + typeof(badfield)</code>
+|}
+
+==Mathematical functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Examples
+|-
+| <code>abs(X)</code>
+| This function takes a number X and returns its absolute value.
+| This example returns the absnum, whose values are the absolute values of the numeric field <code>number</code>: 
+
+<code>... &#124; eval absnum=abs(number)</code>
+|-
+| <code>ceil(X), ceiling(X)</code>
+| This function rounds a number X up to the next highest integer.
+| This example returns n=2:
+
+<code>... &#124; eval n=ceil(1.9)</code>
+|-
+| <code>exact(X)</code> 
+| This function renders the result of a numeric eval calculation with a larger amount of precision in the formatted output.  
+| <code>... &#124; eval n=exact(3.14 * num)</code>
+|-
+| <code>exp(X)</code>
+| This function takes a number X and returns the exponential function <code>e<sup>X</sup></code>.
+| The following example returns y=e<sup>3</sup>: 
+
+<code>... &#124; eval y=exp(3)</code>
+|- 
+| <code>floor(X)</code>
+| This function rounds a number X down to the nearest whole integer.
+| This example returns 1: 
+
+<code>... &#124; eval n=floor(1.9)</code>
+|-
+| <code>ln(X)</code>
+| This function takes a number X and returns its natural log. 
+| This example returns the natural log of the values of bytes:
+
+<code>... &#124; eval lnBytes=ln(bytes)</code>
+|-
+| <code>log(X,Y)</code>
+
+<code>log(X)</code>
+| This function takes either one or two numeric arguments and returns the log of the first argument X using the second argument Y as the base. If the second argument Y is omitted, this function evaluates the log of number X with base 10.
+| <code>... &#124; eval num=log(number,2)</code>
+|-
 | <code>pi()</code>
 | This function takes no arguments and returns the constant pi to 11 digits of precision.
 | <code>... &#124; eval area_circle=pi()*pow(radius,2)</code>
@@ -234,20 +286,6 @@ For <code>mvindex(mvfield, startindex, [endindex])</code>, endindex is inclusive
 | <code>pow(X,Y)</code>
 | This function takes two numeric arguments X and Y and returns X<sup>Y</sup>.
 | <code>... &#124; eval area_circle=pi()*pow(radius,2)</code>
-|-
-|<code>random()</code>
-| This function takes no arguments and returns a pseudo-random number ranging from zero to 2<sup>31</sup>-1, for example: 0&hellip;2147483647
-|
-|-
-| <code>relative_time(X,Y)</code>
-| This function takes an epochtime time, X, as the first argument and a relative time specifier, Y, as the second argument and returns the epochtime value of Y applied to X.
-| <code>... &#124; eval n=relative_time(now(), "-1d@d")</code>
-|-
-| <code>replace(X,Y,Z)</code> 
-| This function returns a string formed by substituting string Z for every occurrence of regex string Y in string X. The third argument Z can also reference groups that are matched in the regex. 
-| This example returns date with the month and day numbers switched, so if the input was 1/12/2009 the return value would be 12/1/2009:
-
-<code>... &#124; eval n=replace(date, "^(\d{1,2})/(\d{1,2})/", "\2/\1/")</code>
 |-
 | <code>round(X,Y)</code>
 | This function takes one or two numeric arguments X and Y, returning X rounded to the amount of decimal places specified by Y. The default is to round to an integer.
@@ -259,16 +297,6 @@ This example returns n=2.56:
 
 <code>... &#124; eval n=round(2.555, 2)</code>
 |-
-| <code>rtrim(X,Y)</code>
-| This function takes one or two string arguments X and Y and returns X with the characters in Y trimmed from the right side. If Y is not specified, spaces and tabs are trimmed.
-| This example returns n="ZZZZabc":
-
-<code>... &#124; eval n=rtrim("   ZZZZabcZZ ", " Z")</code>
-|-
-| <code>searchmatch(X)</code>
-| This function takes one argument X, which is a search string. The function returns true IF AND ONLY IF the event matches the search string.
-| <code>... &#124; eval n=searchmatch("foo AND bar")</code>
-|-
 | <code>sigfig(X)</code>
 | This function takes one argument X, a number, and rounds that number to the appropriate number of significant figures.
 | <code>1.00*1111 = 1111</code>, but 
@@ -277,35 +305,158 @@ This example returns n=2.56:
 
 returns n=1110.
 |-
+| <code>sqrt(X)</code>
+| This function takes one numeric argument X and returns its square root.
+| This example returns 3:
+
+<code>... &#124; eval n=sqrt(9)</code>
+
+|}
+
+==Multivalue functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Example(s)
+|-
+| <code>commands(X)</code>
+| This function takes a search string, or field that contains a search string, X and returns a multivalued field containing a list of the commands used in X. (This is generally not recommended for use except for analysis of audit.log events.)
+| <code>... &#124; eval x=commands("search foo  &#124; stats count  &#124; sort count")</code> 
+
+returns a multivalued field X, that contains 'search', 'stats', and 'sort'.
+|-
+| <code>mvappend(X,...)</code>
+| This function takes an arbitrary number of arguments and returns a multivalue result of all the values. The arguments can be strings, multivalue fields or single value fields.  
+| <code>... &#124; eval fullName=mvappend(initial_values, "middle value", last_values)</code>
+|-
+| <code>mvcount(MVFIELD)</code>
+| This function takes a field MVFIELD. The function returns the number of values if it is a multivalue, 1 if it is a single value field, and NULL otherwise.
+| <code>... &#124; eval n=mvcount(multifield)</code>
+|-
+| <code>mvdedup(X)</code>
+| This function takes a multivalue field X and returns a multivalue field with its duplicate values removed.
+| <code>... &#124; eval s=mvdedup(mvfield)</code>
+|-
+| <code>mvfilter(X)</code>
+| This function filters a multivalue field based on an arbitrary Boolean expression X. The Boolean expression X can reference ONLY ONE field at a time. 
+
+'''Note:'''This function will return NULL values of the field <code>x</code> as well. If you don't want the NULL values, use the expression: <code>mvfilter(x!=NULL)</code>.
+| This example returns all of the values in field email that end in .net or .org:
+
+<code>... &#124; eval n=mvfilter(match(email, "\.net$") OR match(email, "\.org$"))</code>
+|-
+| <code>mvfind(MVFIELD,"REGEX")</code>
+| This function tries to find a value in multivalue field X that matches the regular expression REGEX. If a match exists, the index of the first matching value is returned (beginning with zero). If no values match, NULL is returned.
+| <code>... &#124; eval n=mvfind(mymvfield, "err\d+")</code>
+|-
+| <code>mvindex(MVFIELD,STARTINDEX, ENDINDEX)</code>
+
+<code>mvindex(MVFIELD,STARTINDEX)</code>
+| This function takes two or three arguments, field MVFIELD and numbers STARTINDEX and ENDINDEX, and returns a subset of the multivalue field using the indexes provided.
+
+For <code>mvindex(mvfield, startindex, [endindex])</code>, endindex is inclusive and optional. Both startindex and endindex can be negative, where -1 is the last element. If endindex is not specified, it returns only the value at startindex. If the indexes are out of range or invalid, the result is NULL. 
+| Since indexes start at zero, this example returns the third value in "multifield", if it exists:
+
+<code>... &#124; eval n=mvindex(multifield, 2)</code>
+|-
+| <code>mvjoin(MVFIELD,STR)</code>
+| This function takes two arguments, multivalue field MVFIELD and string delimiter STR. The function concatenates the individual values of MVFIELD with copies of STR in between as separators.  
+| This example joins together the individual values of "foo" using a semicolon as the delimiter:
+
+<code>... &#124; eval n=mvjoin(foo, ";")</code>
+|-
+| <code>mvrange(X,Y,Z)</code>
+| This function creates a multivalue field for a range of numbers. This function can contain up to three arguments: a starting number X, an ending number Y (exclusive), and an optional step increment Z. If the increment is a timespan such as '7'd, the starting and ending numbers are treated as epoch times.
+| This example returns a multivalue field with the values 1, 3, 5, 7, 9.
+
+<code>... &#124; eval mv=mvrange(1,11,2)</code>
+|-
+| <code>mvsort(X)</code>
+| This function uses a multivalue field X and returns a multivalue field with the values sorted lexicographically.
+| <code>... &#124; eval s=mvsort(mvfield)</code>
+|-
+| <code>mvzip(X,Y,"Z")</code>
+| This function takes two multivalue fields, X and Y, and combines them by stitching together the first value of X with the first value of field Y, then the second with the second, and so on.  The third argument, Z, is optional and is used to specify a delimiting character to join the two values. The default delimiter is a comma. This is similar to Python's zip command.
+| <code>... &#124; eval nserver=mvzip(hosts,ports)</code>
+|}
+
+==Statistical functions==
+In addition to these functions, a comprehensive set of [[Documentation:Splunk:SearchReference:CommonStatsFunctions|statistical functions]] is available to use with the stats, chart, and related commands.
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Example(s)
+|-
+| <code>max(X,...)</code>
+| This function takes an arbitrary number of numeric or string arguments, and returns the max; strings are greater than numbers.
+| This example returns either "foo" or field, depending on the value of field:
+
+<code>... &#124; eval n=max(1, 3, 6, 7, "foo", field)</code>
+|-
+| <code>min(X,...)</code>
+| This function takes an arbitrary number of numeric or string arguments, and returns the min; strings are greater than numbers.
+| This example returns either 1 or field, depending on the value of field:
+
+<code>... &#124; eval n=min(1, 3, 6, 7, "foo", field)</code>
+|-
+|<code>random()</code>
+| This function takes no arguments and returns a pseudo-random integer ranging from zero to 2<sup>31</sup>-1, for example: 0&hellip;2147483647
+|
+|}
+
+==Text functions==
+
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!Function
+!Description
+!Examples
+|-
+| <code>len(X)</code>
+| This function returns the character length of a string X.
+| <code>... &#124; eval n=len(field)</code>
+|-
+| <code>lower(X)</code>
+| This function takes one string argument and returns the lowercase version. The upper() function also exists for returning the uppercase version.
+| This example returns the value provided by the field username in lowercase.
+
+<code>... &#124; eval username=lower(username)</code>
+|-
+| <code>ltrim(X,Y)</code>
+
+<code>ltrim(X)</code>
+| This function takes one or two arguments X and Y and returns X with the characters in Y trimmed from the left side. If Y is not specified, spaces and tabs are removed.
+| This example returns x="abcZZ":
+
+<code>... &#124; eval x=ltrim("   ZZZZabcZZ ", " Z")</code> 
+|-
+| <code>replace(X,Y,Z)</code> 
+| This function returns a string formed by substituting string Z for every occurrence of regex string Y in string X. The third argument Z can also reference groups that are matched in the regex. 
+| This example returns date with the month and day numbers switched, so if the input was 1/14/2015 the return value would be 14/1/2015:
+
+<code>... &#124; eval n=replace(date, "^(\d{1,2})/(\d{1,2})/", "\2/\1/")</code>
+|-
+| <code>rtrim(X,Y)</code>
+
+<code>rtrim(X)</code>
+| This function takes one or two arguments X and Y and returns X with the characters in Y trimmed from the right side. If Y is not specified, spaces and tabs are removed.
+| This example returns n="ZZZZabc":
+
+<code>... &#124; eval n=rtrim("   ZZZZabcZZ ", " Z")</code>
+|-
 |<code>spath(X,Y)</code>
 | This function takes two arguments: an input source field X and an spath expression Y, that is the XML or JSON formatted location path to the value that you want to extract from X. If Y is a literal string, it needs quotes, <code>spath(X,"Y")</code>. If Y is a field name (with values that are the location paths), it doesn't need quotes. This may result in a multivalued field. Read more about the <code>[[Documentation:Splunk:SearchReference:Spath|spath]]</code> search command.
 | This example returns the values of locDesc elements: 
 <code>... &#124; eval locDesc=spath(_raw, "vendorProductSet.product.desc.locDesc")</code>
 
 This example returns the hashtags from a twitter event:
-<code>index=twitter | eval output=spath(_raw, "entities.hashtags")</code>
+
+<code>index=twitter &#124; eval output=spath(_raw, "entities.hashtags")</code>
 |-
 |<code>split(X,"Y")</code>
-| This function takes two arguments, field X and delimiting character Y. It splits the value(s) of X on the delimiter Y and returns X as a multi-valued field.
+| This function takes two arguments, field X and delimiting character Y. It splits the value(s) of X on the delimiter Y and returns X as a multivalue field.
 | <code>... &#124; eval n=split(foo, ";")</code>
-|-
-| <code>sqrt(X)</code>
-| This function takes one numeric argument X and returns its square root.
-| This example returns 3:
-
-<code>... &#124; eval n=sqrt(9)</code>
-|-
-| <code>strftime(X,Y)</code>
-| This function takes an epochtime value, X, as the first argument and renders it as a string using the format specified by Y.  For a list and descriptions of format options, refer to the topic [[Documentation:Splunk:SearchReference:Commontimeformatvariables|"Common time format variables"]].
-| This example returns the hour and minute from the _time field:
-
-<code>... &#124; eval n=strftime(_time, "%H:%M")</code>
-|-
-| <code>strptime(X,Y)</code>
-| This function takes a time represented by a string, X, and parses it into a timestamp using the format specified by Y.  For a list and descriptions of format options, refer to the topic [[Documentation:Splunk:SearchReference:Commontimeformatvariables|"Common time format variables"]].
-| If timeStr is in the form, "11:59", this returns it as a timestamp:
-
-<code>... &#124; eval n=strptime(timeStr, "%H:%M")</code>
 |-
 | <code>substr(X,Y,Z)</code>
 | This function takes either two or three arguments, where X is a string and Y and Z are numeric. It returns a substring of X, starting at the index specified by Y with the number of characters specified by Z. If Z is not given, it returns the rest of the string. 
@@ -315,41 +466,13 @@ The indexes follow SQLite semantics; they start at 1. Negative indexes can be us
 
 <code>... &#124; eval n=substr("string", 1, 3) + substr("string", -3)</code>
 |-
-| <code>time()</code>
-| This function returns the wall-clock time with microsecond resolution. The value of time() will be different for each event based on when that event was processed by the <code>eval</code> command.
-|
-|-
-| <code>tonumber("X",Y)</code>
-| This function converts the input string X to a number, where Y is optional and used to define the base of the number to convert to. Y can be 2..36, and defaults to 10. If it cannot parse the input to a number, the function returns NULL.
-| This example returns "164":
-
-<code>... &#124; eval n=tonumber("0A4",16)</code>
-|-
-| <code>tostring(X,Y)</code> 
-| This function converts the input value to a string. If the input value is a number, it reformats it as a string. If the input value is a Boolean value, it returns the corresponding string value, "True" or "False".
-
-This function requires at least one argument X; if X is a number, the second argument Y is optional and can be <code>"hex"</code> <code>"commas"</code> or <code>"duration"</code>:
-* <code>tostring(X,"hex")</code> converts X to hexadecimal.
-* <code>tostring(X,"commas")</code> formats X with commas and, if the number includes decimals, rounds to nearest two decimal places.
-* <code>tostring(X,"duration")</code> converts seconds X to readable time format HH:MM:SS.
-| This example returns "True 0xF 12,345.68":
-<code>... &#124; eval n=tostring(1&#61;&#61;1) + " " + tostring(15, "hex") + " " 
-+ tostring(12345.6789, "commas")</code>
-
-This example returns <code>foo=615 and foo2=00:10:15</code>:
-<code>... | eval foo=615 | eval foo2 = tostring(foo, "duration")</code>
-|-
 | <code>trim(X,Y)</code>
-| This function takes one or two string arguments X and Y and returns X with the characters in Y trimmed from both sides. If Y is not specified, spaces and tabs are trimmed.
+
+<code>trim(X)</code>
+| This function takes one or two arguments X and Y and returns X with the characters in Y trimmed from both sides. If Y is not specified, spaces and tabs are removed.
 | This example returns "abc":
 
 <code>... &#124; eval n=trim("   ZZZZabcZZ ", " Z")</code>
-|-
-| <code>typeof(X)</code>
-| This function takes one argument and returns a string representation of its type.
-| This example returns "NumberStringBoolInvalid":
-
-<code>... &#124; eval n=typeof(12) + typeof("string") + typeof(1&#61;&#61;2) + typeof(badfield)</code>
 |-
 | <code>upper(X)</code>
 | This function takes one string argument and returns the uppercase version. The lower() function also exists for returning the lowercase version.
@@ -361,14 +484,91 @@ This example returns <code>foo=615 and foo2=00:10:15</code>:
 | This function takes one URL string argument X and returns the unescaped or decoded URL string. 
 | This example returns "<nowiki>http://www.splunk.com/download?r=header</nowiki>":
 
-<code>... &#124; eval n=urldecode("http%3A%2F%2Fwww.splunk.com%2Fdownload%3Fr%3Dheader")</code>
-|-
-| <code>validate(X,Y,...)</code>
-| This function takes pairs of arguments, Boolean expressions X and strings Y. The function returns the string Y corresponding to the first expression X that evaluates to False and defaults to NULL if all are True. 
-| This example runs a simple check for valid ports:
-<code>... &#124; eval n=validate(isint(port), "ERROR: Port is not an integer", 
-port >= 1 AND port <= 65535, "ERROR: Port is out of range")</code>
+<code>... &#124; eval n=urldecode("http%3A%2F%2Fwww.splunk.com
+%2Fdownload%3Fr%3Dheader")</code>
+
 |}
 
+==Trigonometry and Hyperbolic functions==
 
-[[Category:V:Splunk:5.0beta]][[Category:V:Splunk:5.0]][[Category:V:Splunk:6.0beta]][[Category:V:Splunk:6.0]][[Category:V:Splunk:5.0.1]][[Category:V:Splunk:5.0.2]][[Category:V:Splunk:5.0.3]][[Category:V:Splunk:5.0.4]][[Category:V:Splunk:5.0.5]][[Category:V:Splunk:6.0.1]]
+{| cellpadding="5" cellspacing="0" border="1" width="100%"
+!|Function
+!Description
+!Examples
+|-
+| <code>acos(X)</code>
+| This function computes the arc cosine of X, in the interval [0,pi] radians. 
+| <code>... &#124; eval n=acos(0)</code>
+
+<code>... &#124; eval degrees=acos(0)*180/pi()</code>
+|-
+| <code>acosh(X)</code>
+| This function computes the arc hyperbolic cosine of X, in radians.
+| <code>... &#124; eval n=acosh(2)</code>
+|-
+| <code>asin(X)</code>
+| This function computes the arc sine of X, in the interval [-pi/2,+pi/2] radians. 
+| <code>... &#124;  eval n=asin(1)</code>
+
+<code>... &#124;  eval degrees=asin(1)*180/pi()</code>
+|-
+| <code>asinh(X)</code>
+| This function computes the arc hyperbolic sine of X, in radians.
+| <code>... &#124;  eval n=asinh(1)</code>
+|-
+| <code>atan(X)</code>
+| This function computes the arc tangent of X, in the interval [-pi/2,+pi/2] radians.
+| <code>... &#124; eval n=atan(0.50)</code>
+|-
+| <code>atan2(Y, X)</code>
+| This function computes the arc tangent of Y, X in the interval [-pi,+pi] radians. Y is a value that represents the proportion of the y-coordinate.  X is the value that represents the proportion of the x-coordinate.
+
+To compute the value, the function takes into account the sign of both arguments to determine the quadrant.
+| <code>.. &#124; eval n=atan2(0.50, 0.75)</code>
+|-
+| <code>atanh(X)</code>
+| This function computes the arc hyperbolic tangent of X, in radians.
+| <code>... &#124; eval n=atanh(0.500)</code>
+|-
+| <code>cos(X)</code>
+| This function computes the cosine of an angle of X radians.
+| <code>... &#124; eval n=cos(-1)</code>
+
+<code>... &#124; eval n=cos(pi())</code>
+|-
+| <code>cosh(X)</code>
+| This function hyperbolic cosine of X radians. 
+| <code>... &#124; eval n=cosh(1)</code>
+|-
+| <code>hypot(X,Y)</code>
+| This function computes the hypotenuse of a right-angled triangle whose legs are X and Y. 
+The function returns the square root of the sum of the squares of X and Y, as described in the Pythagorean theorem.
+| <code>... &#124; eval n=hypot(3,4)</code>
+|-
+| <code>sin(X)</code>
+| This function computes the sine.
+| <code>... &#124; eval n=sin(1)</code>
+
+<code>... &#124; eval n=sin(90 * pi()/180)</code>
+|-
+| <code>sinh(X)</code>
+| This function computes the hyperbolic sine.
+| <code>... &#124; eval n=sinh(1)</code>
+|-
+| <code>tan(X)</code>
+| This function computes the tangent.
+| <code>... &#124; eval n=tan(1)</code>
+|-
+| <code>tanh(X)</code>
+| This function computes the hyperbolic tangent.
+| <code>... &#124; eval n=tanh(1)</code>
+|}
+
+== See also ==
+[[Documentation:Splunk:SearchReference:CommonStatsFunctions|Statistical and charting functions]], [[Documentation:Splunk:SearchReference:Eval|eval]],  [[Documentation:Splunk:SearchReference:Fieldformat|fieldformat]],  [[Documentation:Splunk:SearchReference:Where|where]]
+
+== Splunk Answers ==
+Have questions? Visit [http://splunk-base.splunk.com Splunk Answers] and search for a specific function or command. 
+
+
+[[Category:V:Splunk:6.3.0]][[Category:V:Splunk:6.3.1511]][[Category:V:Splunk:Galaxy]][[Category:V:Splunk:6.3.1]]
