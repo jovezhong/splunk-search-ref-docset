@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html lang="en" dir="ltr" class="client-nojs no-js">  <!--<![endif]-->
 <head>
 <meta charset="UTF-8" />
-<title> typeahead  - Splunk Knowledgebase</title>
+<title> bin  - Splunk Knowledgebase</title>
 <meta name="generator" content="MediaWiki 1.24.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Splunk Knowledgebase (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://docs.splunk.com/api.php?action=rsd" />
-<link rel="alternate" hreflang="x-default" href="/Documentation:Splunk:SearchReference:Typeahead:5.0beta" />
+<link rel="alternate" hreflang="x-default" href="/Documentation:Splunk:SearchReference:Bin:5.0.3" />
 <link rel="alternate" type="application/rss+xml" title="Splunk Knowledgebase RSS feed" href="/index.php?title=Special:RecentChanges&amp;feed=rss" />
 <link rel="alternate" type="application/atom+xml" title="Splunk Knowledgebase Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
 <link rel="stylesheet" href="http://docs.splunk.com/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.oxfordcomma.css&amp;only=styles&amp;skin=oxfordcomma&amp;*" />
@@ -21,7 +21,7 @@
 /* cache key: ponydocs:resourceloader:filter:minify-css:7:b6f100ebd268d526a6357c8a077890c6 */</style>
 <script src="http://docs.splunk.com/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=oxfordcomma&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"Documentation","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Documentation:Splunk:SearchReference:Typeahead:5.0beta","wgTitle":"Splunk:SearchReference:Typeahead:5.0beta","wgCurRevisionId":470439,"wgRevisionId":470439,"wgArticleId":117470,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Typeahead","Assist","Reference","V:Splunk:5.0beta","V:Splunk:5.0","V:Splunk:6.0beta","V:Splunk:6.0","V:Splunk:5.0.1","V:Splunk:5.0.2","V:Splunk:5.0.3","V:Splunk:5.0.4","V:Splunk:5.0.5","V:Splunk:6.0.1","V:Splunk:5.0.6","V:Splunk:6.1beta","V:Splunk:5.0.7","V:Splunk:6.0.2","V:Splunk:6.1","V:Splunk:5.0.8","V:Splunk:6.0.3","V:Splunk:6.0.4","V:Splunk:6.2beta","V:Splunk:6.1.1","V:Splunk:6.0.5","V:Splunk:5.0.9","V:Splunk:6.1.2","V:Splunk:6.1.3","V:Splunk:6.2.0","V:Splunk:6.3.0beta","V:Splunk:6.0.6","V:Splunk:6.1.4","V:Splunk:5.0.10","V:Splunk:6.1.5","V:Splunk:6.2.1","V:Splunk:6.0.7","V:Splunk:5.0.11","V:Splunk:6.1.6","V:Splunk:6.2.2","V:Splunk:5.0.12","V:Splunk:6.0.8","V:Splunk:6.1.7","V:Splunk:6.2.3","V:Splunk:6.3.0","V:Splunk:6.3.1511","V:Splunk:6.2.4","V:Splunk:5.0.13","V:Splunk:6.0.9","V:Splunk:6.1.8","V:Splunk:6.1.9","V:Splunk:6.2.5","V:Splunk:Galaxy","V:Splunk:5.0.14","V:Splunk:6.0.10","V:Splunk:6.2.6","V:Splunk:6.2.7","V:Splunk:6.3.1"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Documentation:Splunk:SearchReference:Typeahead:5.0beta","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"Documentation","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Documentation:Splunk:SearchReference:Bin:5.0.3","wgTitle":"Splunk:SearchReference:Bin:5.0.3","wgCurRevisionId":469222,"wgRevisionId":469222,"wgArticleId":118324,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Bucket","Assist","Reference","V:Splunk:4.3beta","V:Splunk:4.3","V:Splunk:5.0beta","V:Splunk:4.3.1","V:Splunk:4.3.2","V:Splunk:5.0","V:Splunk:6.0beta","V:Splunk:6.0","V:Splunk:4.3.3","V:Splunk:4.3.4","V:Splunk:4.3.5","V:Splunk:5.0.1","V:Splunk:5.0.2","V:Splunk:4.3.6","V:Splunk:5.0.3","V:Splunk:5.0.4","V:Splunk:5.0.5","V:Splunk:6.0.1","V:Splunk:4.3.7","V:Splunk:5.0.6","V:Splunk:6.1beta","V:Splunk:5.0.7","V:Splunk:6.0.2","V:Splunk:6.1","V:Splunk:5.0.8","V:Splunk:6.0.3","V:Splunk:6.0.4","V:Splunk:6.2beta","V:Splunk:6.1.1","V:Splunk:6.0.5","V:Splunk:5.0.9","V:Splunk:6.1.2","V:Splunk:6.1.3","V:Splunk:6.2.0","V:Splunk:6.3.0beta","V:Splunk:6.0.6","V:Splunk:6.1.4","V:Splunk:5.0.10","V:Splunk:6.1.5","V:Splunk:6.2.1","V:Splunk:6.0.7","V:Splunk:5.0.11","V:Splunk:6.1.6","V:Splunk:6.2.2","V:Splunk:5.0.12","V:Splunk:6.0.8","V:Splunk:6.1.7","V:Splunk:6.2.3","V:Splunk:6.3.0","V:Splunk:6.3.1511","V:Splunk:6.2.4","V:Splunk:5.0.13","V:Splunk:6.0.9","V:Splunk:6.1.8","V:Splunk:6.1.9","V:Splunk:6.2.5","V:Splunk:Galaxy","V:Splunk:5.0.14","V:Splunk:6.0.10","V:Splunk:6.2.6","V:Splunk:6.2.7","V:Splunk:6.3.1"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Documentation:Splunk:SearchReference:Bin:5.0.3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"oxfordcomma","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":false,"watchdefault":false,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,
 "watchrollback":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"showjumplinks":1,"showtoc":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs110":false,"searchNs120":false,"searchNs130":false,"searchNs140":false,"searchNs150":false,"searchNs160":false,"searchNs170":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{});
@@ -39,7 +39,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 <![endif]-->
 
 </head>
-<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Documentation_Splunk_SearchReference_Typeahead_5_0beta skin-oxfordcomma action-view">
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Documentation_Splunk_SearchReference_Bin_5_0_3 skin-oxfordcomma action-view">
 <!--googleoff: index--><!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -340,8 +340,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<span class="caret"></span></a>
 						<ul class="dropdown-menu account" role="menu">
-															<li id="loginId"><a href="https://login.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Typeahead">Login</a></li>
-								<li id="signId" ><a href="http://www.splunk.com/index.php/sign_up?redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Typeahead">Sign Up</a></li>
+															<li id="loginId"><a href="https://login.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Bin">Login</a></li>
+								<li id="signId" ><a href="http://www.splunk.com/index.php/sign_up?redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Bin">Sign Up</a></li>
 														</ul>
 					</li>
 					
@@ -363,7 +363,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 				<div class="super-title">
 					Splunk<sup>&reg;</sup> Enterprise				</div>
 				<h1>Search Reference</h1>
-				<a class="download" href="/index.php?title=Documentation:Splunk:SearchReference:Typeahead:5.0beta&amp;action=pdfbook">
+				<a class="download" href="/index.php?title=Documentation:Splunk:SearchReference:Bin:5.0.3&amp;action=pdfbook">
 					<img src="/skins/OxfordComma/images/acrobat-logo.png" />
 					Download manual as PDF
 				</a>
@@ -602,7 +602,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 								<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
 									 autoregress 								</a>
 							</li>
-														<li >
+														<li class="selected">
 								<a href="/Documentation/Splunk/latest/SearchReference/Bin">
 									 bin 								</a>
 							</li>
@@ -1050,7 +1050,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 								<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
 									 tstats 								</a>
 							</li>
-														<li class="selected">
+														<li >
 								<a href="/Documentation/Splunk/latest/SearchReference/Typeahead">
 									 typeahead 								</a>
 							</li>
@@ -1218,8 +1218,8 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 				Search Reference			</a>
 		</li>
 				<li>
-			<a href="/Documentation/Splunk/latest/SearchReference/Typeahead" class="active">
-				 typeahead 			</a>
+			<a href="/Documentation/Splunk/latest/SearchReference/Bin" class="active">
+				 bin 			</a>
 		</li>
 		</ol>							</div>
 						</div>
@@ -1445,7 +1445,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 										<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
 											 autoregress 										</a>
 									</li>
-																		<li >
+																		<li class="selected">
 										<a href="/Documentation/Splunk/latest/SearchReference/Bin">
 											 bin 										</a>
 									</li>
@@ -1893,7 +1893,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 										<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
 											 tstats 										</a>
 									</li>
-																		<li class="selected">
+																		<li >
 										<a href="/Documentation/Splunk/latest/SearchReference/Typeahead">
 											 typeahead 										</a>
 									</li>
@@ -2024,74 +2024,136 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 				<div class="row">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<!--googleon: index--><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1><span class="mw-headline" id="typeahead">typeahead</span></h1>
+							<!--googleon: index--><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1><span class="mw-headline" id="bin">bin</span></h1>
+<p>The <code>bucket</code> command is an alias for the <code>bin</code> command.
+</p>
 <h2><span class="mw-headline" id="Description">Description</span></h2>
-<p>Returns typeahead information for the a specified prefix. The maximum number of results returned is based on value you specify for the <code> count</code> argument. The <code>typeahead</code> command can be targeted to an index and restricted by time.
+<p>Puts continuous numerical values into discrete sets, or bins, by adjusting the value of <i>field</i> so that all of the items in a particular set have the same value. 
+</p><p><b>Note:</b> The bin command is automatically called by the <code>chart</code> and the <code>timechart</code> commands. Use the <code>bin</code> command for only statistical operations that the <code>chart</code> and the <code>timechart</code> commands cannot process.
 </p>
 <h2><span class="mw-headline" id="Syntax">Syntax</span></h2>
-<p>| typeahead prefix=&lt;string&gt; count=&lt;int&gt; [max_time=&lt;int&gt;] [&lt;index-specifier&gt;] [&lt;starttimeu&gt;] [&lt;endtimeu&gt;] [collapse]
+<p>bin [&lt;bins-options&gt;...] &lt;field&gt; [AS &lt;newfield&gt;]
 </p>
 <h3><span class="mw-headline" id="Required_arguments">Required arguments</span></h3>
-<dl><dt> prefix</dt>
-<dd> <b>Syntax:</b> prefix=&lt;string&gt;</dd>
-<dd> <b>Description:</b> The full search string to return <code>typeahead</code> information.</dd></dl>
-<dl><dt> count</dt>
-<dd> <b>Syntax:</b> count=&lt;int&gt;</dd>
-<dd> <b>Description:</b> The maximum number of results to return.</dd></dl>
+<dl><dt> field</dt>
+<dd> <b>Syntax:</b> &lt;<i>field</i>&gt;</dd>
+<dd> <b>Description:</b> Specify a field name.</dd></dl>
 <h3><span class="mw-headline" id="Optional_arguments">Optional arguments</span></h3>
-<dl><dt> index-specifier</dt>
-<dd> <b>Syntax:</b> index=&lt;string&gt;</dd>
-<dd> <b>Description:</b> Search the specified index instead of the default index.</dd></dl>
-<dl><dt> max_time</dt>
-<dd> <b>Syntax:</b> max_time=&lt;int&gt;</dd>
-<dd> <b>Description:</b> The maximum time in seconds that the <code>typeahead</code> can run. If <code>max_time=0</code>, there is no limit.</dd></dl>
-<dl><dt> startimeu</dt>
-<dd> <b>Syntax:</b> starttimeu=&lt;int&gt;</dd>
-<dd> <b>Description:</b> Set the start time to N seconds since the epoch, measured in Unix time. </dd>
-<dd> <b>Default</b>: 0</dd>
-<dt> endtimeu</dt>
-<dd> <b>Syntax:</b> endtimeu=&lt;int&gt;</dd>
-<dd> <b>Description:</b> Set the end time to N seconds since the epoch, measured in Unix time. </dd>
-<dd> <b>Default</b>: now</dd></dl>
-<dl><dt> collapse</dt>
-<dd> <b>Syntax:</b> collapse=&lt;bool&gt;</dd>
-<dd> <b>Description:</b> Specify whether to collapse a term that is a prefix of another term when the event count is the same. </dd>
-<dd> <b>Default</b>: true</dd></dl>
-<h3><span class="mw-headline" id="Typeahead_and_sourcetype_renaming">Typeahead and sourcetype renaming</span></h3>
-<p>After renaming the <code>sourcetype</code> in the <code>props.conf</code> file, it takes about 5 minutes (the exact time might slightly depend on the performance of the server) to clear up the cache data. The <code>typeahead</code> search during the time still returns the cached sourcetype data. This is expected behavior.
-</p><p>To remove the cached data, run the following command in a terminal:
-</p>
-<div class="samplecode">
-<pre>
-rm $SPLUNK_HOME/var/run/splunk/typeahead/*, then re-run the typeahead search.
-</pre></div>
-<p>When you re-run the <code>typeahead</code> search, you should see the renamed source types.
-</p><p>For more information, read <a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/Data/Renamesourcetypes">"Rename source types"</a> in the <i>Getting Data In</i> manual.
-</p>
-<h2><span class="mw-headline" id="Usage">Usage</span></h2>
-<p>The <code>typeahead</code> command is a <a href="/Splexicon:Generatingcommand" title="Splexicon:Generatingcommand">generating command</a> and should be the first command in the search. Generating commands use a leading pipe character.
-</p>
+<dl><dt> bins-option</dt>
+<dd> <b>Syntax:</b> bins | minspan | span | start-end</dd>
+<dd> <b>Description:</b> Discretization options. See the <a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/SearchReference/Bin#Bins_options">Bins options</a> section in this topic. </dd></dl>
+<dl><dt> newfield</dt>
+<dd> <b>Syntax:</b> &lt;string&gt;</dd>
+<dd> <b>Description:</b> A new name for the field.</dd></dl>
+<h3><span class="mw-headline" id="Bins_options">Bins options</span></h3>
+<dl><dt> bins</dt>
+<dd> <b>Syntax:</b> bins=&lt;int&gt;</dd>
+<dd> <b>Description:</b> Sets the maximum number of bins to discretize into.</dd></dl>
+<dl><dt> minspan</dt>
+<dd> <b>Syntax:</b> minspan=&lt;span-length&gt;</dd>
+<dd> <b>Description:</b> Specifies the smallest span granularity to use automatically inferring span from the data time range.</dd></dl>
+<dl><dt> span</dt>
+<dd> <b>Syntax:</b> span = &lt;log-span&gt; | &lt;span-length&gt;</dd>
+<dd> <b>Description:</b> Sets the size of each bin, using a span length based on time or log-based span.</dd></dl>
+<dl><dt> &lt;start-end&gt;</dt>
+<dd> <b>Syntax:</b> start=&lt;num&gt; | end=&lt;num&gt; </dd>
+<dd> <b>Description:</b> Sets the minimum and maximum extents for numerical bins. The data in the field is analyzed and the beginning and ending values are determined.  The start and end arguments are used when a span value is not specified.</dd></dl>
+<dl><dd> You can use the start or end arguments only to <i>expand</i> the range, not to shorten the range.  For example, if the field represents seconds the values are from 0-59. If you specify a span of 10, then the bins are calculated in increments of 10. The bins are 0-9, 10-19, 20-29, and so forth.  If you do not specify a span, but specify end=1000, the bins are calculated based on the actual beginning value and 1000 as the end value.</dd></dl>
+<dl><dd> If you set end=10 and the values are &gt;10, the end argument has no effect.</dd></dl>
+<h3><span class="mw-headline" id="Span_options">Span options</span></h3>
+<dl><dt> log-span</dt>
+<dd> <b>Syntax:</b> [&lt;num&gt;]log[&lt;num&gt;]</dd>
+<dd> <b>Description:</b> Sets to log-based span. The first number is a coefficient. The second number is the base. If the first number is supplied, it must be a real number &gt;= 1.0 and &lt; base. Base, if supplied, must be real number &gt; 1.0 (strictly greater than 1). </dd>
+<dd> <b>Example:</b> span=2log10</dd></dl>
+<dl><dt> span-length</dt>
+<dd> <b>Syntax:</b> &lt;int&gt;[&lt;timescale&gt;]</dd>
+<dd> <b>Description:</b> A span of each bin. If discretizing based on the <code>_time</code> field or used with a timescale, this is treated as a time range. If not, this is an absolute bin length.</dd></dl>
+<dl><dd><dl><dt> &lt;timescale&gt;</dt>
+<dd> <b>Syntax:</b> &lt;sec&gt; | &lt;min&gt; | &lt;hr&gt; | &lt;day&gt; | &lt;month&gt; | &lt;subseconds&gt;</dd>
+<dd> <b>Description:</b> Time scale units. If discretizing based on the <code>_time</code> field.</dd>
+<dd> <b>Default:</b> sec</dd></dl></dd></dl>
+<table cellpadding="5" cellspacing="0" border="1">
+<tr>
+<th> Time scale
+</th>
+<th> Syntax
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td> &lt;sec&gt;
+</td>
+<td>  s | sec | secs | second | seconds
+</td>
+<td> Time scale in seconds.
+</td></tr>
+<tr>
+<td> &lt;min&gt;
+</td>
+<td>  m | min |  mins |  minute |  minutes
+</td>
+<td> Time scale in minutes.
+</td></tr>
+<tr>
+<td> &lt;hr&gt;
+</td>
+<td>  h | hr |  hrs |  hour | hours
+</td>
+<td> Time scale in hours.
+</td></tr>
+<tr>
+<td> &lt;day&gt;
+</td>
+<td>  d |  day | days
+</td>
+<td> Time scale in days.
+</td></tr>
+<tr>
+<td> &lt;month&gt;
+</td>
+<td>  mon | month |  months
+</td>
+<td> Time scale in months.
+</td></tr>
+<tr>
+<td> &lt;subseconds&gt;
+</td>
+<td>  us | ms |  cs |  ds
+</td>
+<td> Time scale in microseconds (us), milliseconds (ms), centiseconds (cs), or deciseconds (ds)
+</td></tr></table>
 <h2><span class="mw-headline" id="Examples">Examples</span></h2>
 <h3><span class="mw-headline" id="Example_1:">Example 1:</span></h3>
-<p>Return typeahead information for sources in the "_internal" index.
+<p>Return the average "thruput" of each "host" for each 5 minute time span.
 </p>
-<div class="inlineQuery splunk_search_4_3"><code>| typeahead prefix=source count=10 index=_internal</code><br/></div>
+<div class="inlineQuery splunk_search_4_3"><code>... | bin _time span=5m | stats avg(thruput) by _time host</code><br/></div>
+<h3><span class="mw-headline" id="Example_2:">Example 2:</span></h3>
+<p>Bin search results into 10 bins, and return the count of raw events for each bin.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | bin size bins=10 | stats count(_raw) by size</code><br/></div>
+<h3><span class="mw-headline" id="Example_3:">Example 3:</span></h3>
+<p>Create bins with an end value larger than you need, ensure that all possible values are included.
+</p>
+<div class="inlineQuery splunk_search_4_3"><code>... | bin amount end=1000 </code><br/></div>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<p><a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/SearchReference/Chart">chart</a>, <a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/SearchReference/Timechart">timechart</a>
+</p>
 <h2><span class="mw-headline" id="Answers">Answers</span></h2>
-<p>Have questions? Visit <a class="external text" href="http://splunk-base.splunk.com">Splunk Answers</a> and see what <a class="external text" href="http://splunk-base.splunk.com/tags/typeahead">questions and answers the Splunk community has using the typeahead command</a>.
+<p>Have questions? Visit <a class="external text" href="http://splunk-base.splunk.com">Splunk Answers</a> and see what <a class="external text" href="http://splunk-base.splunk.com/tags/bin/">questions and answers the Splunk community has using the bin command</a>.
 </p>
 <!-- 
 NewPP limit report
-CPU time usage: 0.034 seconds
-Real time usage: 0.038 seconds
-Preprocessor visited node count: 57/1000000
-Preprocessor generated node count: 86/1000000
+CPU time usage: 0.054 seconds
+Real time usage: 0.068 seconds
+Preprocessor visited node count: 248/1000000
+Preprocessor generated node count: 496/1000000
 Post‐expand include size: 0/2097152 bytes
 Template argument size: 0/2097152 bytes
 Highest expansion depth: 2/40
 Expensive parser function count: 0/100
 -->
 </div><div class="printfooter">
-Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Typeahead:5.0beta&amp;oldid=470439">http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Typeahead:5.0beta&amp;oldid=470439</a>"</div>
+Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Bin:5.0.3&amp;oldid=469222">http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Bin:5.0.3&amp;oldid=469222</a>"</div>
 <!--googleoff: index-->						</div>
 					</div>	
 				</div>
@@ -2099,23 +2161,23 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 									<table class="paging">
 						<tr>
 															<td class="arrow-previous">
-									<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
+									<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
 										<i class="glyphicon glyphicon-chevron-left"></i>
 									</a>
 								</td>
 								<td class="previous">
 									<span>PREVIOUS</span><br />
-									<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
-										 tstats 									</a>
+									<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
+										 autoregress 									</a>
 								</td>
 															<td class="separator">&nbsp;</td>
 															<td class="next">
 									<span>NEXT</span><br />
-									<a href="/Documentation/Splunk/latest/SearchReference/Typelearner">
-										 typelearner 									</a>
+									<a href="/Documentation/Splunk/latest/SearchReference/Bucket">
+										 bucket 									</a>
 								</td>
 								<td class="arrow-next">
-									<a href="/Documentation/Splunk/latest/SearchReference/Typelearner">
+									<a href="/Documentation/Splunk/latest/SearchReference/Bucket">
 										<i class="glyphicon glyphicon-chevron-right"></i>
 									</a>
 								</td>
@@ -2123,8 +2185,8 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 					</table>
 						<p class="disclaimer">
 		This documentation applies to the following versions of Splunk: 
-		<a href="/Category:V:Splunk:5.0">5.0</a>, <a href="/Category:V:Splunk:5.0.1">5.0.1</a>, <a href="/Category:V:Splunk:5.0.2">5.0.2</a>, <a href="/Category:V:Splunk:5.0.3">5.0.3</a>, <a href="/Category:V:Splunk:5.0.4">5.0.4</a>, <a href="/Category:V:Splunk:5.0.5">5.0.5</a>, <a href="/Category:V:Splunk:5.0.6">5.0.6</a>, <a href="/Category:V:Splunk:5.0.7">5.0.7</a>, <a href="/Category:V:Splunk:5.0.8">5.0.8</a>, <a href="/Category:V:Splunk:5.0.9">5.0.9</a>, <a href="/Category:V:Splunk:5.0.10">5.0.10</a>, <a href="/Category:V:Splunk:5.0.11">5.0.11</a>, <a href="/Category:V:Splunk:5.0.12">5.0.12</a>, <a href="/Category:V:Splunk:5.0.13">5.0.13</a>, <a href="/Category:V:Splunk:5.0.14">5.0.14</a>, <a href="/Category:V:Splunk:6.0">6.0</a>, <a href="/Category:V:Splunk:6.0.1">6.0.1</a>, <a href="/Category:V:Splunk:6.0.2">6.0.2</a>, <a href="/Category:V:Splunk:6.0.3">6.0.3</a>, <a href="/Category:V:Splunk:6.0.4">6.0.4</a>, <a href="/Category:V:Splunk:6.0.5">6.0.5</a>, <a href="/Category:V:Splunk:6.0.6">6.0.6</a>, <a href="/Category:V:Splunk:6.0.7">6.0.7</a>, <a href="/Category:V:Splunk:6.0.8">6.0.8</a>, <a href="/Category:V:Splunk:6.0.9">6.0.9</a>, <a href="/Category:V:Splunk:6.0.10">6.0.10</a>, <a href="/Category:V:Splunk:6.1">6.1</a>, <a href="/Category:V:Splunk:6.1.1">6.1.1</a>, <a href="/Category:V:Splunk:6.1.2">6.1.2</a>, <a href="/Category:V:Splunk:6.1.3">6.1.3</a>, <a href="/Category:V:Splunk:6.1.4">6.1.4</a>, <a href="/Category:V:Splunk:6.1.5">6.1.5</a>, <a href="/Category:V:Splunk:6.1.6">6.1.6</a>, <a href="/Category:V:Splunk:6.1.7">6.1.7</a>, <a href="/Category:V:Splunk:6.1.8">6.1.8</a>, <a href="/Category:V:Splunk:6.1.9">6.1.9</a>, <a href="/Category:V:Splunk:6.2.0">6.2.0</a>, <a href="/Category:V:Splunk:6.2.1">6.2.1</a>, <a href="/Category:V:Splunk:6.2.2">6.2.2</a>, <a href="/Category:V:Splunk:6.2.3">6.2.3</a>, <a href="/Category:V:Splunk:6.2.4">6.2.4</a>, <a href="/Category:V:Splunk:6.2.5">6.2.5</a>, <a href="/Category:V:Splunk:6.2.6">6.2.6</a>, <a href="/Category:V:Splunk:6.3.0">6.3.0</a>, <a href="/Category:V:Splunk:6.3.1">6.3.1</a>		<span id="startlink">
-			View the <a href="/index.php?title=Documentation:Splunk:SearchReference:Typeahead:5.0beta&amp;action=history">Article History</a> for its revisions.
+		<a href="/Category:V:Splunk:4.3">4.3</a>, <a href="/Category:V:Splunk:4.3.1">4.3.1</a>, <a href="/Category:V:Splunk:4.3.2">4.3.2</a>, <a href="/Category:V:Splunk:4.3.3">4.3.3</a>, <a href="/Category:V:Splunk:4.3.4">4.3.4</a>, <a href="/Category:V:Splunk:4.3.5">4.3.5</a>, <a href="/Category:V:Splunk:4.3.6">4.3.6</a>, <a href="/Category:V:Splunk:4.3.7">4.3.7</a>, <a href="/Category:V:Splunk:5.0">5.0</a>, <a href="/Category:V:Splunk:5.0.1">5.0.1</a>, <a href="/Category:V:Splunk:5.0.2">5.0.2</a>, <a href="/Category:V:Splunk:5.0.3">5.0.3</a>, <a href="/Category:V:Splunk:5.0.4">5.0.4</a>, <a href="/Category:V:Splunk:5.0.5">5.0.5</a>, <a href="/Category:V:Splunk:5.0.6">5.0.6</a>, <a href="/Category:V:Splunk:5.0.7">5.0.7</a>, <a href="/Category:V:Splunk:5.0.8">5.0.8</a>, <a href="/Category:V:Splunk:5.0.9">5.0.9</a>, <a href="/Category:V:Splunk:5.0.10">5.0.10</a>, <a href="/Category:V:Splunk:5.0.11">5.0.11</a>, <a href="/Category:V:Splunk:5.0.12">5.0.12</a>, <a href="/Category:V:Splunk:5.0.13">5.0.13</a>, <a href="/Category:V:Splunk:5.0.14">5.0.14</a>, <a href="/Category:V:Splunk:6.0">6.0</a>, <a href="/Category:V:Splunk:6.0.1">6.0.1</a>, <a href="/Category:V:Splunk:6.0.2">6.0.2</a>, <a href="/Category:V:Splunk:6.0.3">6.0.3</a>, <a href="/Category:V:Splunk:6.0.4">6.0.4</a>, <a href="/Category:V:Splunk:6.0.5">6.0.5</a>, <a href="/Category:V:Splunk:6.0.6">6.0.6</a>, <a href="/Category:V:Splunk:6.0.7">6.0.7</a>, <a href="/Category:V:Splunk:6.0.8">6.0.8</a>, <a href="/Category:V:Splunk:6.0.9">6.0.9</a>, <a href="/Category:V:Splunk:6.0.10">6.0.10</a>, <a href="/Category:V:Splunk:6.1">6.1</a>, <a href="/Category:V:Splunk:6.1.1">6.1.1</a>, <a href="/Category:V:Splunk:6.1.2">6.1.2</a>, <a href="/Category:V:Splunk:6.1.3">6.1.3</a>, <a href="/Category:V:Splunk:6.1.4">6.1.4</a>, <a href="/Category:V:Splunk:6.1.5">6.1.5</a>, <a href="/Category:V:Splunk:6.1.6">6.1.6</a>, <a href="/Category:V:Splunk:6.1.7">6.1.7</a>, <a href="/Category:V:Splunk:6.1.8">6.1.8</a>, <a href="/Category:V:Splunk:6.1.9">6.1.9</a>, <a href="/Category:V:Splunk:6.2.0">6.2.0</a>, <a href="/Category:V:Splunk:6.2.1">6.2.1</a>, <a href="/Category:V:Splunk:6.2.2">6.2.2</a>, <a href="/Category:V:Splunk:6.2.3">6.2.3</a>, <a href="/Category:V:Splunk:6.2.4">6.2.4</a>, <a href="/Category:V:Splunk:6.2.5">6.2.5</a>, <a href="/Category:V:Splunk:6.2.6">6.2.6</a>, <a href="/Category:V:Splunk:6.3.0">6.3.0</a>, <a href="/Category:V:Splunk:6.3.1">6.3.1</a>		<span id="startlink">
+			View the <a href="/index.php?title=Documentation:Splunk:SearchReference:Bin:5.0.3&amp;action=history">Article History</a> for its revisions.
 		</span>
 	</p>
 	
@@ -2138,7 +2200,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 							<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 related-container">
 					<div id="sticky-right-nav">
 						<div id="right-nav" class="hidden-xs hidden-sm">
-							<h2> typeahead </h2>
+							<h2> bin </h2>
 							<ul class="list-unstyled">
 																			<li rel="#Description" class="anchorlink">
 												<a href="#Description">Description</a>
@@ -2146,13 +2208,16 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 												<a href="#Syntax">Syntax</a>
 											<ul class="sublist">											<li><a href="#Required_arguments">Required arguments</a></li>
 																						<li><a href="#Optional_arguments">Optional arguments</a></li>
-																						<li><a href="#Typeahead_and_sourcetype_renaming">Typeahead and sourcetype renaming</a></li>
-											</ul></li>											<li rel="#Usage" class="anchorlink">
-												<a href="#Usage">Usage</a>
-											</li>											<li rel="#Examples" class="anchorlink">
+																						<li><a href="#Bins_options">Bins options</a></li>
+																						<li><a href="#Span_options">Span options</a></li>
+											</ul></li>											<li rel="#Examples" class="anchorlink">
 												<a href="#Examples">Examples</a>
 											<ul class="sublist">											<li><a href="#Example_1:">Example 1:</a></li>
-											</ul></li>											<li rel="#Answers" class="anchorlink">
+																						<li><a href="#Example_2:">Example 2:</a></li>
+																						<li><a href="#Example_3:">Example 3:</a></li>
+											</ul></li>											<li rel="#See_also" class="anchorlink">
+												<a href="#See_also">See also</a>
+											</li>											<li rel="#Answers" class="anchorlink">
 												<a href="#Answers">Answers</a>
 											</li>							</ul>
 						</div>
@@ -2205,9 +2270,9 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 										<div class="col-lg-12 comment-container">
 											<form id="feedbackdialoginner">
 												<input type="hidden" id="splunk_feedback_title" 
-													value="Documentation/Splunk/latest/SearchReference/Typeahead" />
+													value="Documentation/Splunk/latest/SearchReference/Bin" />
 												<input type="hidden" id="splunk_feedback_rawtitle"
-													   value="Documentation:Splunk:SearchReference:Typeahead:5.0beta" />
+													   value="Documentation:Splunk:SearchReference:Bin:5.0.3" />
 												<p>
 													<strong>Was this documentation topic helpful?</strong>
 													<select id="splunk_feedback_yesno">
@@ -2245,7 +2310,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 									<div class="row">
 										<div class="col-lg-12 comment-container">
 																							<p>You must be logged into splunk.com in order to post comments.
-													<a href="https://login.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Typeahead">Log in now</a>.
+													<a href="https://login.splunk.com/index.php?module=roles&amp;func=showloginform&amp;redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Bin">Log in now</a>.
 												</p>
 																							<p>
 												Please try to keep this discussion focused on the content covered in this documentation topic.
@@ -2253,7 +2318,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 												consider posting a question to <a href="http://answers.splunk.com">Splunkbase Answers</a>.
 											</p>
 											<form>
-												<input type="hidden" id="splunk_comment_title" value="Documentation:Splunk:SearchReference:Typeahead:5.0beta" />
+												<input type="hidden" id="splunk_comment_title" value="Documentation:Splunk:SearchReference:Bin:5.0.3" />
 												<div class="counter disabled"><span id="splunk_comment_charcount">0</span>
 												out of 1000 Characters</div>
 												<textarea disabled class="form-control"
@@ -2324,6 +2389,6 @@ mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
 mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.Splunk.js","skins.oxfordcomma.js"],null,true);
 }</script>
 <script>if(window.mw){
-mw.config.set({"wgBackendResponseTime":377});
+mw.config.set({"wgBackendResponseTime":520});
 }</script><!--googleon: index-->	</body>
 </html>
