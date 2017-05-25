@@ -33,7 +33,7 @@ void genSearchCommands(){
 void genEvalFunctions(){
 	//source: http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions
 	def searchWiki=new File('wiki/CommonEvalFunctions.txt').getText()
-	def m=searchWiki=~/\|-\n\| <code>(.+)<\/code>/
+	def m=searchWiki=~/\|?<code>(.+)<\/code><br>/
 	//println m
 	//println m.size()
 	//m.each{println it}

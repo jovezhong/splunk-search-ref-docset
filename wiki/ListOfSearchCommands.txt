@@ -3,30 +3,30 @@
 == Search command quick reference table ==
 The table below lists all of the search commands in alphabetical order.  There is a short description of the command and links to related commands. For the complete syntax, usage, and detailed examples, click the command name to display the specific topic for that command.
 
-Some of these commands share functions. For a list of the functions with descriptions and examples, see [[Documentation:Splunk:SearchReference:CommonEvalFunctions|"Evaluation functions"]] and [[Documentation:Splunk:SearchReference:CommonStatsFunctions|"Statistical and charting functions"]].
+Some of these commands share functions. For a list of the functions with descriptions and examples, see [[Documentation:Splunk:SearchReference:CommonEvalFunctions|Evaluation functions]] and [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Statistical and charting functions]].
 
 {| cellpadding="5" cellspacing="0" border="1"
 !Command
 !Description
 !Related commands
 |-
-|<code>[[Documentation:Splunk:SearchReference:Abstract|abstract]]</code> 
+|<code>[[Documentation:Splunk:SearchReference:Abstract|abstract]]</code>
 |Produces a summary of each search result. 
-|<code>highlight</code> 
+|<code>highlight</code>
 |-
-|<code>[[Documentation:Splunk:SearchReference:Accum|accum]]</code> 
+|<code>[[Documentation:Splunk:SearchReference:Accum|accum]]</code>
 |Keeps a running total of the specified numeric field. 
-|<code>autoregress</code>, <code>delta</code>, <code>trendline</code>, <code>streamstats</code>
+|<code>autoregress, delta, trendline, streamstats</code>
 |-
-|<code>[[Documentation:Splunk:SearchReference:Addcoltotals|addcoltotals]]</code> 
+|<code>[[Documentation:Splunk:SearchReference:Addcoltotals|addcoltotals]]</code>
 |Computes an event that contains sum of all numeric fields for previous events.
-|<code>addtotals</code>, <code>stats</code>
+|<code>addtotals, stats</code>
 |-
-|<code>[[Documentation:Splunk:SearchReference:Addinfo|addinfo]]</code> 
+|<code>[[Documentation:Splunk:SearchReference:Addinfo|addinfo]]</code>
 |Add fields that contain common information about the current search. 
 |<code>search</code>
 |-
-|<code>[[Documentation:Splunk:SearchReference:Addtotals|addtotals]]</code> 
+|<code>[[Documentation:Splunk:SearchReference:Addtotals|addtotals]]</code>
 |Computes the sum of all numeric fields for each result. 
 |<code>addcoltotals</code>, <code>stats</code>
 |-
@@ -119,7 +119,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>input</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Datamodel|datamodel]]</code>
-|Examine data model or data model object and search a data model object. 
+|Examine data model or data model dataset and search a data model dataset. 
 |<code>pivot</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Dbinspect|dbinspect]]</code> 
@@ -198,6 +198,10 @@ Some of these commands share functions. For a list of the functions with descrip
 |Takes the results of a subsearch and formats them into a single result. 
 |
 |-
+|<code>[[Documentation:Splunk:SearchReference:From|from]]</code> 
+|Retrieves data from a dataset, such as a data model dataset, a CSV lookup, a KV Store lookup, a saved search, or a table dataset. 
+|
+|-
 |<code>[[Documentation:Splunk:SearchReference:Gauge|gauge]]</code> 
 |Transforms results into a format suitable for display by the Gauge chart types. 
 |
@@ -235,7 +239,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>highlight</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Input|input]]</code> 
-|Adds sources to Splunk or disables sources from being processed by Splunk. 
+|Add or disable sources.
 | 
 |-
 |<code>[[Documentation:Splunk:SearchReference:Inputcsv|inputcsv]]</code> 
@@ -271,7 +275,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>map, transaction</code> 
 |-
 |<code>[[Documentation:Splunk:SearchReference:Localop|localop]]</code> 
-| Tells Splunk to run subsequent commands, that is all commands following this, locally and not on a remote peer(s).
+| Run subsequent commands, that is all commands following this, locally and not on remote peers.
 |
 |-
 |<code>[[Documentation:Splunk:SearchReference:Lookup|lookup]]</code>
@@ -343,7 +347,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>collect</code> 
 |-
 | <code>[[Documentation:Splunk:SearchReference:Pivot|pivot]]</code>
-|Run pivot searches against a particular data model object. 
+|Run pivot searches against a particular data model dataset. 
 |<code>dbinspect</code>
 |-
 | <code>[[Documentation:Splunk:SearchReference:Predict|predict]]</code>
@@ -411,7 +415,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |
 |-
 |<code>[[Documentation:Splunk:SearchReference:Search|search]]</code> 
-|Searches Splunk Enterprise indexes for matching events. 
+|Searches indexes for matching events. 
 |
 |-
 |<code>[[Documentation:Splunk:SearchReference:Searchtxn|searchtxn]]</code>
@@ -436,23 +440,23 @@ Some of these commands share functions. For a list of the functions with descrip
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sichart|sichart]]</code> 
 |Summary indexing version of chart. 
-|chart, sitimechart, timechart
+|<code>chart, sitimechart, timechart</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sirare|sirare]]</code> 
 |Summary indexing version of rare. 
-|rare
+|<code>rare</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sistats|sistats]]</code> 
 |Summary indexing version of stats. 
-|stats
+|<code>stats</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sitimechart|sitimechart]]</code> 
 |Summary indexing version of timechart. 
-|chart, sichart, timechart
+|<code>chart, sichart, timechart</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sitop|sitop]]</code> 
 |Summary indexing version of top. 
-|top
+|<code>top</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Sort|sort]]</code> 
 |Sorts search results by the specified fields. 
@@ -472,7 +476,7 @@ Some of these commands share functions. For a list of the functions with descrip
 |-
 |<code>[[Documentation:Splunk:SearchReference:Streamstats|streamstats]]</code> 
 |Adds summary statistics to all search results in a streaming manner. 
-|eventstats, stats
+|<code>eventstats, stats</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Table|table]]</code>
 |Creates a table using the specified fields. 
@@ -489,6 +493,10 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>[[Documentation:Splunk:SearchReference:Timechart|timechart]]</code> 
 |Create a time series chart and corresponding table of statistics. See also, [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Statistical and charting functions]].
 |<code>chart, bucket</code> 
+|-
+|<code>[[Documentation:Splunk:SearchReference:Timewrap|timewrap]]</code> 
+|Displays, or wraps, the output of the [[Documentation:Splunk:SearchReference:Timechart|timechart command]] so that every <code>timewrap-span</code> range of time is a different series.
+|<code>timechart</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Top|top]]</code> 
 |Displays the most common values of a field. 
@@ -560,4 +568,4 @@ Some of these commands share functions. For a list of the functions with descrip
 |}
 
 [[Category:Reference]][[Category:Search commands]]
-[[Category:V:Splunk:6.3.0]][[Category:V:Splunk:6.3.1511]][[Category:V:Splunk:6.3.1]]
+[[Category:V:Splunk:6.5.0]][[Category:V:Splunk:6.5.1612]][[Category:V:Splunk:6.6.0]][[Category:V:SplunkCloud:6.5.0]][[Category:V:Splunk:6.5.1]][[Category:V:SplunkCloud:6.5.1]][[Category:V:Splunk:6.5.2]][[Category:V:SplunkCloud:6.5.1612]][[Category:V:Splunk:Minty]][[Category:V:Splunk:6.5.3]][[Category:V:SplunkCloud:6.6.0]][[Category:V:Splunk:6.5.4]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.1]]

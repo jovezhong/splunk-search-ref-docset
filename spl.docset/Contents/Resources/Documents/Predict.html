@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7 no-js"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8 no-js"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9 no-js"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" dir="ltr" class="client-nojs no-js">  <!--<![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" dir="ltr" class="client-nojs"><!--<![endif]-->
 <head>
 <meta charset="UTF-8" />
-<title> predict - Splunk Knowledgebase</title>
+<title>predict - Splunk Documentation</title>
 <meta name="generator" content="MediaWiki 1.24.1" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Splunk Knowledgebase (en)" />
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="Splunk Documentation (en)" />
 <link rel="EditURI" type="application/rsd+xml" href="http://docs.splunk.com/api.php?action=rsd" />
-<link rel="alternate" hreflang="x-default" href="/Documentation:Splunk:SearchReference:Predict:4.1" />
-<link rel="alternate" type="application/rss+xml" title="Splunk Knowledgebase RSS feed" href="/index.php?title=Special:RecentChanges&amp;feed=rss" />
-<link rel="alternate" type="application/atom+xml" title="Splunk Knowledgebase Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="http://docs.splunk.com/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.oxfordcomma.css&amp;only=styles&amp;skin=oxfordcomma&amp;*" />
+<link rel="alternate" hreflang="x-default" href="/Documentation:Splunk:SearchReference:Predict:Galaxy" />
+<link rel="alternate" type="application/rss+xml" title="Splunk Documentation RSS feed" href="/index.php?title=Special:RecentChanges&amp;feed=rss" />
+<link rel="alternate" type="application/atom+xml" title="Splunk Documentation Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="stylesheet" href="http://docs.splunk.com/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.ui.button%7Cskins.oxfordcomma.css%7Cskins.oxfordcomma.more.css&amp;only=styles&amp;skin=oxfordcomma&amp;*" />
 <meta name="ResourceLoaderDynamicStyles" content="" />
 <style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
 /* cache key: ponydocs:resourceloader:filter:minify-css:7:b6f100ebd268d526a6357c8a077890c6 */</style>
 <script src="http://docs.splunk.com/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=oxfordcomma&amp;*"></script>
 <script>if(window.mw){
-mw.config.set({"wgCanonicalNamespace":"Documentation","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Documentation:Splunk:SearchReference:Predict:4.1","wgTitle":"Splunk:SearchReference:Predict:4.1","wgCurRevisionId":468697,"wgRevisionId":468697,"wgArticleId":110849,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Predict","Assist","Reference","V:Splunk:5.0","V:Splunk:5.0beta","V:Splunk:6.0beta","V:Splunk:6.0","V:Splunk:5.0.1","V:Splunk:5.0.2","V:Splunk:5.0.3","V:Splunk:5.0.4","V:Splunk:5.0.5","V:Splunk:6.0.1","V:Splunk:5.0.6","V:Splunk:6.1beta","V:Splunk:5.0.7","V:Splunk:6.0.2","V:Splunk:6.1","V:Splunk:5.0.8","V:Splunk:6.0.3","V:Splunk:6.0.4","V:Splunk:6.2beta","V:Splunk:6.1.1","V:Splunk:6.0.5","V:Splunk:5.0.9","V:Splunk:6.1.2","V:Splunk:6.1.3","V:Splunk:6.2.0","V:Splunk:6.3.0beta","V:Splunk:6.0.6","V:Splunk:6.1.4","V:Splunk:5.0.10","V:Splunk:6.1.5","V:Splunk:6.2.1","V:Splunk:6.0.7","V:Splunk:5.0.11","V:Splunk:6.1.6","V:Splunk:6.2.2","V:Splunk:5.0.12","V:Splunk:6.0.8","V:Splunk:6.1.7","V:Splunk:6.2.3","V:Splunk:6.3.0","V:Splunk:6.3.1511","V:Splunk:6.2.4","V:Splunk:5.0.13","V:Splunk:6.0.9","V:Splunk:6.1.8","V:Splunk:6.1.9","V:Splunk:6.2.5","V:Splunk:Galaxy","V:Splunk:5.0.14","V:Splunk:6.0.10","V:Splunk:6.2.6","V:Splunk:6.2.7","V:Splunk:6.3.1"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Documentation:Splunk:SearchReference:Predict:4.1","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+mw.config.set({"wgCanonicalNamespace":"Documentation","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":100,"wgPageName":"Documentation:Splunk:SearchReference:Predict:Galaxy","wgTitle":"Splunk:SearchReference:Predict:Galaxy","wgCurRevisionId":668235,"wgRevisionId":668235,"wgArticleId":134355,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Predict","Assist","Reference","V:Splunk:6.4.0","V:Splunk:6.4.1606","V:Splunk:6.5.0","V:Splunk:6.4.1","V:Splunk:6.4.2","V:Splunk:6.5.1612","V:Splunk:6.4.3","V:Splunk:6.6.0","V:SplunkCloud:6.5.0","V:Splunk:6.4.4","V:Splunk:6.4.5","V:Splunk:6.5.1","V:SplunkCloud:6.5.1","V:Splunk:6.5.2","V:SplunkCloud:6.5.1612","V:Splunk:6.4.6","V:Splunk:Minty","V:Splunk:6.5.3","V:Splunk:6.4.7","V:SplunkCloud:6.6.0","V:Splunk:6.5.4","V:Splunk:6.6.1","V:SplunkCloud:6.6.1"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Documentation:Splunk:SearchReference:Predict:Galaxy","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
 }</script><script>if(window.mw){
 mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"oxfordcomma","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":false,"watchdefault":false,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,
-"watchrollback":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"showjumplinks":1,"showtoc":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs110":false,"searchNs120":false,"searchNs130":false,"searchNs140":false,"searchNs150":false,"searchNs160":false,"searchNs170":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{});
-/* cache key: ponydocs:resourceloader:filter:minify-js:7:46b448679a4f1b595ff9b8f1fcd317ed */
+"watchrollback":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"showjumplinks":1,"showtoc":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs150":false,"searchNs3000":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});},{},{});
+/* cache key: ponydocs:resourceloader:filter:minify-js:7:342fb5c9f6b6478e0bf981520ef46b92 */
 }</script>
 <script>if(window.mw){
 mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.PonyDocs","skins.oxfordcomma.top.js"]);
@@ -38,8 +38,9 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<link rel="canonical" href="/Documentation/Splunk/6.6.0/SearchReference/Predict" />
 </head>
-<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Documentation_Splunk_SearchReference_Predict_4_1 skin-oxfordcomma action-view">
+<body class="mediawiki ltr sitedir-ltr ns-100 ns-subject page-Documentation_Splunk_SearchReference_Predict_Galaxy skin-oxfordcomma action-view">
 <!--googleoff: index--><!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -71,19 +72,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 						</form>
 					</li>
 
-					<li class="dropdown">
+					<li class="dropdown dropdown-column normal-width">
 						<a href="http://www.splunk.com/en_us/products.html"
 							class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li>
+					<div class="dropdown-menu" role="menu">
+						<div class="dropdown-block">					
+							<ul>
+								<li>
 								<a href="http://www.splunk.com/en_us/products.html"
-									target="">Overview</a>
-							</li>
-							<li>
+										   target="">Overview</a>
+								</li>
+							</ul>
+							<h3>Core Products</h3>
+							<ul>
+								<li>
 								<a href="http://www.splunk.com/en_us/products/splunk-enterprise.html"
-									target="">Splunk Enterprise</a>
-							</li>
-							<li>
+										   target="">Splunk Enterprise</a>
+								</li>
+								<li>
 								<a href="http://www.splunk.com/en_us/products/splunk-cloud.html"
 									target="">Splunk Cloud</a>
 							</li>
@@ -91,34 +97,38 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 								<a href="http://www.splunk.com/en_us/products/splunk-light.html"
 									target="_parent">Splunk Light</a>
 							</li>
+							</ul>
+							<h3>Premium Solutions</h3>
+							<ul>
 							<li>
-								<a href="http://www.splunk.com/en_us/products/hunk.html"
-									target="">Hunk</a>
+								<a href="http://www.splunk.com/en_us/products/premium-solutions/splunk-enterprise-security.html"
+										target="">Splunk Enterprise Security</a>
 							</li>
 							<li>
-								<a href="http://www.splunk.com/en_us/products/splunk-mint.html"
-									target="">Splunk MINT</a>
+								<a href="http://www.splunk.com/en_us/products/premium-solutions/it-service-intelligence.html"
+										   target="_parent">Splunk IT Service Intelligence</a>
 							</li>
 							<li>
-								<a href="http://www.splunk.com/en_us/solutions/solution-areas/security-and-fraud/splunk-app-for-enterprise-security.html"
-									target="_parent">Splunk App for Enterprise Security</a>
+								<a href="http://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html"
+										   target="_parent">Splunk User Behavior Analytics</a>
 							</li>
-							<li>
-								<a href="http://www.splunk.com/en_us/products/splunk-app-for-stream.html"
-									target="_parent">Splunk App for Stream</a>
-							</li>
-							<li>
+							</ul>
+							<ul>
+								<li role="separator" class="divider"></li>
+								<li>
 								<a href="http://www.splunk.com/en_us/products/apps-and-add-ons.html"
-									target="_parent">Apps &amp; Add-Ons</a>
-							</li>
-							<li>
+										target="_parent">Apps &amp; Add-Ons</a>
+								</li>
+								<li>
 								<a href="http://www.splunk.com/en_us/products/pricing.html"
-									target="_parent">Pricing</a>
-							</li>
-							<li>
+										target="_parent">Pricing</a>
+								</li>
+								<li>
 								<a href="http://www.co-store.com/splunk" target="_blank">T-Shirts</a>
-							</li>
+								</li>
 						</ul>
+						</div>
+					</div>
 					</li>
 
 					<li class="dropdown dropdown-column">
@@ -264,7 +274,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									target="_blank">Blogs</a>
 							</li>
 							<li>
-								<a href="http://docs.splunk.com"
+								<a href="http://docs.splunk.com/Documentation"
 									target="_blank">Documentation</a>
 							</li>
 							<li>
@@ -283,11 +293,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 							</li>
 							<li>
 								<a href="http://conf.splunk.com"
-									target="_blank">.conf2015</a>
+									target="_blank">.conf</a>
 							</li>
                         </ul>
   					</li>
-					
+
 					<li><a href="/Splexicon">SPLEXICON <span class="sr-only">(current)</span></a></li>
 				</ul>
 
@@ -304,7 +314,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 								<a href="http://answers.splunk.com" target="_blank">Splunk Answers</a>
 							</li>
 							<li>
-								<a href="http://docs.splunk.com"
+								<a href="http://docs.splunk.com/Documentation"
 									target="_blank">Documentation</a>
 							</li>
 							<li>
@@ -323,7 +333,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									target="">Professional Services</a>
 							</li>
 							<li>
-								<a href="http://login.splunk.com/page/sso_redirect?type=portal"
+								<a href="https://login.splunk.com/page/sso_redirect?type=portal"
 									target="">Support Portal</a>
 							</li>
 							<li>
@@ -344,7 +354,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 								<li id="signId" ><a href="http://www.splunk.com/index.php/sign_up?redirecturl=http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/Predict">Sign Up</a></li>
 														</ul>
 					</li>
-					
+
 					<li class="hidden-sm hidden-xs search-desktop">
 						<form class="navbar-form" role="search" action="/Special:SplunkSearch/docs">
 							<input type="text" class="form-control" placeholder="Search Docs"
@@ -356,14 +366,15 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
-</header><section id="hero">
+</header>
+<section id="hero">
     <div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-lg-10 col-md-10">
 				<div class="super-title">
 					Splunk<sup>&reg;</sup> Enterprise				</div>
 				<h1>Search Reference</h1>
-				<a class="download" href="/index.php?title=Documentation:Splunk:SearchReference:Predict:4.1&amp;action=pdfbook">
+				<a class="download" href="/index.php?title=Documentation:Splunk:SearchReference:Predict:Galaxy&amp;action=pdfbook&amp;version=6.6.0&amp;product=Splunk">
 					<img src="/skins/OxfordComma/images/acrobat-logo.png" />
 					Download manual as PDF
 				</a>
@@ -374,7 +385,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 			   value="Splunk" />
 			<label for="version-select">Version</label> <br />
 	<select id="version-select" class="form-control">
-		<option value="2.1">2.1</option><option value="2.2">2.2</option><option value="2.2.1">2.2.1</option><option value="2.2.3">2.2.3</option><option value="2.2.6">2.2.6</option><option value="3.0">3.0</option><option value="3.0.1">3.0.1</option><option value="3.0.2">3.0.2</option><option value="3.1">3.1</option><option value="3.1.1">3.1.1</option><option value="3.1.2">3.1.2</option><option value="3.1.3">3.1.3</option><option value="3.1.4">3.1.4</option><option value="3.2">3.2</option><option value="3.2.1">3.2.1</option><option value="3.2.2">3.2.2</option><option value="3.2.3">3.2.3</option><option value="3.2.4">3.2.4</option><option value="3.2.5">3.2.5</option><option value="3.2.6">3.2.6</option><option value="3.3">3.3</option><option value="3.3.1">3.3.1</option><option value="3.3.2">3.3.2</option><option value="3.3.3">3.3.3</option><option value="3.3.4">3.3.4</option><option value="3.4">3.4</option><option value="3.4.1">3.4.1</option><option value="3.4.2">3.4.2</option><option value="3.4.3">3.4.3</option><option value="3.4.5">3.4.5</option><option value="3.4.6">3.4.6</option><option value="3.4.8">3.4.8</option><option value="3.4.9">3.4.9</option><option value="3.4.10">3.4.10</option><option value="3.4.11">3.4.11</option><option value="3.4.12">3.4.12</option><option value="3.4.13">3.4.13</option><option value="3.4.14">3.4.14</option><option value="4.0">4.0</option><option value="4.0.1">4.0.1</option><option value="4.0.2">4.0.2</option><option value="4.0.3">4.0.3</option><option value="4.0.4">4.0.4</option><option value="4.0.5">4.0.5</option><option value="4.0.6">4.0.6</option><option value="4.0.7">4.0.7</option><option value="4.0.8">4.0.8</option><option value="4.0.9">4.0.9</option><option value="4.0.10">4.0.10</option><option value="4.0.11">4.0.11</option><option value="4.1">4.1</option><option value="4.1.1">4.1.1</option><option value="4.1.2">4.1.2</option><option value="4.1.3">4.1.3</option><option value="4.1.4">4.1.4</option><option value="4.1.5">4.1.5</option><option value="4.1.6">4.1.6</option><option value="4.1.7">4.1.7</option><option value="4.1.8">4.1.8</option><option value="4.2">4.2</option><option value="4.2.1">4.2.1</option><option value="4.2.2">4.2.2</option><option value="4.2.3">4.2.3</option><option value="4.2.4">4.2.4</option><option value="4.2.5">4.2.5</option><option value="4.3">4.3</option><option value="4.3.1">4.3.1</option><option value="4.3.2">4.3.2</option><option value="4.3.3">4.3.3</option><option value="4.3.4">4.3.4</option><option value="4.3.5">4.3.5</option><option value="4.3.6">4.3.6</option><option value="4.3.7">4.3.7</option><option value="5.0">5.0</option><option value="5.0.1">5.0.1</option><option value="5.0.2">5.0.2</option><option value="5.0.3">5.0.3</option><option value="5.0.4">5.0.4</option><option value="5.0.5">5.0.5</option><option value="5.0.6">5.0.6</option><option value="5.0.7">5.0.7</option><option value="5.0.8">5.0.8</option><option value="5.0.9">5.0.9</option><option value="5.0.10">5.0.10</option><option value="5.0.11">5.0.11</option><option value="5.0.12">5.0.12</option><option value="5.0.13">5.0.13</option><option value="5.0.14">5.0.14</option><option value="6.0">6.0</option><option value="6.0.1">6.0.1</option><option value="6.0.2">6.0.2</option><option value="6.0.3">6.0.3</option><option value="6.0.4">6.0.4</option><option value="6.0.5">6.0.5</option><option value="6.0.6">6.0.6</option><option value="6.0.7">6.0.7</option><option value="6.0.8">6.0.8</option><option value="6.0.9">6.0.9</option><option value="6.0.10">6.0.10</option><option value="6.1">6.1</option><option value="6.1.1">6.1.1</option><option value="6.1.2">6.1.2</option><option value="6.1.3">6.1.3</option><option value="6.1.4">6.1.4</option><option value="6.1.5">6.1.5</option><option value="6.1.6">6.1.6</option><option value="6.1.7">6.1.7</option><option value="6.1.8">6.1.8</option><option value="6.1.9">6.1.9</option><option value="6.2.0">6.2.0</option><option value="6.2.1">6.2.1</option><option value="6.2.2">6.2.2</option><option value="6.2.3">6.2.3</option><option value="6.2.4">6.2.4</option><option value="6.2.5">6.2.5</option><option value="6.2.6">6.2.6</option><option value="6.3.0">6.3.0</option><option value="6.3.1" selected>6.3.1 (latest release)</option>	</select>
+		<option value="4.3">4.3</option><option value="4.3.1">4.3.1</option><option value="4.3.2">4.3.2</option><option value="4.3.3">4.3.3</option><option value="4.3.4">4.3.4</option><option value="4.3.5">4.3.5</option><option value="4.3.6">4.3.6</option><option value="4.3.7">4.3.7</option><option value="5.0">5.0</option><option value="5.0.1">5.0.1</option><option value="5.0.2">5.0.2</option><option value="5.0.3">5.0.3</option><option value="5.0.4">5.0.4</option><option value="5.0.5">5.0.5</option><option value="5.0.6">5.0.6</option><option value="5.0.7">5.0.7</option><option value="5.0.8">5.0.8</option><option value="5.0.9">5.0.9</option><option value="5.0.10">5.0.10</option><option value="5.0.11">5.0.11</option><option value="5.0.12">5.0.12</option><option value="5.0.13">5.0.13</option><option value="5.0.14">5.0.14</option><option value="5.0.15">5.0.15</option><option value="5.0.16">5.0.16</option><option value="5.0.17">5.0.17</option><option value="5.0.18">5.0.18</option><option value="6.0">6.0</option><option value="6.0.1">6.0.1</option><option value="6.0.2">6.0.2</option><option value="6.0.3">6.0.3</option><option value="6.0.4">6.0.4</option><option value="6.0.5">6.0.5</option><option value="6.0.6">6.0.6</option><option value="6.0.7">6.0.7</option><option value="6.0.8">6.0.8</option><option value="6.0.9">6.0.9</option><option value="6.0.10">6.0.10</option><option value="6.0.11">6.0.11</option><option value="6.0.12">6.0.12</option><option value="6.0.13">6.0.13</option><option value="6.0.14">6.0.14</option><option value="6.1">6.1</option><option value="6.1.1">6.1.1</option><option value="6.1.2">6.1.2</option><option value="6.1.3">6.1.3</option><option value="6.1.4">6.1.4</option><option value="6.1.5">6.1.5</option><option value="6.1.6">6.1.6</option><option value="6.1.7">6.1.7</option><option value="6.1.8">6.1.8</option><option value="6.1.9">6.1.9</option><option value="6.1.10">6.1.10</option><option value="6.1.11">6.1.11</option><option value="6.1.12">6.1.12</option><option value="6.1.13">6.1.13</option><option value="6.2.0">6.2.0</option><option value="6.2.1">6.2.1</option><option value="6.2.2">6.2.2</option><option value="6.2.3">6.2.3</option><option value="6.2.4">6.2.4</option><option value="6.2.5">6.2.5</option><option value="6.2.6">6.2.6</option><option value="6.2.7">6.2.7</option><option value="6.2.8">6.2.8</option><option value="6.2.9">6.2.9</option><option value="6.2.10">6.2.10</option><option value="6.2.11">6.2.11</option><option value="6.2.12">6.2.12</option><option value="6.2.13">6.2.13</option><option value="6.3.0">6.3.0</option><option value="6.3.1">6.3.1</option><option value="6.3.2">6.3.2</option><option value="6.3.3">6.3.3</option><option value="6.3.4">6.3.4</option><option value="6.3.5">6.3.5</option><option value="6.3.6">6.3.6</option><option value="6.3.7">6.3.7</option><option value="6.3.8">6.3.8</option><option value="6.3.9">6.3.9</option><option value="6.3.10">6.3.10</option><option value="6.4.0">6.4.0</option><option value="6.4.1">6.4.1</option><option value="6.4.2">6.4.2</option><option value="6.4.3">6.4.3</option><option value="6.4.4">6.4.4</option><option value="6.4.5">6.4.5</option><option value="6.4.6">6.4.6</option><option value="6.4.7">6.4.7</option><option value="6.5.0">6.5.0</option><option value="6.5.1">6.5.1</option><option value="6.5.1612">6.5.1612 (Splunk Cloud only)</option><option value="6.5.2">6.5.2</option><option value="6.5.3">6.5.3</option><option value="6.6.0" selected>6.6.0 (latest release)</option>	</select>
 </div>			</div>
 		</div>
     </div>
@@ -419,12 +430,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">
-									 Welcome to the Search Reference 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/WhatsInThisManual">
+									Welcome to the Search Reference								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/HowToUseThisManual">
-									 How to use this manual 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/UnderstandingSPLsyntax">
+									Understanding SPL syntax								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/HowToUseThisManual">
+									How to use this manual								</a>
 							</li>
 																		</ul>
 										</div>
@@ -446,24 +461,28 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/SplunkEnterpriseQuickReferenceGuide">
-									 Splunk Enterprise Quick Reference Guide								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/SplunkEnterpriseQuickReferenceGuide">
+									Quick Reference Guide								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/ListOfSearchCommands">
-									 Command quick reference 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/ListOfSearchCommands">
+									Command quick reference								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Commandsbycategory">
-									 Search commands by category 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Commandsbycategory">
+									Commands by category								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/SQLtoSplunk">
-									 Splunk for SQL users 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Commandsbytype">
+									Command types								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/ListOfDataTypes">
-									 SPL data types and clauses								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/SQLtoSplunk">
+									Splunk SPL for SQL users								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/ListOfDataTypes">
+									SPL data types and clauses								</a>
 							</li>
 																		</ul>
 										</div>
@@ -477,7 +496,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									   href="#collapse3" aria-expanded="false"
 									   aria-controls="collapse3">
 										<span class="caret"></span>
-										<span class="caret-right"></span>Functions									</a>
+										<span class="caret-right"></span>Evaluation Functions									</a>
 								</h4>
 							</div>
 															<div id="collapse3" class="panel-collapse collapse" role="tabpanel"
@@ -485,12 +504,48 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions">
-									 Evaluation functions 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/CommonEvalFunctions">
+									Evaluation functions								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/CommonStatsFunctions">
-									 Statistical and charting functions 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/ConditionalFunctions">
+									Comparison and Conditional functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/ConversionFunctions">
+									Conversion functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/CryptographicFunctions">
+									Cryptographic functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/DateandTimeFunctions">
+									Date and Time Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/InformationalFunctions">
+									Informational Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/MathematicalFunctions">
+									Mathematical Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/MultivalueEvalFunctions">
+									Multivalue Eval Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/StatisticalFunctions">
+									Statistical Eval Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/TextFunctions">
+									Text Functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/TrigandHyperbolicFunctions">
+									Trig and Hyperbolic Functions								</a>
 							</li>
 																		</ul>
 										</div>
@@ -504,7 +559,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									   href="#collapse4" aria-expanded="false"
 									   aria-controls="collapse4">
 										<span class="caret"></span>
-										<span class="caret-right"></span>Time Format Variables and Modifiers									</a>
+										<span class="caret-right"></span>Statistical and Charting Functions									</a>
 								</h4>
 							</div>
 															<div id="collapse4" class="panel-collapse collapse" role="tabpanel"
@@ -512,12 +567,24 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Commontimeformatvariables">
-									 Date and time format variables								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/CommonStatsFunctions">
+									Statistical and charting functions								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/SearchTimeModifiers">
-									 Time modifiers for search 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Aggregatefunctions">
+									Aggregate functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventorderfunctions">
+									Event order functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Multivaluefunctions">
+									Multivalue functions								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Timefunctions">
+									Time functions								</a>
 							</li>
 																		</ul>
 										</div>
@@ -531,7 +598,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									   href="#collapse5" aria-expanded="false"
 									   aria-controls="collapse5">
 										<span class="caret"></span>
-										<span class="caret-right"></span>Search Commands									</a>
+										<span class="caret-right"></span>Time Format Variables and Modifiers									</a>
 								</h4>
 							</div>
 															<div id="collapse5" class="panel-collapse collapse" role="tabpanel"
@@ -539,560 +606,12 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Abstract">
-									 abstract 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Commontimeformatvariables">
+									Date and time format variables								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Accum">
-									 accum 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Addcoltotals">
-									 addcoltotals 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Addinfo">
-									 addinfo 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Addtotals">
-									 addtotals 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Analyzefields">
-									 analyzefields 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Anomalies">
-									 anomalies 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Anomalousvalue">
-									 anomalousvalue 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Anomalydetection">
-									 anomalydetection								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Append">
-									 append 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Appendcols">
-									 appendcols 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Appendpipe">
-									 appendpipe								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Arules">
-									 arules								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Associate">
-									 associate 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Audit">
-									 audit 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
-									 autoregress 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Bin">
-									 bin 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Bucket">
-									 bucket 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Bucketdir">
-									 bucketdir 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Chart">
-									 chart 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Cluster">
-									 cluster 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Cofilter">
-									 cofilter								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Collect">
-									 collect 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Concurrency">
-									 concurrency 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Contingency">
-									 contingency 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Convert">
-									 convert 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Correlate">
-									 correlate 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Crawl">
-									 crawl 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Datamodel">
-									 datamodel 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Dbinspect">
-									 dbinspect 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Dedup">
-									 dedup 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Delete">
-									 delete 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Delta">
-									 delta 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Diff">
-									 diff 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Erex">
-									 erex 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Eval">
-									 eval 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Eventcount">
-									 eventcount 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Eventstats">
-									 eventstats 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Extract">
-									 extract								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Fieldformat">
-									 fieldformat 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Fields">
-									 fields 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Fieldsummary">
-									 fieldsummary 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Filldown">
-									 filldown 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Fillnull">
-									 fillnull 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Findtypes">
-									 findtypes								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Folderize">
-									 folderize 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Foreach">
-									 foreach								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Format">
-									 format 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Gauge">
-									 gauge								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Gentimes">
-									 gentimes 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Geom">
-									 geom 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Geomfilter">
-									 geomfilter 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Geostats">
-									 geostats								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Head">
-									 head 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Highlight">
-									 highlight 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/History">
-									 history 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Iconify">
-									 iconify 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Input">
-									 input 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Inputcsv">
-									 inputcsv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Inputlookup">
-									 inputlookup 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Iplocation">
-									 iplocation 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Join">
-									  join 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Kmeans">
-									 kmeans 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Kvform">
-									 kvform 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Loadjob">
-									 loadjob 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Localize">
-									 localize 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Localop">
-									 localop 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Lookup">
-									 lookup 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Makecontinuous">
-									 makecontinuous 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Makemv">
-									 makemv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Makeresults">
-									 makeresults 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Map">
-									 map 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Metadata">
-									 metadata 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Metasearch">
-									 metasearch 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Multikv">
-									 multikv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Multisearch">
-									 multisearch								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Mvcombine">
-									 mvcombine 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Mvexpand">
-									 mvexpand 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Nomv">
-									 nomv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Outlier">
-									 outlier 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Outputcsv">
-									 outputcsv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Outputlookup">
-									 outputlookup 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Outputtext">
-									 outputtext 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Overlap">
-									 overlap 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Pivot">
-									 pivot 								</a>
-							</li>
-														<li class="selected">
-								<a href="/Documentation/Splunk/latest/SearchReference/Predict">
-									 predict								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rangemap">
-									 rangemap 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rare">
-									 rare 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Regex">
-									 regex 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Relevancy">
-									 relevancy 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Reltime">
-									 reltime 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rename">
-									 rename 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Replace">
-									 replace 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rest">
-									 rest								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Return">
-									 return								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Reverse">
-									 reverse 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rex">
-									 rex 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Rtorder">
-									 rtorder 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Run">
-									 run 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Savedsearch">
-									 savedsearch 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Script">
-									 script 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Scrub">
-									 scrub 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Search">
-									 search 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Searchtxn">
-									 searchtxn 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Selfjoin">
-									 selfjoin 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sendemail">
-									 sendemail 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Set">
-									 set 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Setfields">
-									 setfields								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sichart">
-									 sichart 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sirare">
-									 sirare 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sistats">
-									 sistats 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sitimechart">
-									 sitimechart 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sitop">
-									 sitop 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sort">
-									 sort 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Spath">
-									 spath								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Stats">
-									 stats 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Strcat">
-									 strcat 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Streamstats">
-									 streamstats 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Table">
-									 table								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Tags">
-									 tags 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Tail">
-									 tail 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Timechart">
-									 timechart 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Top">
-									 top 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Transaction">
-									 transaction 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Transpose">
-									 transpose 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Trendline">
-									 trendline 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Tscollect">
-									 tscollect 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
-									 tstats 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Typeahead">
-									 typeahead 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Typelearner">
-									 typelearner 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Typer">
-									 typer 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Uniq">
-									 uniq 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Untable">
-									 untable 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Where">
-									 where 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/X11">
-									 x11								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Xmlkv">
-									 xmlkv 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Xmlunescape">
-									 xmlunescape 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Xpath">
-									 xpath 								</a>
-							</li>
-														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Xyseries">
-									 xyseries 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/SearchTimeModifiers">
+									Time modifiers								</a>
 							</li>
 																		</ul>
 										</div>
@@ -1106,7 +625,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									   href="#collapse6" aria-expanded="false"
 									   aria-controls="collapse6">
 										<span class="caret"></span>
-										<span class="caret-right"></span>Internal Search Commands									</a>
+										<span class="caret-right"></span>Search Commands									</a>
 								</h4>
 							</div>
 															<div id="collapse6" class="panel-collapse collapse" role="tabpanel"
@@ -1114,28 +633,572 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Aboutinternalcommands">
-									 About internal commands								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Abstract">
+									abstract								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Collapse">
-									 collapse 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Accum">
+									accum								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Dump">
-									 dump 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Addcoltotals">
+									addcoltotals								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Findkeywords">
-									 findkeywords								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Addinfo">
+									addinfo								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Runshellscript">
-									 runshellscript 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Addtotals">
+									addtotals								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/Sendalert">
-									 sendalert 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Analyzefields">
+									analyzefields								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalies">
+									anomalies								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalousvalue">
+									anomalousvalue								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalydetection">
+									anomalydetection								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Append">
+									append								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Appendcols">
+									appendcols								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Appendpipe">
+									appendpipe								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Arules">
+									arules								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Associate">
+									associate								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Audit">
+									audit								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Autoregress">
+									autoregress								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Bin">
+									bin								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Bucket">
+									bucket								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Bucketdir">
+									bucketdir								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Chart">
+									chart								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Cluster">
+									cluster								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Cofilter">
+									cofilter								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Collect">
+									collect								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Concurrency">
+									concurrency								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Contingency">
+									contingency								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Convert">
+									convert								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Correlate">
+									correlate								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Crawl">
+									crawl								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Datamodel">
+									datamodel								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Dbinspect">
+									dbinspect								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Dedup">
+									dedup								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Delete">
+									delete								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Delta">
+									delta								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Diff">
+									diff								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Erex">
+									erex								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Eval">
+									eval								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventcount">
+									eventcount								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventstats">
+									eventstats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Extract">
+									extract								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Fieldformat">
+									fieldformat								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Fields">
+									fields								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Fieldsummary">
+									fieldsummary								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Filldown">
+									filldown								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Fillnull">
+									fillnull								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Findtypes">
+									findtypes								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Folderize">
+									folderize								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Foreach">
+									foreach								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Format">
+									format								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/From">
+									from								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Gauge">
+									gauge								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Gentimes">
+									gentimes								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Geom">
+									geom								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Geomfilter">
+									geomfilter								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Geostats">
+									geostats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Head">
+									head								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Highlight">
+									highlight								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/History">
+									history								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Iconify">
+									iconify								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Input">
+									input								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Inputcsv">
+									inputcsv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Inputlookup">
+									inputlookup								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Iplocation">
+									iplocation								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Join">
+									join								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Kmeans">
+									kmeans								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Kvform">
+									kvform								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Loadjob">
+									loadjob								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Localize">
+									localize								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Localop">
+									localop								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Lookup">
+									lookup								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Makecontinuous">
+									makecontinuous								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Makemv">
+									makemv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Makeresults">
+									makeresults								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Map">
+									map								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Metadata">
+									metadata								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Metasearch">
+									metasearch								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Multikv">
+									multikv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Multisearch">
+									multisearch								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Mvcombine">
+									mvcombine								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Mvexpand">
+									mvexpand								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Nomv">
+									nomv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Outlier">
+									outlier								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputcsv">
+									outputcsv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputlookup">
+									outputlookup								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputtext">
+									outputtext								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Overlap">
+									overlap								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Pivot">
+									pivot								</a>
+							</li>
+														<li class="selected">
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Predict">
+									predict								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rangemap">
+									rangemap								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rare">
+									rare								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Regex">
+									regex								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Relevancy">
+									relevancy								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Reltime">
+									reltime								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rename">
+									rename								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Replace">
+									replace								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rest">
+									rest								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Return">
+									return								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Reverse">
+									reverse								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rex">
+									rex								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Rtorder">
+									rtorder								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Run">
+									run								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Savedsearch">
+									savedsearch								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Script">
+									script								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Scrub">
+									scrub								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Search">
+									search								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Searchtxn">
+									searchtxn								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Selfjoin">
+									selfjoin								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sendemail">
+									sendemail								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Set">
+									set								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Setfields">
+									setfields								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sichart">
+									sichart								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sirare">
+									sirare								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sistats">
+									sistats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sitimechart">
+									sitimechart								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sitop">
+									sitop								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sort">
+									sort								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Spath">
+									spath								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Stats">
+									stats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Strcat">
+									strcat								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Streamstats">
+									streamstats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Table">
+									table								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Tags">
+									tags								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Tail">
+									tail								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Timechart">
+									timechart								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Timewrap">
+									timewrap								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Top">
+									top								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Transaction">
+									transaction								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Transpose">
+									transpose								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Trendline">
+									trendline								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Tscollect">
+									tscollect								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Tstats">
+									tstats								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Typeahead">
+									typeahead								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Typelearner">
+									typelearner								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Typer">
+									typer								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Union">
+									union								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Uniq">
+									uniq								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Untable">
+									untable								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Where">
+									where								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/X11">
+									x11								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Xmlkv">
+									xmlkv								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Xmlunescape">
+									xmlunescape								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Xpath">
+									xpath								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Xyseries">
+									xyseries								</a>
 							</li>
 																		</ul>
 										</div>
@@ -1149,7 +1212,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									   href="#collapse7" aria-expanded="false"
 									   aria-controls="collapse7">
 										<span class="caret"></span>
-										<span class="caret-right"></span>Search in the CLI									</a>
+										<span class="caret-right"></span>Internal Commands									</a>
 								</h4>
 							</div>
 															<div id="collapse7" class="panel-collapse collapse" role="tabpanel"
@@ -1157,12 +1220,59 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 									<div class="panel-body">
 										<ul class="list-unstyled">
 																<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/AboutCLIsearches">
-									 About searches in the CLI 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Aboutinternalcommands">
+									About internal commands								</a>
 							</li>
 														<li >
-								<a href="/Documentation/Splunk/latest/SearchReference/CLIsearchsyntax">
-									 Syntax for searches in the CLI 								</a>
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Collapse">
+									collapse								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Dump">
+									dump								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Findkeywords">
+									findkeywords								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Noop">
+									noop								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Runshellscript">
+									runshellscript								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/Sendalert">
+									sendalert								</a>
+							</li>
+																		</ul>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+								
+							<div class="panel-heading" role="tab" id="heading8">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion"
+									   href="#collapse8" aria-expanded="false"
+									   aria-controls="collapse8">
+										<span class="caret"></span>
+										<span class="caret-right"></span>Search in the CLI									</a>
+								</h4>
+							</div>
+															<div id="collapse8" class="panel-collapse collapse" role="tabpanel"
+									 aria-labelledby="heading8">
+									<div class="panel-body">
+										<ul class="list-unstyled">
+																<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/AboutCLIsearches">
+									About searches in the CLI								</a>
+							</li>
+														<li >
+								<a href="/Documentation/Splunk/6.6.0/SearchReference/CLIsearchsyntax">
+									Syntax for searches in the CLI								</a>
 							</li>
 															</ul>
 							</div>
@@ -1219,11 +1329,11 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 		</li>
 				<li>
 			<a href="/Documentation/Splunk/latest/SearchReference/Predict" class="active">
-				 predict			</a>
+				predict			</a>
 		</li>
 		</ol>							</div>
 						</div>
-					</div>
+											</div>
 				</div>
 			</div>
 		</div>
@@ -1258,12 +1368,16 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/WhatsInThisManual">
-											 Welcome to the Search Reference 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/WhatsInThisManual">
+											Welcome to the Search Reference										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/HowToUseThisManual">
-											 How to use this manual 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/UnderstandingSPLsyntax">
+											Understanding SPL syntax										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/HowToUseThisManual">
+											How to use this manual										</a>
 									</li>
 																						</ul>
 												</div>
@@ -1286,24 +1400,28 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/SplunkEnterpriseQuickReferenceGuide">
-											 Splunk Enterprise Quick Reference Guide										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/SplunkEnterpriseQuickReferenceGuide">
+											Quick Reference Guide										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/ListOfSearchCommands">
-											 Command quick reference 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/ListOfSearchCommands">
+											Command quick reference										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Commandsbycategory">
-											 Search commands by category 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Commandsbycategory">
+											Commands by category										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/SQLtoSplunk">
-											 Splunk for SQL users 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Commandsbytype">
+											Command types										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/ListOfDataTypes">
-											 SPL data types and clauses										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/SQLtoSplunk">
+											Splunk SPL for SQL users										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/ListOfDataTypes">
+											SPL data types and clauses										</a>
 									</li>
 																						</ul>
 												</div>
@@ -1316,7 +1434,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											   href="#collapseDesktop3"
 											   aria-expanded="false" aria-controls="collapseDesktop3">
 												<span class="caret"></span>
-												<span class="caret-right"></span>Functions											</a>
+												<span class="caret-right"></span>Evaluation Functions											</a>
 										</h4>
 									</div>
 																			<div id="collapseDesktop3"
@@ -1326,12 +1444,48 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions">
-											 Evaluation functions 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/CommonEvalFunctions">
+											Evaluation functions										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/CommonStatsFunctions">
-											 Statistical and charting functions 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/ConditionalFunctions">
+											Comparison and Conditional functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/ConversionFunctions">
+											Conversion functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/CryptographicFunctions">
+											Cryptographic functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/DateandTimeFunctions">
+											Date and Time Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/InformationalFunctions">
+											Informational Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/MathematicalFunctions">
+											Mathematical Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/MultivalueEvalFunctions">
+											Multivalue Eval Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/StatisticalFunctions">
+											Statistical Eval Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/TextFunctions">
+											Text Functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/TrigandHyperbolicFunctions">
+											Trig and Hyperbolic Functions										</a>
 									</li>
 																						</ul>
 												</div>
@@ -1344,7 +1498,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											   href="#collapseDesktop4"
 											   aria-expanded="false" aria-controls="collapseDesktop4">
 												<span class="caret"></span>
-												<span class="caret-right"></span>Time Format Variables and Modifiers											</a>
+												<span class="caret-right"></span>Statistical and Charting Functions											</a>
 										</h4>
 									</div>
 																			<div id="collapseDesktop4"
@@ -1354,632 +1508,640 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Commontimeformatvariables">
-											 Date and time format variables										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/CommonStatsFunctions">
+											Statistical and charting functions										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/SearchTimeModifiers">
-											 Time modifiers for search 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Aggregatefunctions">
+											Aggregate functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventorderfunctions">
+											Event order functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Multivaluefunctions">
+											Multivalue functions										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Timefunctions">
+											Time functions										</a>
 									</li>
 																						</ul>
 												</div>
 											</div>
 										</div>
 										<div class="panel panel-default">
-																			<div class="panel-heading selected" role="tab" id="heading5">
+																			<div class="panel-heading" role="tab" id="heading5">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#accordionDesktop"
 											   href="#collapseDesktop5"
-											   aria-expanded="true" aria-controls="collapseDesktop5">
+											   aria-expanded="false" aria-controls="collapseDesktop5">
 												<span class="caret"></span>
-												<span class="caret-right"></span>Search Commands											</a>
+												<span class="caret-right"></span>Time Format Variables and Modifiers											</a>
 										</h4>
 									</div>
 																			<div id="collapseDesktop5"
-											 class="panel-collapse collapse in" role="tabpanel"
-											 aria-labelledby="heading5"
-											 aria-expanded="true">
-											<div class="panel-body">
-												<ul class="list-unstyled">
-																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Abstract">
-											 abstract 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Accum">
-											 accum 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Addcoltotals">
-											 addcoltotals 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Addinfo">
-											 addinfo 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Addtotals">
-											 addtotals 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Analyzefields">
-											 analyzefields 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Anomalies">
-											 anomalies 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Anomalousvalue">
-											 anomalousvalue 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Anomalydetection">
-											 anomalydetection										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Append">
-											 append 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Appendcols">
-											 appendcols 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Appendpipe">
-											 appendpipe										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Arules">
-											 arules										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Associate">
-											 associate 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Audit">
-											 audit 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Autoregress">
-											 autoregress 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Bin">
-											 bin 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Bucket">
-											 bucket 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Bucketdir">
-											 bucketdir 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Chart">
-											 chart 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Cluster">
-											 cluster 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Cofilter">
-											 cofilter										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Collect">
-											 collect 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Concurrency">
-											 concurrency 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Contingency">
-											 contingency 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Convert">
-											 convert 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Correlate">
-											 correlate 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Crawl">
-											 crawl 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Datamodel">
-											 datamodel 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Dbinspect">
-											 dbinspect 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Dedup">
-											 dedup 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Delete">
-											 delete 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Delta">
-											 delta 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Diff">
-											 diff 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Erex">
-											 erex 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Eval">
-											 eval 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Eventcount">
-											 eventcount 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Eventstats">
-											 eventstats 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Extract">
-											 extract										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Fieldformat">
-											 fieldformat 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Fields">
-											 fields 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Fieldsummary">
-											 fieldsummary 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Filldown">
-											 filldown 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Fillnull">
-											 fillnull 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Findtypes">
-											 findtypes										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Folderize">
-											 folderize 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Foreach">
-											 foreach										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Format">
-											 format 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Gauge">
-											 gauge										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Gentimes">
-											 gentimes 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Geom">
-											 geom 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Geomfilter">
-											 geomfilter 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Geostats">
-											 geostats										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Head">
-											 head 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Highlight">
-											 highlight 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/History">
-											 history 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Iconify">
-											 iconify 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Input">
-											 input 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Inputcsv">
-											 inputcsv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Inputlookup">
-											 inputlookup 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Iplocation">
-											 iplocation 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Join">
-											  join 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Kmeans">
-											 kmeans 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Kvform">
-											 kvform 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Loadjob">
-											 loadjob 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Localize">
-											 localize 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Localop">
-											 localop 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Lookup">
-											 lookup 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Makecontinuous">
-											 makecontinuous 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Makemv">
-											 makemv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Makeresults">
-											 makeresults 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Map">
-											 map 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Metadata">
-											 metadata 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Metasearch">
-											 metasearch 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Multikv">
-											 multikv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Multisearch">
-											 multisearch										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Mvcombine">
-											 mvcombine 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Mvexpand">
-											 mvexpand 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Nomv">
-											 nomv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Outlier">
-											 outlier 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Outputcsv">
-											 outputcsv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Outputlookup">
-											 outputlookup 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Outputtext">
-											 outputtext 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Overlap">
-											 overlap 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Pivot">
-											 pivot 										</a>
-									</li>
-																		<li class="selected">
-										<a href="/Documentation/Splunk/latest/SearchReference/Predict">
-											 predict										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rangemap">
-											 rangemap 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rare">
-											 rare 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Regex">
-											 regex 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Relevancy">
-											 relevancy 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Reltime">
-											 reltime 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rename">
-											 rename 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Replace">
-											 replace 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rest">
-											 rest										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Return">
-											 return										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Reverse">
-											 reverse 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rex">
-											 rex 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Rtorder">
-											 rtorder 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Run">
-											 run 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Savedsearch">
-											 savedsearch 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Script">
-											 script 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Scrub">
-											 scrub 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Search">
-											 search 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Searchtxn">
-											 searchtxn 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Selfjoin">
-											 selfjoin 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sendemail">
-											 sendemail 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Set">
-											 set 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Setfields">
-											 setfields										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sichart">
-											 sichart 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sirare">
-											 sirare 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sistats">
-											 sistats 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sitimechart">
-											 sitimechart 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sitop">
-											 sitop 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sort">
-											 sort 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Spath">
-											 spath										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Stats">
-											 stats 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Strcat">
-											 strcat 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Streamstats">
-											 streamstats 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Table">
-											 table										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Tags">
-											 tags 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Tail">
-											 tail 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Timechart">
-											 timechart 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Top">
-											 top 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Transaction">
-											 transaction 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Transpose">
-											 transpose 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Trendline">
-											 trendline 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Tscollect">
-											 tscollect 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Tstats">
-											 tstats 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Typeahead">
-											 typeahead 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Typelearner">
-											 typelearner 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Typer">
-											 typer 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Uniq">
-											 uniq 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Untable">
-											 untable 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Where">
-											 where 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/X11">
-											 x11										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Xmlkv">
-											 xmlkv 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Xmlunescape">
-											 xmlunescape 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Xpath">
-											 xpath 										</a>
-									</li>
-																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Xyseries">
-											 xyseries 										</a>
-									</li>
-																						</ul>
-												</div>
-											</div>
-										</div>
-										<div class="panel panel-default">
-																			<div class="panel-heading" role="tab" id="heading6">
-										<h4 class="panel-title">
-											<a data-toggle="collapse" data-parent="#accordionDesktop"
-											   href="#collapseDesktop6"
-											   aria-expanded="false" aria-controls="collapseDesktop6">
-												<span class="caret"></span>
-												<span class="caret-right"></span>Internal Search Commands											</a>
-										</h4>
-									</div>
-																			<div id="collapseDesktop6"
 											 class="panel-collapse collapse" role="tabpanel"
-											 aria-labelledby="heading6"
+											 aria-labelledby="heading5"
 											 aria-expanded="false">
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Aboutinternalcommands">
-											 About internal commands										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Commontimeformatvariables">
+											Date and time format variables										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Collapse">
-											 collapse 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/SearchTimeModifiers">
+											Time modifiers										</a>
+									</li>
+																						</ul>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+																			<div class="panel-heading selected" role="tab" id="heading6">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordionDesktop"
+											   href="#collapseDesktop6"
+											   aria-expanded="true" aria-controls="collapseDesktop6">
+												<span class="caret"></span>
+												<span class="caret-right"></span>Search Commands											</a>
+										</h4>
+									</div>
+																			<div id="collapseDesktop6"
+											 class="panel-collapse collapse in" role="tabpanel"
+											 aria-labelledby="heading6"
+											 aria-expanded="true">
+											<div class="panel-body">
+												<ul class="list-unstyled">
+																				<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Abstract">
+											abstract										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Dump">
-											 dump 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Accum">
+											accum										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Findkeywords">
-											 findkeywords										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Addcoltotals">
+											addcoltotals										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Runshellscript">
-											 runshellscript 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Addinfo">
+											addinfo										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/Sendalert">
-											 sendalert 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Addtotals">
+											addtotals										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Analyzefields">
+											analyzefields										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalies">
+											anomalies										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalousvalue">
+											anomalousvalue										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Anomalydetection">
+											anomalydetection										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Append">
+											append										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Appendcols">
+											appendcols										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Appendpipe">
+											appendpipe										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Arules">
+											arules										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Associate">
+											associate										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Audit">
+											audit										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Autoregress">
+											autoregress										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Bin">
+											bin										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Bucket">
+											bucket										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Bucketdir">
+											bucketdir										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Chart">
+											chart										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Cluster">
+											cluster										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Cofilter">
+											cofilter										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Collect">
+											collect										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Concurrency">
+											concurrency										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Contingency">
+											contingency										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Convert">
+											convert										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Correlate">
+											correlate										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Crawl">
+											crawl										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Datamodel">
+											datamodel										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Dbinspect">
+											dbinspect										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Dedup">
+											dedup										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Delete">
+											delete										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Delta">
+											delta										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Diff">
+											diff										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Erex">
+											erex										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Eval">
+											eval										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventcount">
+											eventcount										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Eventstats">
+											eventstats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Extract">
+											extract										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Fieldformat">
+											fieldformat										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Fields">
+											fields										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Fieldsummary">
+											fieldsummary										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Filldown">
+											filldown										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Fillnull">
+											fillnull										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Findtypes">
+											findtypes										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Folderize">
+											folderize										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Foreach">
+											foreach										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Format">
+											format										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/From">
+											from										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Gauge">
+											gauge										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Gentimes">
+											gentimes										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Geom">
+											geom										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Geomfilter">
+											geomfilter										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Geostats">
+											geostats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Head">
+											head										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Highlight">
+											highlight										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/History">
+											history										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Iconify">
+											iconify										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Input">
+											input										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Inputcsv">
+											inputcsv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Inputlookup">
+											inputlookup										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Iplocation">
+											iplocation										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Join">
+											join										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Kmeans">
+											kmeans										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Kvform">
+											kvform										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Loadjob">
+											loadjob										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Localize">
+											localize										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Localop">
+											localop										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Lookup">
+											lookup										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Makecontinuous">
+											makecontinuous										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Makemv">
+											makemv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Makeresults">
+											makeresults										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Map">
+											map										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Metadata">
+											metadata										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Metasearch">
+											metasearch										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Multikv">
+											multikv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Multisearch">
+											multisearch										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Mvcombine">
+											mvcombine										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Mvexpand">
+											mvexpand										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Nomv">
+											nomv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Outlier">
+											outlier										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputcsv">
+											outputcsv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputlookup">
+											outputlookup										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Outputtext">
+											outputtext										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Overlap">
+											overlap										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Pivot">
+											pivot										</a>
+									</li>
+																		<li class="selected">
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Predict">
+											predict										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rangemap">
+											rangemap										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rare">
+											rare										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Regex">
+											regex										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Relevancy">
+											relevancy										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Reltime">
+											reltime										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rename">
+											rename										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Replace">
+											replace										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rest">
+											rest										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Return">
+											return										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Reverse">
+											reverse										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rex">
+											rex										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Rtorder">
+											rtorder										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Run">
+											run										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Savedsearch">
+											savedsearch										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Script">
+											script										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Scrub">
+											scrub										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Search">
+											search										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Searchtxn">
+											searchtxn										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Selfjoin">
+											selfjoin										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sendemail">
+											sendemail										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Set">
+											set										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Setfields">
+											setfields										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sichart">
+											sichart										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sirare">
+											sirare										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sistats">
+											sistats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sitimechart">
+											sitimechart										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sitop">
+											sitop										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sort">
+											sort										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Spath">
+											spath										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Stats">
+											stats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Strcat">
+											strcat										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Streamstats">
+											streamstats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Table">
+											table										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Tags">
+											tags										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Tail">
+											tail										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Timechart">
+											timechart										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Timewrap">
+											timewrap										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Top">
+											top										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Transaction">
+											transaction										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Transpose">
+											transpose										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Trendline">
+											trendline										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Tscollect">
+											tscollect										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Tstats">
+											tstats										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Typeahead">
+											typeahead										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Typelearner">
+											typelearner										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Typer">
+											typer										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Union">
+											union										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Uniq">
+											uniq										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Untable">
+											untable										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Where">
+											where										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/X11">
+											x11										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Xmlkv">
+											xmlkv										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Xmlunescape">
+											xmlunescape										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Xpath">
+											xpath										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Xyseries">
+											xyseries										</a>
 									</li>
 																						</ul>
 												</div>
@@ -1992,7 +2154,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											   href="#collapseDesktop7"
 											   aria-expanded="false" aria-controls="collapseDesktop7">
 												<span class="caret"></span>
-												<span class="caret-right"></span>Search in the CLI											</a>
+												<span class="caret-right"></span>Internal Commands											</a>
 										</h4>
 									</div>
 																			<div id="collapseDesktop7"
@@ -2002,12 +2164,60 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 											<div class="panel-body">
 												<ul class="list-unstyled">
 																				<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/AboutCLIsearches">
-											 About searches in the CLI 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Aboutinternalcommands">
+											About internal commands										</a>
 									</li>
 																		<li >
-										<a href="/Documentation/Splunk/latest/SearchReference/CLIsearchsyntax">
-											 Syntax for searches in the CLI 										</a>
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Collapse">
+											collapse										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Dump">
+											dump										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Findkeywords">
+											findkeywords										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Noop">
+											noop										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Runshellscript">
+											runshellscript										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/Sendalert">
+											sendalert										</a>
+									</li>
+																						</ul>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-default">
+																			<div class="panel-heading" role="tab" id="heading8">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#accordionDesktop"
+											   href="#collapseDesktop8"
+											   aria-expanded="false" aria-controls="collapseDesktop8">
+												<span class="caret"></span>
+												<span class="caret-right"></span>Search in the CLI											</a>
+										</h4>
+									</div>
+																			<div id="collapseDesktop8"
+											 class="panel-collapse collapse" role="tabpanel"
+											 aria-labelledby="heading8"
+											 aria-expanded="false">
+											<div class="panel-body">
+												<ul class="list-unstyled">
+																				<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/AboutCLIsearches">
+											About searches in the CLI										</a>
+									</li>
+																		<li >
+										<a href="/Documentation/Splunk/6.6.0/SearchReference/CLIsearchsyntax">
+											Syntax for searches in the CLI										</a>
 									</li>
 																			</ul>
 									</div>
@@ -2015,8 +2225,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 															</div> <!-- final panel-default -->
 						</div> <!-- panel-group -->
 											<!-- END of collapsible panels -->
-
-									</div>
+														</div>
 				<!-- END OF DESKTOP Table of Contents -->
 			</div>
 			<!-- main body -->
@@ -2024,239 +2233,240 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 				<div class="row">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<!--googleon: index--><div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1><span class="mw-headline" id="predict">predict</span></h1>
+							<!--googleon: index-->							<a href="/index.php?title=Documentation:Splunk:SearchReference:Predict:Galaxy&amp;action=pdfbook&amp;version=6.6.0&amp;topic=1&amp;product=Splunk" class="download"><img src="/skins/OxfordComma/images/acrobat-logo.png"> Download topic as PDF</a>
+							<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h1><span class="mw-headline" id="predict">predict</span></h1>
 <h2><span class="mw-headline" id="Description">Description</span></h2>
-<p>Predict future values of fields.
-</p><p>The <code>predict</code> command performs a prediction for time-series data. The command can fill missing data within a time-series and provide predictions for the next several time steps. The command provides rigorous confidence intervals for all of its estimates. The command adds a predicted value and an upper and lower 95th percentile range to each event in the time-series.
+<p>The <code>predict</code> command forecasts values for one or more sets of time-series data. The command can also fill in missing data in a time-series and provide predictions for the next several time steps.
+</p><p>The <code>predict</code> command provides confidence intervals for all of its estimates. The command adds a predicted value and an upper and lower 95th percentile range to each event in the time-series. See the <b>Usage</b> section in this topic.
 </p>
 <h2><span class="mw-headline" id="Syntax">Syntax</span></h2>
-<p>predict &lt;variable_to_predict&gt; [AS &lt;newfield_name&gt;] [&lt;predict_option&gt;]
+<p>predict &lt;field-list&gt; [AS &lt;newfield&gt;] [&lt;predict_options&gt;]
 </p>
 <h3><span class="mw-headline" id="Required_arguments">Required arguments</span></h3>
-<dl><dt> &lt;variable_to_predict&gt;</dt>
-<dd> <b>Syntax:</b> &lt;field&gt;</dd>
-<dd> <b>Description:</b> The field name for the variable that you want to predict.</dd></dl>
+<dl><dt> &lt;field-list&gt;</dt>
+<dd> <b>Syntax:</b> &lt;field&gt;...</dd>
+<dd> <b>Description:</b> The names of the fields for the variable that you want to predict. You can specify one or more fields.</dd></dl>
 <h3><span class="mw-headline" id="Optional_arguments">Optional arguments</span></h3>
 <dl><dt> &lt;newfield&gt;</dt>
 <dd> <b>Syntax:</b> &lt;string&gt;</dd>
-<dd> <b>Description:</b> Renames the field name for &lt;variable_to_predict&gt;.</dd></dl>
-<dl><dt> &lt;predict_option&gt;</dt>
-<dd> <b>Syntax:</b> algorithm=&lt;algorithm_name&gt; | correlate_field=&lt;field&gt; | future_timespan=&lt;number&gt; | holdback=&lt;number&gt; | period=&lt;number&gt; |  lowerXX=&lt;field&gt; | upperYY=&lt;field&gt; </dd>
-<dd> <b>Description:</b> Forecasting options. All options can be specified anywhere in any order.</dd></dl>
+<dd> <b>Description:</b> Renames the fields that are specified in the <code>&lt;field-list&gt;</code>.  You do not need to rename every field that you specify in the <code>&lt;field-list&gt;</code>. However, for each field that you want to rename, you must specify a separate <code>AS &lt;newfield&gt;</code> clause. </dd></dl>
+<dl><dt> &lt;predict_options&gt;</dt>
+<dd> <b>Syntax:</b> algorithm=&lt;algorithm_name&gt; | correlate_field=&lt;field&gt; | future_timespan=&lt;number&gt; | holdback=&lt;number&gt; | period=&lt;number&gt; | suppress=&lt;bool&gt; | lowerXX=&lt;field&gt; | upperYY=&lt;field&gt; </dd>
+<dd> <b>Description:</b> Options you can specify to control the predictions. You can specify one or more options, in any order. Each of these options is described in the <b>Predict options</b> section.</dd></dl>
 <h3><span class="mw-headline" id="Predict_options">Predict options</span></h3>
 <dl><dt> algorithm</dt>
-<dd> <b>Syntax:</b> algorithm= LL | LLP | LLT | LLB | LLP5</dd>
-<dd> <b>Description:</b> Specify the name of the forecasting algorithm to apply: LL (local level), LLP (seasonal local level), LLT (local level trend), LLB (bivariate local level), or LLP5 (which combines LLP and LLT). Each algorithm expects a minimum number of data points; for more information, see "Algorithm options" below. </dd>
+<dd> <b>Syntax:</b> algorithm= LL | LLT | LLP | LLP5 | LLB | BiLL</dd>
+<dd> <b>Description:</b> Specify the name of the forecasting algorithm to apply. LL, LLT, LLP, and LLP5 are univariate algorithms. LLB and BiLL are bivariate algorithms. All the algorithms are variations based on the Kalman filter. Each algorithm expects a minimum number of data points. If not enough effective data points are supplied, an error message is displayed. For instance, the field itself might have more than enough data points, but the number of effective data points might be small if the <code>holdback</code> value that you specify is large.</dd>
 <dd> <b>Default:</b> LLP5</dd></dl>
-<dl><dt> correlate</dt>
-<dd> <b>Syntax:</b> correlate=&lt;field&gt;</dd>
-<dd> <b>Description:</b> For bivariate model, indicates the field to correlate against.</dd></dl>
-<dl><dt> future_timespan</dt>
-<dd> <b>Syntax:</b> future_timespan=&lt;number&gt;</dd>
-<dd> <b>Description:</b> The length of prediction into the future. Must be a non-negative number. You would not use this option if algorithm=LLB.</dd></dl>
-<dl><dt> holdback</dt>
-<dd> <b>Syntax:</b> holdback=&lt;number&gt;</dd>
-<dd> <b>Description:</b> Specifies the &lt;number&gt; of data points from the end that are NOT used to build the model. For example, 'holdback=10' computes the prediction for the last 10 values. Typically, this is used to compare the predicted values to the actual data. Required when algorithm=LLB.</dd></dl>
-<dl><dt> lowerXX</dt>
-<dd> <b>Syntax:</b> lower&lt;int&gt;=&lt;field&gt;</dd>
-<dd> <b>Description:</b> Specifies a field name for the lower &lt;int&gt; percentage confidence interval. &lt;int&gt; is greater than or equal to 0 and less than 100. </dd>
-<dd> <b>Default:</b> lower95, in which 95% of predictions are expected to fall.</dd></dl>
-<dl><dt> period</dt>
-<dd> <b>Syntax:</b> period=&lt;number&gt;</dd>
-<dd> <b>Description:</b> If algorithm is LLP or LLP5, specify the seasonal period of the time series data. If not specified, the period is estimated using the data's auto-correlation. If algorithm is not LLP or LLP5, this is ignored. </dd></dl>
-<dl><dt> upperYY</dt>
-<dd> <b>Syntax:</b> upper&lt;int&gt;=&lt;field&gt;</dd>
-<dd> <b>Description:</b> Specifies a field name for the upper &lt;int&gt; percentage confidence interval. &lt;int&gt; is greater than or equal to 0 and less than 100. </dd>
-<dd> <b>Default:</b> upper95, in which 95% of predictions are expected to fall.</dd></dl>
-<h3><span class="mw-headline" id="Algorithm_options">Algorithm options</span></h3>
-<p>All the algorithms are variations based on the Kalman filter. The algorithm names are: LL, LLP, LLT, LLB, and LLP5. Each algorithm above expects a minimum number of data points. If not enough effective data points are supplied, an error message is displayed. For instance, the field itself might have more than enough data points, but the number of effective data points might be small if the holdback is large.
-</p>
-<table cellpadding="5" cellspacing="0" border="1">
+<dl><dd><table cellpadding="5" cellspacing="0" border="1">
 <tr>
 <th>Algorithm option
 </th>
-<th>Algorithm name
+<th>Algorithm type
 </th>
 <th>Description
 </th></tr>
 <tr>
-<td> LL
+<td style="width: 10%;"> LL
 </td>
-<td> Local level
+<td style="width: 20%;"> Local level
 </td>
-<td> This is a univariate model with no trends and no seasonality. Requires a minimum of 2 data points.
-</td></tr>
-<tr>
-<td> LLP
-</td>
-<td> Seasonal local level
-</td>
-<td> This is a univariate model with seasonality. The periodicity of the time series is automatically computed. Requires the minimum number of data points to be twice the period.
+<td style="width: 70%;"> A univariate model with no trends and no seasonality. Requires a minimum of 2 data points.  The LL algorithm is the simplest algorithm and computes the levels of the time series. For example, each new state equals the previous state, plus the Gaussian noise.
 </td></tr>
 <tr>
 <td> LLT
 </td>
 <td> Local level trend
 </td>
-<td> This is a univariate model with trend but no seasonality. Requires a minimum of 3 data points.
+<td> A univariate model with trend, but no seasonality. Requires a minimum of 3 data points.
+</td></tr>
+<tr>
+<td> LLP
+</td>
+<td> Seasonal local level
+</td>
+<td> A univariate model with seasonality. The number of data points must be at least twice the number of periods. The LLP algorithm takes into account the cyclical regularity of the data, if it exists. If you know the number of periods, specify the <code>period</code> option. If you do not set the <code>period</code>, this algorithm tries to calculate it. LLP returns an error message if the data is not periodic.
+</td></tr>
+<tr>
+<td> LLP5
+</td>
+<td> Combines LLT and LLP models for its prediction.
+</td>
+<td> If the time series is periodic, LLP5 computes two predictions, one using LLT and the other using LLP. The algorithm then takes a weighted average of the two values and outputs that as the prediction. The confidence interval is also based on a weighted average of the variances of LLT and LLP.
 </td></tr>
 <tr>
 <td> LLB
 </td>
 <td> Bivariate local level
 </td>
-<td> This is a bivariate model with no trends and no seasonality. Requires a minimum of 2 data points. LLB uses one set of data to make predictions for another. For example, assume it uses dataset Y to make predictions for dataset X. If the holdback=10, this means LLB takes the last 10 data points of Y to make predictions for the last 10 data points of X.
+<td> A bivariate model with no trends and no seasonality. Requires a minimum of 2 data points. LLB uses one set of data to make predictions for another. For example, assume it uses dataset Y to make predictions for dataset X. If <code>holdback=10</code>,  LLB takes the last 10 data points of Y to make predictions for the last 10 data points of X.
 </td></tr>
 <tr>
-<td> LLP5
+<td> BiLL
 </td>
-<td>
+<td> Bivariate local level
 </td>
-<td> Combines LLT and LLP models for its prediction.
-</td></tr></table>
+<td> A bivariate model  that predicts both time series simultaneously. The covariance of the two series is taken into account.
+</td></tr></table></dd></dl>
+<dl><dt> correlate</dt>
+<dd> <b>Syntax:</b> correlate=&lt;field&gt;</dd>
+<dd> <b>Description:</b> Specifies the time series that the LLB algorithm uses to predict the other time series. Required when you specify the LLB algorithm.  Not used for any other algorithm. </dd>
+<dd> <b>Default:</b> None</dd></dl>
+<dl><dt> future_timespan</dt>
+<dd> <b>Syntax:</b> future_timespan=&lt;num&gt;</dd>
+<dd> <b>Description:</b> Specifies how many future predictions the <code>predict</code> command will compute. This number must be a non-negative number. You would not use the <code>future_timespan</code> option if  <code>algorithm=LLB</code>.</dd>
+<dd> <b>Default:</b> 5</dd></dl>
+<dl><dt> holdback</dt>
+<dd> <b>Syntax:</b> holdback=&lt;num&gt;</dd>
+<dd> <b>Description:</b> Specifies the number of data points from the end that are not to be used by the <code>predict</code> command. Use in conjunction with the <code>future_timespan</code> argument. For example, 'holdback=10 future_timespan=10' computes the predicted values for the last 10 values in the data set.  You can then judge how accurate the predictions are by checking whether the actual data point values fall into the predicted confidence intervals. </dd>
+<dd> <b>Default:</b> 0</dd></dl>
+<dl><dt> lowerXX</dt>
+<dd> <b>Syntax:</b> lower&lt;int&gt;=&lt;field&gt;</dd>
+<dd> <b>Description:</b> Specifies a percentage for the confidence interval and a field name to use for the lower confidence interval curve. The <code>&lt;int&gt;</code> value is a percentage that specifies the confidence level.  The integer must be a number between 0 and 100. The <code>&lt;field&gt;</code> value is the field name.</dd>
+<dd> <b>Default:</b> The default confidence interval is 95%. The default field name is 'lower95(prediction(X))' where X is the name of the field to be predicted.</dd></dl>
+<dl><dt> period</dt>
+<dd> <b>Syntax:</b> period=&lt;num&gt;</dd>
+<dd> <b>Description:</b> Specifies the length of the time period, or recurring cycle, in the time series data. The number must be at least 2.  The LLP and LLP5 algorithms attempt to compute the length of time period if no value is specified. If you specify the <code>span</code> argument with the <code>timechart</code> command, the unit that you specify for <code>span</code> is the unit used for <code>period</code>.  For example, if your search is <code>...|timechart span=1d foo2| predict foo2 period=3</code>. The spans are 1 day and the period for the predict is 3 days. Otherwise, the unit for the time period is a data point. For example, if there are a thousand events, then each event is a unit. If you specify <code>period=7</code>, that means the data recycles after every 7 data points, or events.</dd>
+<dd> <b>Default:</b> None</dd></dl>
+<dl><dt> suppress</dt>
+<dd> <b>Syntax:</b> suppress=&lt;field&gt;</dd>
+<dd> <b>Description:</b> Used with the multivariate algorithms. Specifies one of the predicted fields to hide from the output. Use <code>suppress</code> when it is difficult to see all of the predicted visualizations at the same time.</dd>
+<dd> <b>Default:</b> None</dd></dl>
+<dl><dt> upperYY</dt>
+<dd> <b>Syntax:</b> upper&lt;int&gt;=&lt;field&gt;</dd>
+<dd> <b>Description:</b> Specifies a percentage for the confidence interval and a field name to use for the upper confidence interval curve. The <code>&lt;int&gt;</code> value is a percentage that specifies the confidence level.  This must be a number between 0 and 100. The <code>&lt;field&gt;</code> value is the field name.</dd>
+<dd> <b>Default:</b> The default confidence interval is 95%. The default field name is 'upper95(prediction(X))' where X is the name of the field to be predicted.</dd></dl>
 <h3><span class="mw-headline" id="Confidence_intervals">Confidence intervals</span></h3>
-<p>The lower and upper confidence interval parameters default to lower95 and upper95. This specifies a confidence interval where 95% of the predictions  are expected to fall.
-</p><p>It is typical for some of the predictions to fall outside the confidence interval because:
+<p>The lower and upper confidence interval parameters default to <code>lower95</code> and <code>upper95</code>. These values specify a confidence interval where 95% of the predictions are expected fall.  
+</p><p>It is typical for some of the predictions to fall outside the confidence interval.
 </p>
 <ul><li> The confidence interval does not cover 100% of the predictions.</li>
 <li> The confidence interval is about a probabilistic expectation and results do not match the expectation exactly.</li></ul>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Command_sequence_requirement">Command sequence requirement</span></h3>
+<p>The <code>predict</code> command must be preceded by the <code>timechart</code> command. The  <code>predict</code> command requires time series data. See the <b>Examples</b> section for more details.
+</p>
+<h3><span class="mw-headline" id="How_it_works">How it works</span></h3>
+<p>The <code>predict</code> command models the data by stipulating that there is an unobserved entity which progresses through time in different states.  
+</p><p>To predict a value, the command calculates the best estimate of the state by considering all of the data in the past. 
+To compute estimates of the states, the command hypothesizes that the states follow specific linear equations with Gaussian noise components.
+</p><p>Under this hypothesis, the least-squares estimate of the states are calculated efficiently. This calculation is called the Kalman filter, or Kalman-Bucy filter. For each state estimate, a confidence interval is obtained. The estimate is not a point estimate. The estimate is a range of values that contain the observed, or predicted, values.
+</p><p>The measurements might capture only some aspect of the state, but not necessarily the whole state.
+</p>
+<h3><span class="mw-headline" id="Missing_values">Missing values</span></h3>
+<p>The <code>predict</code> command can work with data that has missing values. The command calculates the best estimates of the missing values. 
+</p><p>Do not remove events with missing values, Removing the events might distort the periodicity of the data. Do not specify <code>cont=false</code> with the  <code>timechart</code> command. Specifying <code>cont=false</code> removes events with missing values.
+</p>
 <h2><span class="mw-headline" id="Examples">Examples</span></h2>
-<h3><span class="mw-headline" id="Example_1:">Example 1:</span></h3>
+<h3><span class="mw-headline" id="Example:_Predict_future_downloads">Example: Predict future downloads</span></h3>
 <p>Predict future downloads based on the previous download numbers.
 </p>
-<div class="inlineQuery splunk_search_4_3"><code>index=download | timechart span=1d count(file) as count | predict count</code><br/></div>
+<p class="inlineQuery"><code>index=download | timechart span=1d count(file) as count | predict count</code></p>
 <p><a href="/File:Predict_example1.png" class="image"><img alt="Predict example1.png" src="/images/1/10/Predict_example1.png" width="600" height="195" /></a>
-</p><p><br />
 </p>
-<h3><span class="mw-headline" id="Example_2:">Example 2:</span></h3>
-<p>Predict the values of foo using LL or LLP, depending on whether foo is periodic.
+<h3><span class="mw-headline" id="Example:_Predict_the_values_using_the_default_algorithm">Example: Predict the values using the default algorithm</span></h3>
+<p>Predict the values of foo using the default LLP5 algorithm, an algorithm that combines the LLP and LLT algorithms.
 </p>
-<div class="inlineQuery splunk_search_4_3"><code>... | timechart span=&quot;1m&quot; count AS foo | predict foo</code><br/></div>
-<h3><span class="mw-headline" id="Example_3:">Example 3:</span></h3>
-<p>Upper and lower confidence intervals do not have to match.
+<p class="inlineQuery"><code>... | timechart span=&quot;1m&quot; count AS foo | predict foo</code></p>
+<h3><span class="mw-headline" id="Example:_Predict_multiple_fields_using_the_same_algorithm">Example: Predict multiple fields using the same algorithm</span></h3>
+<p>Predict multiple fields using the same algorithm. The default algorithm in this example. 
 </p>
-<div class="inlineQuery splunk_search_4_3"><code>... | timechart span=&quot;1m&quot; count AS foo | predict foo as fubar algorithm=LL upper90=high lower97=low future_timespan=10 holdback=20</code><br/></div>
-<h3><span class="mw-headline" id="Example_4:">Example 4:</span></h3>
-<p>Illustrates the LLB algorithm. The foo2 field is predicted by correlating it with the foo1 field.
+<p class="inlineQuery"><code>... | timechart ... |  predict foo1 foo2 foo3</code></p>
+<h3><span class="mw-headline" id="Example:_Specifying_different_upper_and_lower_confidence_intervals">Example: Specifying different upper and lower confidence intervals</span></h3>
+<p>When specifying confidence intervals, the upper and lower confidence interval values do not need to match. This example predicts 10 values for a field using the LL algorithm, holding back the last 20 values in the data set. 
 </p>
-<div class="inlineQuery splunk_search_4_3"><code>... | timechart span=&quot;1m&quot; count(x) AS foo1 count(y) AS foo2 | predict foo2 as fubar algorithm=LLB correlate=foo1 holdback=100</code><br/></div>
+<p class="inlineQuery"><code>... | timechart span=&quot;1m&quot; count AS foo | predict foo AS foobar algorithm=LL upper90=high lower97=low future_timespan=10 holdback=20</code></p>
+<h3><span class="mw-headline" id="Example:_Predict_the_values_using_the_LLB_algorithm">Example: Predict the values using the LLB algorithm</span></h3>
+<p>This example illustrates the LLB algorithm. The foo3 field is predicted by correlating it with the foo2 field.
+</p>
+<p class="inlineQuery"><code>... | timechart span=&quot;1m&quot; count(x) AS foo2 count(y) AS foo3 | predict foo3 AS foobar algorithm=LLB correlate=foo2 holdback=100</code></p>
+<h3><span class="mw-headline" id="Example:_Omit_the_last_5_data_points_and_predict_5_future_values">Example: Omit the last 5 data points and predict 5 future values</span></h3>
+<p>In this example, the search abstains from using the last 5 data points and makes 5 future predictions. The predictions correspond to the last 5 values in the data. You can judge how accurate the predictions are by checking whether the observed values fall into the predicted confidence intervals.
+</p>
+<p class="inlineQuery"><code>... | timechart ... |  predict foo holdback=5 future_timespan=5</code></p>
+<h3><span class="mw-headline" id="Example:_Predict_multiple_fields_using_the_same_algorithm_and_the_same_future_timespan_and_holdback">Example: Predict multiple fields using the same algorithm and the same future_timespan and holdback</span></h3>
+<p>Predict multiple fields using the same algorithm and same future_timespan and holdback.
+</p>
+<p class="inlineQuery"><code>... | timechart ... |  predict foo1 foo2 foo3 algorithm=LLT future_timespan=15 holdback=5</code></p>
+<h3><span class="mw-headline" id="Example:_Specify_aliases_for_fields">Example: Specify aliases for fields</span></h3>
+<p>Use aliases for the fields by specifying the AS keyword for each field. 
+</p>
+<p class="inlineQuery"><code>... | timechart ... |  predict foo1 AS foobar1 foo2 AS foobar2 foo3 AS foobar3 algorithm=LLT future_timespan=15 holdback=5</code></p>
+<h3><span class="mw-headline" id="Example:_Predict_multiple_fields_using_different_algorithms_and_options">Example: Predict multiple fields using different algorithms and options</span></h3>
+<p>Predict multiple fields using different algorithms and different options for each field.
+</p>
+<p class="inlineQuery"><code>... | timechart ... |  predict foo1 algorithm=LL future_timespan=15 foo2 algorithm=LLP period=7 future_timespan=7</code></p>
+<h3><span class="mw-headline" id="Example:_Predict_multiple_fields_using_the_BiLL_algorithm">Example: Predict multiple fields using the BiLL algorithm</span></h3>
+<p>Predict values for foo1 and foo2 together using the bivariate algorithm BiLL. 
+</p>
+<p class="inlineQuery"><code>... | timechart ... |  predict foo1 foo2 algorithm=BiLL future_timespan=10</code></p>
 <h2><span class="mw-headline" id="See_also">See also</span></h2>
-<p><a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/SearchReference/Trendline">trendline</a>, <a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.3.1/SearchReference/x11">x11</a>
+<p><a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/Trendline">trendline</a>, <a class="external text" href="http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/x11">x11</a>
 </p>
 <h2><span class="mw-headline" id="Answers">Answers</span></h2>
 <p>Have questions? Visit <a class="external text" href="http://splunk-base.splunk.com">Splunk Answers</a> and see what <a class="external text" href="http://splunk-base.splunk.com/tags/predict/">questions and answers the Splunk community has about using the predict command</a>.
 </p>
 <!-- 
 NewPP limit report
-CPU time usage: 0.065 seconds
-Real time usage: 0.097 seconds
-Preprocessor visited node count: 94/1000000
-Preprocessor generated node count: 144/1000000
+CPU time usage: 0.070 seconds
+Real time usage: 0.113 seconds
+Preprocessor visited node count: 186/1000000
+Preprocessor generated node count: 304/1000000
 Post‐expand include size: 0/2097152 bytes
 Template argument size: 0/2097152 bytes
 Highest expansion depth: 2/40
 Expensive parser function count: 0/100
 -->
 </div><div class="printfooter">
-Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Predict:4.1&amp;oldid=468697">http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Predict:4.1&amp;oldid=468697</a>"</div>
+Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Predict:Galaxy&amp;oldid=668235">http://docs.splunk.com/index.php?title=Documentation:Splunk:SearchReference:Predict:Galaxy&amp;oldid=668235</a>"</div>
 <!--googleoff: index-->						</div>
-					</div>	
+					</div>
 				</div>
-				
+
 									<table class="paging">
 						<tr>
 															<td class="arrow-previous">
-									<a href="/Documentation/Splunk/latest/SearchReference/Pivot">
+									<a href="/Documentation/Splunk/6.6.0/SearchReference/Pivot">
 										<i class="glyphicon glyphicon-chevron-left"></i>
 									</a>
 								</td>
 								<td class="previous">
 									<span>PREVIOUS</span><br />
-									<a href="/Documentation/Splunk/latest/SearchReference/Pivot">
-										 pivot 									</a>
+									<a href="/Documentation/Splunk/6.6.0/SearchReference/Pivot">
+										pivot									</a>
 								</td>
 															<td class="separator">&nbsp;</td>
 															<td class="next">
 									<span>NEXT</span><br />
-									<a href="/Documentation/Splunk/latest/SearchReference/Rangemap">
-										 rangemap 									</a>
+									<a href="/Documentation/Splunk/6.6.0/SearchReference/Rangemap">
+										rangemap									</a>
 								</td>
 								<td class="arrow-next">
-									<a href="/Documentation/Splunk/latest/SearchReference/Rangemap">
+									<a href="/Documentation/Splunk/6.6.0/SearchReference/Rangemap">
 										<i class="glyphicon glyphicon-chevron-right"></i>
 									</a>
 								</td>
 														</tr>
 					</table>
 						<p class="disclaimer">
-		This documentation applies to the following versions of Splunk: 
-		<a href="/Category:V:Splunk:5.0">5.0</a>, <a href="/Category:V:Splunk:5.0.1">5.0.1</a>, <a href="/Category:V:Splunk:5.0.2">5.0.2</a>, <a href="/Category:V:Splunk:5.0.3">5.0.3</a>, <a href="/Category:V:Splunk:5.0.4">5.0.4</a>, <a href="/Category:V:Splunk:5.0.5">5.0.5</a>, <a href="/Category:V:Splunk:5.0.6">5.0.6</a>, <a href="/Category:V:Splunk:5.0.7">5.0.7</a>, <a href="/Category:V:Splunk:5.0.8">5.0.8</a>, <a href="/Category:V:Splunk:5.0.9">5.0.9</a>, <a href="/Category:V:Splunk:5.0.10">5.0.10</a>, <a href="/Category:V:Splunk:5.0.11">5.0.11</a>, <a href="/Category:V:Splunk:5.0.12">5.0.12</a>, <a href="/Category:V:Splunk:5.0.13">5.0.13</a>, <a href="/Category:V:Splunk:5.0.14">5.0.14</a>, <a href="/Category:V:Splunk:6.0">6.0</a>, <a href="/Category:V:Splunk:6.0.1">6.0.1</a>, <a href="/Category:V:Splunk:6.0.2">6.0.2</a>, <a href="/Category:V:Splunk:6.0.3">6.0.3</a>, <a href="/Category:V:Splunk:6.0.4">6.0.4</a>, <a href="/Category:V:Splunk:6.0.5">6.0.5</a>, <a href="/Category:V:Splunk:6.0.6">6.0.6</a>, <a href="/Category:V:Splunk:6.0.7">6.0.7</a>, <a href="/Category:V:Splunk:6.0.8">6.0.8</a>, <a href="/Category:V:Splunk:6.0.9">6.0.9</a>, <a href="/Category:V:Splunk:6.0.10">6.0.10</a>, <a href="/Category:V:Splunk:6.1">6.1</a>, <a href="/Category:V:Splunk:6.1.1">6.1.1</a>, <a href="/Category:V:Splunk:6.1.2">6.1.2</a>, <a href="/Category:V:Splunk:6.1.3">6.1.3</a>, <a href="/Category:V:Splunk:6.1.4">6.1.4</a>, <a href="/Category:V:Splunk:6.1.5">6.1.5</a>, <a href="/Category:V:Splunk:6.1.6">6.1.6</a>, <a href="/Category:V:Splunk:6.1.7">6.1.7</a>, <a href="/Category:V:Splunk:6.1.8">6.1.8</a>, <a href="/Category:V:Splunk:6.1.9">6.1.9</a>, <a href="/Category:V:Splunk:6.2.0">6.2.0</a>, <a href="/Category:V:Splunk:6.2.1">6.2.1</a>, <a href="/Category:V:Splunk:6.2.2">6.2.2</a>, <a href="/Category:V:Splunk:6.2.3">6.2.3</a>, <a href="/Category:V:Splunk:6.2.4">6.2.4</a>, <a href="/Category:V:Splunk:6.2.5">6.2.5</a>, <a href="/Category:V:Splunk:6.2.6">6.2.6</a>, <a href="/Category:V:Splunk:6.3.0">6.3.0</a>, <a href="/Category:V:Splunk:6.3.1">6.3.1</a>		<span id="startlink">
-			View the <a href="/index.php?title=Documentation:Splunk:SearchReference:Predict:4.1&amp;action=history">Article History</a> for its revisions.
-		</span>
-	</p>
+		This documentation applies to the following versions of Splunk<sup>&reg;</sup> Enterprise: 
+		6.4.0, 6.4.1, 6.4.2, 6.4.3, 6.4.4, 6.4.5, 6.4.6, 6.4.7, 6.5.0, 6.5.1, 6.5.1612 (Splunk Cloud only), 6.5.2, 6.5.3, 6.6.0	</p>
 	
 <hr />
 
-					<h2>Comments</h2>
-									<div id="commentListing">
-											<div>
-										<div class="commentWrapper" data-comment-id="2462">
-				<div class="commentBoxWrapper">
-					<div class="commentBoxTop"></div>
-					<div class="commentContent"><p>Thank you for correcting the typo :)</p></div>
-					<div class="commentBoxBottom"></div>
-				</div><!-- /commentBoxWrapper -->
-				<div class="comment-meta">
-					<div class="fn n">
-					Strive					</div>
-					<div class="commentDate">September 2, 2014					</div>
-				</div>
-			</div>
-					<div class="commentWrapper" data-comment-id="2454">
-				<div class="commentBoxWrapper">
-					<div class="commentBoxTop"></div>
-					<div class="commentContent"><p>Hi,&lt;br /&gt;&lt;br /&gt;While explaining Predict Options, for lowerXX and upperXX it is mentioned that &quot;in which 95% of predictions are expected to fail&quot;. Whereas while explaining confidence intervals, it is mentioned that &quot;interval where 95% of the predictions are expected to fall&quot;. Please look at the word fail and fall. I think fall is the right word.&lt;br /&gt;&lt;br /&gt;Thanks,&lt;br /&gt;Strive</p></div>
-					<div class="commentBoxBottom"></div>
-				</div><!-- /commentBoxWrapper -->
-				<div class="comment-meta">
-					<div class="fn n">
-					Strive					</div>
-					<div class="commentDate">September 1, 2014					</div>
-				</div>
-			</div>
-					<div class="commentWrapper" data-comment-id="2154">
-				<div class="commentBoxWrapper">
-					<div class="commentBoxTop"></div>
-					<div class="commentContent"><p>Thanks Alacer! I've corrected the typo. :D</p></div>
-					<div class="commentBoxBottom"></div>
-				</div><!-- /commentBoxWrapper -->
-				<div class="comment-meta">
-					<div class="fn n">
-					Sophy					</div>
-					<div class="commentDate">January 24, 2014					</div>
-				</div>
-			</div>
-					<div class="commentWrapper" data-comment-id="2152">
-				<div class="commentBoxWrapper">
-					<div class="commentBoxTop"></div>
-					<div class="commentContent"><p>Example 3: Should probably read as *Upper and lower confidence intervals DO not have to match*</p></div>
-					<div class="commentBoxBottom"></div>
-				</div><!-- /commentBoxWrapper -->
-				<div class="comment-meta">
-					<div class="fn n">
-					Alacercogitatus					</div>
-					<div class="commentDate">January 23, 2014					</div>
-				</div>
-			</div>
-								</div>
-										</div>
+				<h2 id="topic-comment" style="display:none">Comments</h2>
+				<div id="commentListing">
+									</div>
 			</div>
 			<!-- /main body -->
 			<!-- fixed nav -->
 							<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 related-container">
+					<div id="sticky-back-to-top" class="hidden">
+					  <a href="#">Back To Top</a>
+					</div>
 					<div id="sticky-right-nav">
 						<div id="right-nav" class="hidden-xs hidden-sm">
-							<h2> predict</h2>
+							<h2>predict</h2>
 							<ul class="list-unstyled">
 																			<li rel="#Description" class="anchorlink">
 												<a href="#Description">Description</a>
@@ -2265,14 +2475,24 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 											<ul class="sublist">											<li><a href="#Required_arguments">Required arguments</a></li>
 																						<li><a href="#Optional_arguments">Optional arguments</a></li>
 																						<li><a href="#Predict_options">Predict options</a></li>
-																						<li><a href="#Algorithm_options">Algorithm options</a></li>
 																						<li><a href="#Confidence_intervals">Confidence intervals</a></li>
+											</ul></li>											<li rel="#Usage" class="anchorlink">
+												<a href="#Usage">Usage</a>
+											<ul class="sublist">											<li><a href="#Command_sequence_requirement">Command sequence requirement</a></li>
+																						<li><a href="#How_it_works">How it works</a></li>
+																						<li><a href="#Missing_values">Missing values</a></li>
 											</ul></li>											<li rel="#Examples" class="anchorlink">
 												<a href="#Examples">Examples</a>
-											<ul class="sublist">											<li><a href="#Example_1:">Example 1:</a></li>
-																						<li><a href="#Example_2:">Example 2:</a></li>
-																						<li><a href="#Example_3:">Example 3:</a></li>
-																						<li><a href="#Example_4:">Example 4:</a></li>
+											<ul class="sublist">											<li><a href="#Example:_Predict_future_downloads">Example: Predict future downloads</a></li>
+																						<li><a href="#Example:_Predict_the_values_using_the_default_algorithm">Example: Predict the values using the default algorithm</a></li>
+																						<li><a href="#Example:_Predict_multiple_fields_using_the_same_algorithm">Example: Predict multiple fields using the same algorithm</a></li>
+																						<li><a href="#Example:_Specifying_different_upper_and_lower_confidence_intervals">Example: Specifying different upper and lower confidence intervals</a></li>
+																						<li><a href="#Example:_Predict_the_values_using_the_LLB_algorithm">Example: Predict the values using the LLB algorithm</a></li>
+																						<li><a href="#Example:_Omit_the_last_5_data_points_and_predict_5_future_values">Example: Omit the last 5 data points and predict 5 future values</a></li>
+																						<li><a href="#Example:_Predict_multiple_fields_using_the_same_algorithm_and_the_same_future_timespan_and_holdback">Example: Predict multiple fields using the same algorithm and the same future_timespan and holdback</a></li>
+																						<li><a href="#Example:_Specify_aliases_for_fields">Example: Specify aliases for fields</a></li>
+																						<li><a href="#Example:_Predict_multiple_fields_using_different_algorithms_and_options">Example: Predict multiple fields using different algorithms and options</a></li>
+																						<li><a href="#Example:_Predict_multiple_fields_using_the_BiLL_algorithm">Example: Predict multiple fields using the BiLL algorithm</a></li>
 											</ul></li>											<li rel="#See_also" class="anchorlink">
 												<a href="#See_also">See also</a>
 											</li>											<li rel="#Answers" class="anchorlink">
@@ -2283,7 +2503,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 				</div>
 							<!-- /fixed nav -->
 		</div>
-    </div>
+	</div>
 </section>
 
 <!-- Comments and Feedback -->
@@ -2298,7 +2518,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 							<ul class="tabs" role="tablist">
 								<li role="presentation" class="active">
 									<div class="tab-top-edge"></div>
-									<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Was this topic useful
+									<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Was this topic useful?
 									</a>
 								</li>
 								<li role="presentation">
@@ -2327,10 +2547,10 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 									<div class="row">
 										<div class="col-lg-12 comment-container">
 											<form id="feedbackdialoginner">
-												<input type="hidden" id="splunk_feedback_title" 
+												<input type="hidden" id="splunk_feedback_title"
 													value="Documentation/Splunk/latest/SearchReference/Predict" />
 												<input type="hidden" id="splunk_feedback_rawtitle"
-													   value="Documentation:Splunk:SearchReference:Predict:4.1" />
+													   value="Documentation:Splunk:SearchReference:Predict:Galaxy" />
 												<p>
 													<strong>Was this documentation topic helpful?</strong>
 													<select id="splunk_feedback_yesno">
@@ -2340,17 +2560,27 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 													</select>
 												</p>
 
-												<p>
-													<strong>If you'd like to hear back from us, please provide your email address:</strong>
-													<input id="splunk_feedback_email" type="text" maxlength="255" size="30">
+												<p id="splunk_feedback_no_reason" style="display:none">
+													<strong>Please specify the reason</strong>
+													<select id="splunk_feedback_no_reasonlist">
+														<option value="">Please select</option>
+														<option	value="didnt_answer">The topic did not answer my question(s)</option>
+														<option value="found_error">I found an error</option>
+														<option value="didnt_like">I did not like the topic organization</option>
+														<option value="other">Other</option>
+													</select>
+												</p>
+
+																								<p>
+													<strong>Enter your email address, and someone from the documentation team will respond to you:</strong>
+													<input id="splunk_feedback_email" type="text" maxlength="255" size="30" value=""  />
 												</p>
 
 												<p>
-													We'd love to hear what you think about this topic or the documentation as a whole<br/>
-													Feedback you enter here will be delivered to the documentation team
+													Please provide your comments here. Ask a question or make a suggestion.
 												</p>
 
-												<textarea class="form-control" id="splunk_feedback_comment" rows="3"></textarea>
+												<textarea placeholder = '' class="form-control" id="splunk_feedback_comment" rows="3"></textarea>
 												<button class="btn btn-default" type="submit" id="splunk_feedback_submit" name="submit">Send Feedback</button>
 											</form>
 											<p id="splunk_helpful_completed" class="well" style="display: none">
@@ -2373,10 +2603,10 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 																							<p>
 												Please try to keep this discussion focused on the content covered in this documentation topic.
 												If you have a more general question about Splunk functionality or are experiencing a difficulty with Splunk,
-												consider posting a question to <a href="http://answers.splunk.com">Splunkbase Answers</a>.
+												consider posting a question to <a href="https://answers.splunk.com">Splunkbase Answers</a>.
 											</p>
 											<form>
-												<input type="hidden" id="splunk_comment_title" value="Documentation:Splunk:SearchReference:Predict:4.1" />
+												<input type="hidden" id="splunk_comment_title" value="Documentation:Splunk:SearchReference:Predict:Galaxy" />
 												<div class="counter disabled"><span id="splunk_comment_charcount">0</span>
 												out of 1000 Characters</div>
 												<textarea disabled class="form-control"
@@ -2422,7 +2652,7 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 			</div>
 			<div id="rights" class="col-xs-12">
 				<div>
-					<span>&copy; 2005 - 2015 Splunk Inc. All rights reserved. Splunk&reg;, Splunk&gt;&reg;, Listen to Your Data&reg;, The Engine for Machine Data&reg;, Hunk&reg;, Splunk Cloud&trade;, Splunk&reg; Light, SPL&trade; and Splunk MINT&trade; are trademarks and registered trademarks of Splunk Inc. in the United States and other countries.&nbsp;All other brand names, product names, or trademarks belong to their respective owners.</span>
+					<span>&copy; 2005 - 2017 Splunk Inc. All rights reserved. Splunk&reg;, Splunk&gt;&reg;, Listen to Your Data&reg;, The Engine for Machine Data&reg;, Hunk&reg;, Splunk Cloud&trade;, Splunk&reg; Light, SPL&trade; and Splunk MINT&trade; are trademarks and registered trademarks of Splunk Inc. in the United States and other countries.&nbsp;All other brand names, product names, or trademarks belong to their respective owners.</span>
 				</div>
 			</div>
 		</div>
@@ -2440,13 +2670,24 @@ Retrieved from "<a dir="ltr" href="http://docs.splunk.com/index.php?title=Docume
 		pageTracker._initData();
 		pageTracker._trackPageview();
 	}
-</script><script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+</script>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5ZTFTK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5ZTFTK');</script>
+<!-- End Google Tag Manager --><script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
 mw.loader.state({"site":"ready","user":"ready","user.groups":"ready"});
 }</script>
 <script>if(window.mw){
-mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.Splunk.js","skins.oxfordcomma.js"],null,true);
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.SplunkAuth.js","ext.Splunk.js","skins.oxfordcomma.js"],null,true);
 }</script>
 <script>if(window.mw){
-mw.config.set({"wgBackendResponseTime":665});
+mw.config.set({"wgBackendResponseTime":446});
 }</script><!--googleon: index-->	</body>
 </html>
