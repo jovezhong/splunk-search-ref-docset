@@ -10,7 +10,7 @@ If you purchase the powpack of Alfred, you can use keyboard to quickly search an
 # For most of you, use this out of box!
 After you install Dash, simply clone or download this project, and open the Dash preference, add the spl.docset. Then you can use spl:cmdName to search any command.
 
-![screenshot](http://jzhong.s3.amazonaws.com/splunk_java_sdk_docset.png)
+![screenshot](http://static.splunk.io/dash.png)
 
 # For developers, you can update the docset by yourself
 The main.groovy is developed with JVM language Groovy.So you need instal JVM and Groovy if you want to 
@@ -26,16 +26,19 @@ Sorry, many of the following steps are possibily able to be automated. Next time
 ## Step 1: Update ListOfSearchCommands
 * Go http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/ListOfSearchCommands
 * Save the HTML source as spl.docset/Contents/Resources/Documents/main.html
+	* You'd better add this line to head tag ```<base href="http://docs.splunk.com">```
 * Make sure you've logged in, then click the Edit link on the left hand. Copy the wiki markup to wiki/ListOfSearchCommands.txt
 
 ## Step 2: Update CommonEvalFunctions
 * Go http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/CommonEvalFunctions 
 * Save the HTML source as spl.docset/Contents/Resources/Documents/1_CommonEvalFunctions.html
+	* You'd better add this line to head tag ```<base href="http://docs.splunk.com">```
 * Click the Edit link on the left hand. Copy the wiki markup to wiki/CommonEvalFunctions.txt
 
 ## Step 3: Update CommonStatsFunctions
 * Go http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/CommonStatsFunctions 
 * Save the HTML source as spl.docset/Contents/Resources/Documents/2_CommonStatsFunctions.html
+	* You'd better add this line to head tag ```<base href="http://docs.splunk.com">```
 * Click the Edit link on the left hand. Copy the wiki markup to wiki/CommonStatsFunctions.txt
 
 ## Step 4: Prepare the SQLite database
