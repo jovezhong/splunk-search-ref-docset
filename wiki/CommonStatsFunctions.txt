@@ -110,4 +110,4 @@ The only exceptions are the <code>max</code> and <code>min</code> functions.  Th
 Have questions? Visit [http://splunk-base.splunk.com Splunk Answers] and search for a specific function or command. 
 
 
-[[Category:V:Splunk:6.6.0]][[Category:V:Splunk:Minty]][[Category:V:SplunkCloud:6.6.0]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.1]]
+[[Category:V:Splunk:6.6.0]][[Category:V:Splunk:7.0.0]][[Category:V:SplunkCloud:6.6.0]][[Category:V:SplunkCloud:6.6.1]][[Category:V:Splunk:6.6.2]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.2]][[Category:V:Splunk:6.6.3]][[Category:V:Splunk:NightLight]][[Category:V:SplunkCloud:6.6.3]]

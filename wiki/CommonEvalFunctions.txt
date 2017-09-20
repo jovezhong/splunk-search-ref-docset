@@ -66,7 +66,7 @@ The following table is a quick reference for the evaluation functions. This tabl
 <code>time()</code><br>
 |-
 |[[Documentation:Splunk:SearchReference:InformationalFunctions|Informational functions]]
-|<code>ibool(X)</code><br> 
+|<code>isbool(X)</code><br> 
 <code>isint(X)</code><br> 
 <code>isnotnull(X)</code><br> 
 <code>isnull(X)</code><br> 
@@ -97,7 +97,7 @@ The following table is a quick reference for the evaluation functions. This tabl
 <code>mvfind(MVFIELD,"REGEX")</code><br> 
 <code>mvindex(MVFIELD,STARTINDEX,ENDINDEX)</code><br> 
 <code>mvjoin(MVFIELD,STR)</code><br> 
-<code>mvrange(X,Y.Z)</code><br> 
+<code>mvrange(X,Y,Z)</code><br> 
 <code>mvsort(X)</code><br> 
 <code>mvzip(X,Y,"Z")</code><br>
 |-
@@ -137,12 +137,15 @@ The following table is a quick reference for the evaluation functions. This tabl
 |}
 
 == See also ==
+'''Topics:''' <br>
 [[Documentation:Splunk:SearchReference:CommonStatsFunctions|Statistical and charting functions]]
 
-[[Documentation:Splunk:SearchReference:Eval|eval]],  [[Documentation:Splunk:SearchReference:Fieldformat|fieldformat]],  [[Documentation:Splunk:SearchReference:Where|where]]
+'''Commands:'''<br>
+[[Documentation:Splunk:SearchReference:Eval|eval]] <br>  [[Documentation:Splunk:SearchReference:Fieldformat|fieldformat]] <br>
+[[Documentation:Splunk:SearchReference:Where|where]]
 
 == Splunk Answers ==
 Have questions? Visit [http://splunk-base.splunk.com Splunk Answers] and search for a specific function or command. 
 
 
-[[Category:V:Splunk:6.6.0]][[Category:V:Splunk:Minty]][[Category:V:SplunkCloud:6.6.0]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.1]]
+[[Category:V:Splunk:6.6.0]][[Category:V:Splunk:7.0.0]][[Category:V:SplunkCloud:6.6.0]][[Category:V:SplunkCloud:6.6.1]][[Category:V:Splunk:6.6.2]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.2]][[Category:V:Splunk:6.6.3]][[Category:V:Splunk:NightLight]][[Category:V:SplunkCloud:6.6.3]]

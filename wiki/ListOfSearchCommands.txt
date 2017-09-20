@@ -114,10 +114,6 @@ Some of these commands share functions. For a list of the functions with descrip
 |Calculates the correlation between different fields. 
 |<code>associate</code>, <code>contingency</code> 
 |-
-|<code>[[Documentation:Splunk:SearchReference:Crawl|crawl]]</code> 
-|Crawls the filesystem for new sources to index. 
-|<code>input</code>
-|-
 |<code>[[Documentation:Splunk:SearchReference:Datamodel|datamodel]]</code>
 |Examine data model or data model dataset and search a data model dataset. 
 |<code>pivot</code>
@@ -305,6 +301,10 @@ Some of these commands share functions. For a list of the functions with descrip
 |<code>[[Documentation:Splunk:SearchReference:Metasearch|metasearch]]</code>
 |Retrieves event metadata from indexes based on terms in the logical expression.
 |<code>metadata</code>, <code>search</code>
+|-
+|<code>[[Documentation:Splunk:SearchReference:Mstats|mstats]]</code>
+|Calculates statistics for the measurement, metric_name, and dimension fields in metric indexes.
+|<code>stats</code>, <code>tstats</code>
 |-
 |<code>[[Documentation:Splunk:SearchReference:Multikv|multikv]]</code> 
 | Extracts field-values from table-formatted events. 
@@ -567,5 +567,7 @@ Some of these commands share functions. For a list of the functions with descrip
 | 
 |}
 
+
+
 [[Category:Reference]][[Category:Search commands]]
-[[Category:V:Splunk:6.5.0]][[Category:V:Splunk:6.5.1612]][[Category:V:Splunk:6.6.0]][[Category:V:SplunkCloud:6.5.0]][[Category:V:Splunk:6.5.1]][[Category:V:SplunkCloud:6.5.1]][[Category:V:Splunk:6.5.2]][[Category:V:SplunkCloud:6.5.1612]][[Category:V:Splunk:Minty]][[Category:V:Splunk:6.5.3]][[Category:V:SplunkCloud:6.6.0]][[Category:V:Splunk:6.5.4]][[Category:V:Splunk:6.6.1]][[Category:V:SplunkCloud:6.6.1]]
+[[Category:V:Splunk:7.0.0]][[Category:V:Splunk:NightLight]]

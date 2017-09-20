@@ -1,7 +1,7 @@
 # What's this
 This is a docset for Splunk Search Reference. Hopefully this will be helpful for Mac users who also use dash and Alfred.
 
-Last update: May 2017, with latest doc for Splunk 6.6.0
+Last update: Sep 2017, with latest doc for Splunk 7.0.0
 # What's dash
 [Dash](http://kapeli.com/dash) is a great tool to check any documentations: javadoc, Objective C docset, nodejs and others.
 
@@ -10,7 +10,7 @@ If you purchase the powpack of Alfred, you can use keyboard to quickly search an
 # For most of you, use this out of box!
 After you install Dash, simply clone or download this project, and open the Dash preference, add the spl.docset. Then you can use spl:cmdName to search any command.
 
-![screenshot](http://static.splunk.io/dash.png)
+![screenshot](https://static.splunk.io/dash.png)
 
 # For developers, you can update the docset by yourself
 The main.groovy is developed with JVM language Groovy.So you need instal JVM and Groovy if you want to 
@@ -24,8 +24,8 @@ Sorry, many of the following steps are possibily able to be automated. Next time
 * Delete all html files under spl.docset/Contents/Resources/Documents
 
 ## Step 1: Update ListOfSearchCommands
-* Go http://docs.splunk.com/Documentation/Splunk/6.6.0/SearchReference/ListOfSearchCommands
-* Save the HTML source as spl.docset/Contents/Resources/Documents/main.html
+* Go http://docs.splunk.com/Documentation/Splunk/latest/SearchReference/ListOfSearchCommands
+* Save the HTML **Page Source** as spl.docset/Contents/Resources/Documents/main.html
 	* You'd better add this line to head tag ```<base href="http://docs.splunk.com">```
 * Make sure you've logged in, then click the Edit link on the left hand. Copy the wiki markup to wiki/ListOfSearchCommands.txt
 
