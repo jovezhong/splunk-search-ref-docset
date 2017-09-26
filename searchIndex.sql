@@ -24,7 +24,6 @@ INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('concurrency', 'Comm
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('contingency', 'Command', 'Contingency.html#contingency');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('convert', 'Command', 'Convert.html#convert');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('correlate', 'Command', 'Correlate.html#correlate');
-INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('crawl', 'Command', 'Crawl.html#crawl');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('datamodel', 'Command', 'Datamodel.html#datamodel');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('dbinspect', 'Command', 'Dbinspect.html#dbinspect');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('dedup', 'Command', 'Dedup.html#dedup');
@@ -73,6 +72,7 @@ INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('makeresults', 'Comm
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('map', 'Command', 'Map.html#map');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('metadata', 'Command', 'Metadata.html#metadata');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('metasearch', 'Command', 'Metasearch.html#metasearch');
+INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('mstats', 'Command', 'Mstats.html#mstats');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('multikv', 'Command', 'Multikv.html#multikv');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('multisearch', 'Command', 'Multisearch.html#multisearch');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('mvcombine', 'Command', 'Mvcombine.html#mvcombine');
@@ -162,7 +162,7 @@ INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('relative_time', 'Fu
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('strftime', 'Function', '1_CommonEvalFunctions.html');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('strptime', 'Function', '1_CommonEvalFunctions.html');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('time', 'Function', '1_CommonEvalFunctions.html');
-INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('ibool', 'Function', '1_CommonEvalFunctions.html');
+INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('isbool', 'Function', '1_CommonEvalFunctions.html');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('isint', 'Function', '1_CommonEvalFunctions.html');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('isnotnull', 'Function', '1_CommonEvalFunctions.html');
 INSERT OR IGNORE INTO searchIndex(name, type, path) VALUES ('isnull', 'Function', '1_CommonEvalFunctions.html');
